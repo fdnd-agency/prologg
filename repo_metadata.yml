@@ -2,6 +2,6 @@ title: "Prologg"
 client: "FairWork"
 status: "active"
 years: [2]
-main_link: "https://digitalproofempowerment.agency.fdnd.nl/"
-dev_link: "https://digitalproofempowerment.dev.fdnd.nl/"
+main_link: ""
+dev_link: "https://prologg.netlify.app/"
 tech_stack: ["SvelteKit", "Directus"]
