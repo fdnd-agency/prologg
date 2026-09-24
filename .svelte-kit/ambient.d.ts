@@ -48,6 +48,7 @@ declare module '$env/static/private' {
 	export const npm_config_global_prefix: string;
 	export const VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 	export const TERM_PROGRAM_VERSION: string;
+	export const FPATH: string;
 	export const ZDOTDIR: string;
 	export const MallocNanoZone: string;
 	export const COLOR: string;
@@ -198,6 +199,7 @@ declare module '$env/dynamic/private' {
 		npm_config_global_prefix: string;
 		VSCODE_PYTHON_AUTOACTIVATE_GUARD: string;
 		TERM_PROGRAM_VERSION: string;
+		FPATH: string;
 		ZDOTDIR: string;
 		MallocNanoZone: string;
 		COLOR: string;
