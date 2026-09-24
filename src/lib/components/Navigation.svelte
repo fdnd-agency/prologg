@@ -38,7 +38,7 @@
         <nav class="main-nav" class:open={mobileMenuOpen}>
             <div class="mobile-menu-top">
                 <div class="language-switch">
-                    <button type="button">NL</button>
+                    <button type="button" class="active">NL</button>
                     <button type="button">EN</button>
                 </div>
                 <button type="button" class="close-button" onclick={closeMenu}>
@@ -64,6 +64,12 @@
 
     .nav-bar {
         width: 100%;
+        background-color: #E4EFFC;
+
+            a {
+                text-decoration: none;
+                color: #46464F;
+            }
     }
 
     button {
@@ -75,18 +81,48 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        a {
+            place-items: center;
+            padding-left: 10px;
+        }
     }
 
     .main-nav {
         display: flex;
         align-items: center;
-        gap:24px;
+        gap: 24px;
+        padding: 20px;
     }
 
     .mobile-menu,
     .mobile-menu-top,
     .language-switch-desktop {
         display: none;
+    }
+
+    .language-switch {
+        padding: 5px;
+        background-color: #000000;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+
+        button {
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            width: 35px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+
+            &.active {
+                background-color: #FFFFFF;
+                color: #000000;
+            }
+        }
     }
 
     @media (width <= 768px) {
@@ -96,8 +132,8 @@
 
         .mobile-menu {
             display: flex;
-            align-items: center;
-            gap: 16px;
+            place-items: center;
+            gap: 7px;
         }
 
         .main-nav {
@@ -111,8 +147,18 @@
         .main-nav.open,
         .mobile-menu-top {
             display: flex;
-            justify-content: space-around;
+            align-items: flex-start ;
             background-color: #E4EFFC;
+        }
+
+        .main-nav.open {
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .mobile-menu-top {
+            width: 100%;
+            justify-content: space-between;
         }
     }
 
@@ -120,6 +166,11 @@
         img:first-of-type {
             width: 176px;
             height: 80px;
+        }
+
+        .language-switch-desktop {
+            display:flex;
+
         }
     }
 </style>
