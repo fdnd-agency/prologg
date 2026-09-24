@@ -20,9 +20,18 @@
 </section>
 
 <style>
+	@font-face {
+		font-family: 'Space Grotesk';
+		src: url('../assets/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+		font-weight: 300 700;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	.demo-section {
 		background-color: #101010;
 		color: #fff;
+		font-family: 'Space Grotesk', sans-serif;
 	}
 
 	.demo-content {
@@ -30,6 +39,7 @@
 		max-width: 900px;
 		margin-inline: auto;
 		padding: 72px 24px 56px;
+		text-align: center;
 	}
 
 	.demo-label {
@@ -42,7 +52,7 @@
 
 	h2 {
 		max-width: 700px;
-		margin: 0;
+		margin-inline: auto;
 		font-size: clamp(32px, 8vw, 48px);
 		line-height: 1.15;
 		text-wrap: balance;
@@ -50,7 +60,7 @@
 
 	.demo-description {
 		max-width: 600px;
-		margin: 24px 0 0;
+		margin: 24px auto 0;
 		color: #dedede;
 		font-size: 16px;
 		line-height: 1.6;
@@ -93,16 +103,6 @@
 	@media (min-width: 700px) {
 		.demo-content {
 			padding-block: 100px 80px;
-			text-align: center;
-		}
-
-		h2,
-		.demo-description {
-			margin-inline: auto;
-		}
-
-		h2 {
-			font-size: 48px;
 		}
 
 		.demo-description {
