@@ -2,11 +2,12 @@
 
 ## Communicatie
 Communicatie gaat via Teams of op locatie.
-Standups om 11 uur
+Maandag, woensdag, vrijdag - 14:00 op locatie
+Dinsdag, donderdag - 11:00 via Teams
 
 ## Oplevering
 * Ieder teamlid maakt gebruik van feature branches. Het liefst vanuit de bestaande issues. 
-* Wijzigingen worden via een Pull Request, volgens het template, ingediend en eerst door twee andere teamleden goedgekeurd.
+* Wijzigingen worden via een Pull Request volgens het template ingediend, waarbij twee teamleden worden getagd. Vervolgens pakt één van hen de PR op.
 * Na de goedkeuring kan er gemerged worden, **maar** een ander teamlid mergt jouw werk.
 
 ## Afwezigheid
