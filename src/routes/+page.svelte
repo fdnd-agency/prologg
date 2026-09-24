@@ -5,13 +5,13 @@
 <Button
     href="mailto:frank.kloos@fonetic.studio"
     classes="hero-primary"
-    content="Vraag kantoordemo aan"
+    content="Vraag demo aan"
 />
 <Button href="#" classes="hero-secondary" content="Bekijk de casus" />
 <Button
     href="mailto:frank.kloos@fonetic.studio"
     classes="nav"
-    content="Vraag kantoordemo aan"
+    content="Vraag demo aan"
 />
 <Button
     href="mailto:frank.kloos@fonetic.studio"
