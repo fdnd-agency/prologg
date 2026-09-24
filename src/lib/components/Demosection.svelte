@@ -1,3 +1,7 @@
+<script>
+	import mailIcon from '$lib/assets/mail.svg'
+</script>
+
 <section class="demo-section">
 	<div class="demo-content">
 		<p class="demo-label">BEVEILIGDE BEWIJSLUIS</p>
@@ -9,7 +13,8 @@
 		</p>
 
 		<a class="demo-contact" href="mailto:frank.kloos@fonetic.studio">
-			frank.kloos@fonetic.studio
+			<span>frank.kloos@fonetic.studio</span>
+			<img src={mailIcon} alt="" width="20" height="20" />
 		</a>
 
 		<p class="demo-note">
@@ -71,6 +76,7 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
+		gap: 10px;
 		width: 100%;
 		min-height: 52px;
 		margin-top: 32px;
@@ -91,6 +97,10 @@
 	.demo-contact:focus-visible {
 		outline: 3px solid #1688ec;
 		outline-offset: 4px;
+	}
+
+	.demo-contact img {
+		flex-shrink: 0;
 	}
 
 	.demo-note {
