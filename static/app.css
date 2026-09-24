@@ -1,0 +1,34 @@
+*,*::after,*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color-primary: #000;
+    --text-color-secondary: #FFF;
+    --text-color-accent: #46464F;
+    --background-color-primary: #F7F9FF;
+    --background-color-secondary: #ECF4FF;
+    --background-color-tetriary: #EEF5FF;
+    --background-color-lightest: #fff;
+    --background-color-accent: var(--text-color-primary);
+    --alert-color: #A93629;
+
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/src/lib/assets/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: Space-Grotesk;
+    src: url(/src/lib/assets/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+
+body {
+    font-family: Inter;
+    background-color: var(--background-color-primary);
+}
