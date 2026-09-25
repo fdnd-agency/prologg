@@ -78,6 +78,7 @@
 		justify-content: center;
 		gap: 10px;
 		width: 100%;
+		max-width: 380px;
 		min-height: 52px;
 		margin-top: 32px;
 		padding: 12px 16px;
