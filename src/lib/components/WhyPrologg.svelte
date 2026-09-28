@@ -21,14 +21,14 @@
 
 <style>
     section {
-        background-color: #FFFFFF;
-        color: #46464F;
-        padding: 30px 22px;
+        background-color: var(--white);
+        color: var(--text-color-accent);
+        padding: 35px 35px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;   
-        margin: 0;
+        align-items: start;
+        text-align: start;   
+        margin: 50px;
         max-width: 600px;
         border-radius: 12px;
     }
@@ -43,22 +43,22 @@
 
     .label {
         margin-bottom: 20px;
-        font-weight: 600;
+        font-weight: 400;
     }
 
     h2 {
         font-size: 10px;
         text-transform: uppercase;
-        color: #A93629;
+        color: var(--alert-color);
         word-spacing: 4px;
         letter-spacing: 1px;
     }
 
     .quote {
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 1.4;
-        color: #000000;
+        color: var(--text-color-primary);
         padding: 0 10px;
     }
 
@@ -67,6 +67,7 @@
         max-width: 480px;
         border: .5px solid #E4EFFC;
         margin: 13px;
+        place-self: center;
     }
 
     .info {
@@ -85,6 +86,7 @@
             font-size: 14px;
             line-height: 1.5;
             margin: 0;
+            font-weight: 400;
         }
     }
 
@@ -112,11 +114,11 @@
     @media (width >=1024px) {
         section {
             max-width: 900px;
+            padding-left: 63px;
         }
 
         .info {
             max-width: 800px;
-            text-align: center;
         }
     }
 </style>
