@@ -26,7 +26,8 @@
         align-items: center;
         gap: 1rem;
         padding: 0.5rem;
-        margin-block: 2rem;
+
+        background-color: var(--background-color-secondary);
 
         @media (width > 709px) {
             gap: 3rem;
