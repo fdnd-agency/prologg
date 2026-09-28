@@ -27,6 +27,8 @@
         gap: 1rem;
         padding: 0.5rem;
 
+        background-color: var(--background-color-secondary);
+
         @media (width > 709px) {
             gap: 3rem;
             padding-block: 4rem;
@@ -36,11 +38,7 @@
     h1,
     p {
         max-width: 50rem;
-        text-align: left;
-
-        @media (width > 709px) {
-            text-align: center;
-        }
+        text-align: center;
     }
     h1 {
         font-family: Space-Grotesk;
@@ -54,14 +52,8 @@
     .button-wrapper {
         display: flex;
         gap: 1rem;
-        align-self: start;
         flex-wrap: wrap;
-
-        @media (width > 709px) {
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-self: center;
-        }
+        justify-content: center;
+        align-self: center;
     }
 </style>

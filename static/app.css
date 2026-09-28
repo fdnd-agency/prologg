@@ -5,16 +5,14 @@
 }
 
 :root {
-    --text-color-primary: #000;
-    --text-color-secondary: #FFF;
-    --text-color-accent: #46464F;
-    --background-color-primary: #F7F9FF;
-    --background-color-secondary: #ECF4FF;
-    --background-color-tetriary: #E4EFFC;
-    --background-color-lightest: #fff;
+    --text-color-primary: hsl(212 76% 5%);
+    --text-color-secondary: hsl(225 100% 98%);
+    --text-color-accent: hsl(240 6% 29%);
+    --background-color-primary: hsl(212 76% 95%);
+    --background-color-secondary: hsl(225 100% 99%);
+    --white: #fff;
     --background-color-accent: var(--text-color-primary);
-    --alert-color: #A93629;
-
+    --alert-color: hsl(6 61% 41%);
 }
 
 @font-face {

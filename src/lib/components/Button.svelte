@@ -51,7 +51,7 @@
 
         &.hero-secondary {
             color: var(--text-color-primary);
-            background-color: var(--background-color-tetriary);
+            background-color: var(--background-color-primary);
 
             @media (any-pointer: fine) and (width > 280px) {
                 &:hover {
@@ -78,7 +78,7 @@
 
         &.footer {
             color: var(--text-color-primary);
-            background-color: var(--background-color-lightest);
+            background-color: var(--white);
 
             @media (width > 280px) {
                 &::after {
