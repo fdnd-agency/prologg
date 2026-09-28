@@ -1,14 +1,10 @@
 <script>
     import fullLogo from '$lib/assets/full-logo.svg';
     import closeIcon from '$lib/assets/close-icon.svg';
-    import hamburgerMenuIcon from '$lib/assets/hamburger-menu-icon.svg'
+    import { Hamburger } from 'svelte-hamburgers';
     import Button from '$lib/components/Button.svelte'
 
     let mobileMenuOpen = $state(false);
-
-    function toggleMenu() {
-        mobileMenuOpen = !mobileMenuOpen;
-    }
 
     function closeMenu() {
         mobileMenuOpen = false;
@@ -30,9 +26,7 @@
 
         <div class="mobile-menu">
             <Button href="#" classes="nav" content="Vraag demo aan"/>
-            <button type="button" class="hamburger-menu" onclick={toggleMenu}>
-                <img src={hamburgerMenuIcon} alt="Open menu" width="50px" height="50px">
-            </button>
+            <Hamburger bind:open={mobileMenuOpen} type="collapse" title="Open menu" --padding="22px" />
         </div>
 
         <nav class="main-nav" class:open={mobileMenuOpen}>
@@ -47,7 +41,7 @@
             </div>
 
             {#each navLinks as link}
-                <a href={link.href} onclick={closeMenu}>{link.label}</a>
+                <a href={link.href} onclick={closeMenu} class="nav-link">{link.label}</a>
             {/each}
 
             <div class="language-switch-desktop">
@@ -81,7 +75,7 @@
         align-items: center;
         justify-content: space-between;
 
-        a {
+        .logo-link {
             place-items: center;
             padding-left: 10px;
         }
@@ -90,7 +84,6 @@
     .mobile-menu {
         display: flex;
         place-items: center;
-        gap: 7px;
     }
 
     .language-switch-desktop {
@@ -103,24 +96,44 @@
         position: fixed;
         inset: 0;
         z-index: 10;
+
+        .nav-link {
+            transition: .1s ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+                color: var(--text-color-primary);
+
+                @media (prefers-reduced-motion: no-preference) {
+                    scale: 1.1; 
+                }
+            }
+
+            &:focus-visible {
+                outline-offset: 6px;
+                outline: 2px solid var(--text-color-primary);
+                border-radius: 5px;
+            }
+        }
     }
 
     .open {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         background-color: var(--background-color-primary);
         padding: 30px;
         gap: 30px;
     }
 
     .mobile-menu-top {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start;
         width: 100%;
     }
 
     .language-switch {
+        grid-column: 2;
         padding: 5px;
         background-color: var(--text-color-primary);
         border-radius: 12px;
@@ -142,6 +155,11 @@
                 color: var(--text-color-primary);
             }
         }
+    }
+
+    .close-button {
+        grid-column: 3;
+        justify-self: end;
     }
 
     /* DESKTOP */
