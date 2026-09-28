@@ -63,11 +63,11 @@
 <style>
     .nav-bar {
         width: 100%;
-        background-color: #E4EFFC;
+        background-color: var(--background-color-primary);
 
         a {
             text-decoration: none;
-            color: #46464F;
+            color: var(--text-color-accent);
         }
     }
 
@@ -108,7 +108,7 @@
     .open {
         display: flex;
         align-items: flex-start;
-        background-color: #E4EFFC;
+        background-color: var(--background-color-primary);
         padding: 30px;
         gap: 30px;
     }
@@ -118,18 +118,17 @@
         align-items: flex-start;
         justify-content: space-between;
         width: 100%;
-        background-color: #E4EFFC;
     }
 
     .language-switch {
         padding: 5px;
-        background-color: #000000;
+        background-color: var(--text-color-primary);
         border-radius: 12px;
         display: flex;
         justify-content: center;
 
         button {
-            color: #FFFFFF;
+            color: var(--white);
             padding: 10px;
             border-radius: 4px;
             font-weight: 600;
@@ -139,8 +138,8 @@
             align-items: center;
 
             &.active {
-                background-color: #FFFFFF;
-                color: #000000;
+                background-color: var(--white);
+                color: var(--text-color-primary);
             }
         }
     }
