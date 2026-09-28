@@ -25,11 +25,11 @@
 <header class="nav-bar">
     <div class="logo">
     	<a class="logo-link" href="/">
-            <img src={fullLogo} alt="Prologg logo" width="100" height="70">
+            <img src={fullLogo} alt="Prologg logo" width="100" height="70" fetchpriority="high">
         </a>
 
         <div class="mobile-menu">
-            <Button href="#" classes="nav mobile-cta" content="Vraag demo aan"/>
+            <Button href="#" classes="nav" content="Vraag demo aan"/>
             <button type="button" class="hamburger-menu" onclick={toggleMenu}>
                 <img src={hamburgerMenuIcon} alt="Open menu" width="50px" height="50px">
             </button>
@@ -61,15 +61,14 @@
 </header>
 
 <style>
-
     .nav-bar {
         width: 100%;
         background-color: #E4EFFC;
 
-            a {
-                text-decoration: none;
-                color: #46464F;
-            }
+        a {
+            text-decoration: none;
+            color: #46464F;
+        }
     }
 
     button {
@@ -88,17 +87,38 @@
         }
     }
 
-    .main-nav {
+    .mobile-menu {
         display: flex;
-        align-items: center;
-        gap: 24px;
-        padding: 20px;
+        place-items: center;
+        gap: 7px;
     }
 
-    .mobile-menu,
-    .mobile-menu-top,
     .language-switch-desktop {
         display: none;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+    }
+
+    .open {
+        display: flex;
+        align-items: flex-start;
+        background-color: #E4EFFC;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .mobile-menu-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #E4EFFC;
     }
 
     .language-switch {
@@ -125,52 +145,31 @@
         }
     }
 
-    @media (width <= 768px) {
-        .language-switch-desktop {
-            display: none;
-        }
-
-        .mobile-menu {
-            display: flex;
-            place-items: center;
-            gap: 7px;
-        }
-
-        .main-nav {
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            inset: 0;
-            z-index: 10;
-        }
-
-        .main-nav.open,
-        .mobile-menu-top {
-            display: flex;
-            align-items: flex-start ;
-            background-color: #E4EFFC;
-        }
-
-        .main-nav.open {
-            padding: 30px;
-            gap: 30px;
-        }
-
-        .mobile-menu-top {
-            width: 100%;
-            justify-content: space-between;
-        }
-    }
+    /* DESKTOP */
 
     @media (width >= 768px) {
-        img:first-of-type {
+        .logo-link img {
             width: 176px;
             height: 80px;
         }
 
-        .language-switch-desktop {
-            display:flex;
+        .mobile-menu,
+        .mobile-menu-top {
+            display: none;
+        }
 
+        .main-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: static;
+            z-index: auto;
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .language-switch-desktop {
+            display: flex;
         }
     }
 </style>
