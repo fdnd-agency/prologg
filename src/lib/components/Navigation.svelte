@@ -146,7 +146,7 @@
 
     /* DESKTOP */
 
-    @media (width >= 768px) {
+    @media (width >= 1024px) {
         .logo-link img {
             width: 176px;
             height: 80px;
