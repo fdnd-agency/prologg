@@ -1,5 +1,4 @@
 <script>
-    import mailIcon from '$lib/assets/mail.svg';
     import Button from '$lib/components/Button.svelte';
 </script>
 
@@ -15,9 +14,8 @@
 
         <Button
             href="mailto:frank.kloos@fonetic.studio"
-            classes="demo-contact"
+            classes="footer demo-contact"
             content="frank.kloos@fonetic.studio"
-            icon={mailIcon}
         />
 
         <p class="demo-note">
@@ -43,7 +41,6 @@
     }
 
     .demo-content {
-        box-sizing: border-box;
         max-width: 900px;
         margin-inline: auto;
         padding: 72px 24px 56px;

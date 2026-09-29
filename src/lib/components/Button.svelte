@@ -1,14 +1,8 @@
 <script>
-    let { href, classes, content, icon } = $props();
+    let { href, classes, content } = $props();
 </script>
 
-<a {href} class={classes}>
-    {content}
-
-    {#if icon}
-        <img src={icon} alt="" width="20" height="20" />
-    {/if}
-</a>
+<a {href} class={classes}>{content}</a>
 
 <style>
     a {
@@ -83,6 +77,8 @@
         }
 
         &.footer {
+            align-items: center;
+            justify-content: center;
             color: var(--text-color-primary);
             background-color: var(--background-color-lightest);
 
@@ -94,7 +90,6 @@
         }
 
         &.demo-contact {
-            box-sizing: border-box;
             align-items: center;
             justify-content: center;
             width: 100%;
@@ -111,10 +106,6 @@
             &:focus-visible {
                 outline: 3px solid #1688ec;
                 outline-offset: 4px;
-            }
-
-            img {
-                flex-shrink: 0;
             }
 
             @media (min-width: 700px) {
