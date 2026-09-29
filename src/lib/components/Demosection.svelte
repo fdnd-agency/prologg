@@ -35,8 +35,8 @@
     }
 
     .demo-section {
-        background-color: #101010;
-        color: #fff;
+        background-color: var(--background-color-dark);
+        color: var(--text-color-secondary);
         font-family: 'Space Grotesk', sans-serif;
     }
 
