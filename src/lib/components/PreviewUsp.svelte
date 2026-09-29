@@ -24,8 +24,9 @@
     ];
 </script>
 
-<img src={img} alt="" width="100%" />
-
+<section>
+    <img src={img} alt="" width="100%" />
+</section>
 <div>
     {#each data as usp}
         <UspBlock
@@ -38,6 +39,9 @@
 </div>
 
 <style>
+    section {
+        display: grid;
+    }
     img {
         max-width: 20rem;
         padding: 0.5rem;

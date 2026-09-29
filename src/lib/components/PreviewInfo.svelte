@@ -27,7 +27,7 @@
     h2 {
         margin-block: 0.5rem;
         font-size: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
-        line-height: 0.9;
+        line-height: 0.95;
         color: var(--text-color-primary);
     }
 
