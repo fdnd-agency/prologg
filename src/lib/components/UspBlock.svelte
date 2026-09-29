@@ -66,12 +66,6 @@
             align-items: center;
             gap: 0.5rem;
 
-            h4 {
-                text-transform: uppercase;
-                letter-spacing: 0.05rem;
-                color: var(--alert-color);
-            }
-
             .deco-dot {
                 width: 3px;
                 height: 3px;
@@ -86,7 +80,8 @@
             gap: 0.4rem;
 
             h3 {
-                font-size: 1.75rem;
+                font-size: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
+                line-height: 0.9;
             }
         }
     }

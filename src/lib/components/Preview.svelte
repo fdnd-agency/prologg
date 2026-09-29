@@ -1,37 +1,27 @@
 <script>
-    import UspBlock from "./UspBlock.svelte";
-
-    let data = [
-        {
-            id: 1,
-            subTitle: "Aan de bron",
-            title: "Vastlegging met tijdstempel",
-            text: "Foto's, audio en locatiedata worden direct lokaal voorzien van onafhankelijke tijd- en metadataverankering.",
-        },
-        {
-            id: 2,
-            subTitle: "Integriteitswaarborg",
-            title: "Onaantastbaar logboek met SHA-256",
-            text: "Elke manipulatie of aanpassing is uitgesloten dankzij cryptografische hashes die standhouden bij verweer.",
-        },
-        {
-            id: 3,
-            subTitle: "Rechtsgeldige overdracht",
-            title: "Kant-en-klaar procesdossier",
-            text: "Genereer een gestructureerde export met brondocumenten en verificatiecertificaat voor de rechtbank of Arbeidsinspectie.",
-        },
-    ];
+    import PreviewInfo from "./PreviewInfo.svelte";
+    import PreviewBanner from "./PreviewBanner.svelte";
+    import PreviewUsp from "./PreviewUsp.svelte";
 </script>
 
-{#each data as usp}
-    <UspBlock
-        count={usp.id}
-        subTitle={usp.subTitle}
-        title={usp.title}
-        text={usp.text}
-    />
-{/each}
+<article>
+    <div>
+        <PreviewInfo />
+        <PreviewUsp />
+        <PreviewBanner />
+    </div>
+</article>
 
-<!-- count, subTitle, title, text -->
+<style>
+    article {
+        background-color: var(--background-color-secondary);
+    }
+    div {
+        @media (width > 890px) {
+            display: grid;
+            grid-template-columns: max-content 1fr;
 
-<style></style>
+            justify-self: center;
+        }
+    }
+</style>

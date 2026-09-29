@@ -30,3 +30,11 @@ body {
     font-family: Inter;
     background-color: var(--background-color-primary);
 }
+
+h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: var(--alert-color);
+    font-weight: 500;
+}
