@@ -31,7 +31,7 @@
     }
 
     article {
-        margin: 0.5rem;
+        margin: 1rem 0.5rem;
         padding: 1rem;
         display: flex;
         flex-direction: column;
