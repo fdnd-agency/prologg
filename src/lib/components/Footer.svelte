@@ -16,51 +16,60 @@
 <footer class="site-footer">
 	<div class="footer-inner">
 		<div class="footer-brand">
-			<a href="/" class="logo" aria-label="Prologg homepage">
-
-				<span class="logo-text">Prologg</span>
+			<a href="/" class="logo">
+				<img src="/images/prologg-logo.svg" alt="Prologg" />
 			</a>
 
 			<h2 class="brand-title">Prologg for Legal</h2>
+
 			<p class="brand-description">
 				Digitale Bewijskracht &amp;<br />
 				Forensische Keten van Bewijs
 			</p>
 		</div>
 
-		<nav class="footer-nav" aria-label="Footer navigatie">
+		<nav class="footer-nav">
 			<h2 class="footer-heading">Navigatie</h2>
+
 			<ul>
-				{#each navLinks as link}
-					<li><a href={link.href}>{link.label}</a></li>
+				{#each navLinks as link (link.href)}
+					<li>
+						<a href={link.href}>{link.label}</a>
+					</li>
 				{/each}
 			</ul>
 		</nav>
 
 		<div class="footer-contact">
 			<h2 class="footer-heading">Contact</h2>
+
 			<address>
-				<a href="mailto:frank.kloos@fonetic.studio">frank.kloos@fonetic.studio</a>
+				<a href="mailto:frank.kloos@fonetic.studio">
+					frank.kloos@fonetic.studio
+				</a>
 			</address>
 
-			<a href="/kantoordemo" class="cta-button">Vraag kantoordemo aan</a>
+			<a href="/kantoordemo" class="cta-button">
+				Vraag kantoordemo aan
+			</a>
 
-			<div class="lang-switch" role="group" aria-label="Taalkeuze">
-				<span class="lang-label">Taal:</span>
+			<div class="lang-switch">
+				<span>Taal:</span>
+
 				<button
 					type="button"
 					class:active={lang === 'NL'}
-					aria-pressed={lang === 'NL'}
-					on:click={() => setLang('NL')}
+					onclick={() => setLang('NL')}
 				>
 					NL
 				</button>
-				<span class="lang-divider" aria-hidden="true">/</span>
+
+				<span class="lang-divider">/</span>
+
 				<button
 					type="button"
 					class:active={lang === 'EN'}
-					aria-pressed={lang === 'EN'}
-					on:click={() => setLang('EN')}
+					onclick={() => setLang('EN')}
 				>
 					EN
 				</button>
@@ -75,68 +84,72 @@
 
 <style>
 	.site-footer {
-		border-top: 3px solid #2563eb;
 		background: #eef2fb;
 		color: #1e293b;
 		font-family: system-ui, sans-serif;
 	}
 
+	.footer-inner,
+	.footer-bottom {
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 1200px;
+		margin-inline: auto;
+	}
+
 	.footer-inner {
 		display: grid;
-		grid-template-columns: 1.4fr 1fr 1fr;
-		gap: 2rem;
-		padding: 2.5rem 2rem 1.5rem;
-		max-width: 1200px;
-		margin: 0 auto;
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+		padding: 1.75rem 1.25rem 1.25rem;
 	}
 
 	.logo {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.4rem;
-		color: inherit;
-		text-decoration: none;
 		margin-bottom: 1rem;
 	}
 
-	.logo-text {
-		font-size: 1.15rem;
-		font-weight: 600;
+	.logo img {
+		display: block;
+		width: 110px;
+		max-width: 100%;
+		height: auto;
 	}
 
 	.brand-title {
+		margin: 0 0 0.35rem;
 		font-size: 0.95rem;
 		font-weight: 700;
-		margin: 0 0 0.35rem;
 	}
 
 	.brand-description {
-		font-size: 0.9rem;
-		color: #475569;
 		margin: 0;
+		color: #475569;
+		font-size: 0.9rem;
 		line-height: 1.5;
 	}
 
 	.footer-heading {
+		margin: 0 0 0.9rem;
 		font-size: 0.95rem;
 		font-weight: 700;
-		margin: 0 0 0.9rem;
 	}
 
 	.footer-nav ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
 		display: flex;
 		flex-direction: column;
 		gap: 0.65rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	.footer-nav a,
 	.footer-contact address a {
 		color: #475569;
-		text-decoration: none;
 		font-size: 0.9rem;
+		text-decoration: none;
 	}
 
 	.footer-nav a:hover,
@@ -145,71 +158,80 @@
 	}
 
 	address {
-		font-style: normal;
 		margin: 0 0 1.1rem;
+		font-style: normal;
+		overflow-wrap: anywhere;
 	}
 
 	.cta-button {
 		display: inline-block;
-		background: #0f172a;
+		margin-bottom: 1.1rem;
+		padding: 0.6rem 1.1rem;
+		border-radius: 0.4rem;
+		background: #050505;
 		color: #fff;
 		font-size: 0.9rem;
 		font-weight: 500;
-		padding: 0.6rem 1.1rem;
-		border-radius: 0.4rem;
+		text-align: center;
 		text-decoration: none;
-		margin-bottom: 1.1rem;
+	}
+
+	.cta-button:hover {
+		background: #303030;
 	}
 
 	.lang-switch {
 		display: flex;
 		align-items: center;
 		gap: 0.35rem;
-		font-size: 0.85rem;
 		color: #475569;
+		font-size: 0.85rem;
 	}
 
 	.lang-switch button {
-		background: none;
+		padding: 0.25rem;
 		border: none;
-		padding: 0;
-		font: inherit;
+		background: none;
 		color: inherit;
+		font: inherit;
 		cursor: pointer;
 	}
 
 	.lang-switch button.active {
-		font-weight: 700;
 		color: #0f172a;
+		font-weight: 700;
 	}
 
 	.lang-divider {
-		color: #94a3b8;
+		color: #64748b;
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #2563eb;
+		outline-offset: 4px;
 	}
 
 	.footer-bottom {
+		padding: 0.9rem 1.25rem;
 		border-top: 1px solid #dde3f0;
-		padding: 1rem 2rem;
-		max-width: 1200px;
-		margin: 0 auto;
 	}
 
 	.footer-bottom p {
 		margin: 0;
+		color: #64748b;
 		font-size: 0.8rem;
-		color: #94a3b8;
 	}
 
-	/* Mobile: stacked layout zoals in screenshot 2 */
-	@media (max-width: 640px) {
+	@media (min-width: 700px) {
 		.footer-inner {
-			grid-template-columns: 1fr;
-			gap: 1.75rem;
-			padding: 1.75rem 1.25rem 1.25rem;
+			grid-template-columns: 1.4fr 1fr 1fr;
+			gap: 2rem;
+			padding: 2.5rem 2rem 1.5rem;
 		}
 
 		.footer-bottom {
-			padding: 0.9rem 1.25rem;
+			padding: 1rem 2rem;
 		}
 	}
 </style>
