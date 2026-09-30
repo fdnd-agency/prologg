@@ -1,21 +1,29 @@
 <script>
-    import lawIcon from '$lib/assets/law-icon.svg'
-    import shieldIcon from '$lib/assets/shield-icon.svg'
+    import lawIcon from "$lib/assets/law-icon.svg";
+    import shieldIcon from "$lib/assets/shield-icon.svg";
 </script>
 
 <section id="waarom-prologg">
     <div class="flex-icon label">
-        <img src={lawIcon} alt="" width="20" height="20"/>
+        <img src={lawIcon} alt="" width="20" height="20" />
         <h2>De realiteit in recht</h2>
     </div>
 
-    <p class="quote">"Zonder verifieerbaar bewijs geen zaak. Slachtoffers verliezen hun stem wanneer foto's, locaties en werkuren niet forensisch zijn vastgelegd."</p>
-    
-    <hr/>
+    <p class="quote">
+        "Zonder verifieerbaar bewijs geen zaak. Slachtoffers verliezen hun stem
+        wanneer foto's, locaties en werkuren niet forensisch zijn vastgelegd."
+    </p>
+
+    <hr />
 
     <div class="info">
-        <img src={shieldIcon} alt="" width="17" height="17"/>
-        <p>In de praktijk strandt vervolging of civiele vordering vaak op betwisting van screenshots en losse WhatsApp-berichten. Prologg borgt de bewijsketen direct vanaf het eerste moment met cryptografische zekerheid.</p>
+        <img src={shieldIcon} alt="" width="17" height="17" />
+        <p>
+            In de praktijk strandt vervolging of civiele vordering vaak op
+            betwisting van screenshots en losse WhatsApp-berichten. Prologg
+            borgt de bewijsketen direct vanaf het eerste moment met
+            cryptografische zekerheid.
+        </p>
     </div>
 </section>
 
@@ -27,10 +35,14 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        text-align: start;   
-        margin: 50px;
+        text-align: start;
+        margin: 2rem 0.5rem;
         max-width: 600px;
         border-radius: 12px;
+
+        @media (width > 679px) {
+            margin: 3rem;
+        }
     }
 
     .flex-icon {
@@ -65,7 +77,7 @@
     hr {
         width: 100%;
         max-width: 480px;
-        border: .5px solid #E4EFFC;
+        border: 0.5px solid #e4effc;
         margin: 13px;
         place-self: center;
     }

@@ -15,6 +15,7 @@
 <style>
     article {
         background-color: var(--background-color-secondary);
+        padding: 2rem 0.5rem;
     }
     div {
         @media (width > 890px) {

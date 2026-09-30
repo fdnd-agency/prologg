@@ -25,7 +25,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        padding: 0.5rem;
+        padding: 2rem 0.5rem;
 
         background-color: var(--background-color-secondary);
 
