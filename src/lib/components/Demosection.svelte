@@ -1,5 +1,5 @@
 <script>
-    import Button from '$lib/components/Button.svelte';
+    import Button from "$lib/components/Button.svelte";
 </script>
 
 <section class="demo-section">
@@ -9,7 +9,8 @@
         <h2>Versterk uw dossiers met betrouwbaar bewijs.</h2>
 
         <p class="demo-description">
-            Plan een compacte demonstratie van Prologg voor uw kantoor of praktijkgroep.
+            Plan een compacte demonstratie van Prologg voor uw kantoor of
+            praktijkgroep.
         </p>
 
         <Button
@@ -27,17 +28,18 @@
 
 <style>
     @font-face {
-        font-family: 'Space Grotesk';
-        src: url('../assets/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+        font-family: "Space Grotesk";
+        src: url("../assets/SpaceGrotesk-VariableFont_wght.ttf")
+            format("truetype");
         font-weight: 300 700;
         font-style: normal;
         font-display: swap;
     }
 
     .demo-section {
-        background-color: var(--background-color-dark);
+        background-color: var(--background-color-accent);
         color: var(--text-color-secondary);
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
     }
 
     .demo-content {

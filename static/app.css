@@ -9,7 +9,6 @@
     --text-color-secondary: hsl(225 100% 98%);
     --text-color-accent: hsl(240 6% 29%);
     --background-color-primary: hsl(212 76% 95%);
-    --background-color-dark: #06172B;
     --background-color-secondary: hsl(225 100% 99%);
     --white: #fff;
     --background-color-accent: var(--text-color-primary);
