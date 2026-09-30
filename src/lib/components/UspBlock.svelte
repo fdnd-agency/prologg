@@ -39,7 +39,7 @@
         background-color: var(--background-color-secondary);
         border-radius: 16px;
         max-width: max-content;
-        filter: drop-shadow(0px 0px 15px #e7e7e764);
+        filter: drop-shadow(0px 0px 15px #d2d2d29f);
 
         @media (width > 486px) {
             display: grid;
