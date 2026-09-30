@@ -1,4 +1,6 @@
 <script>
+	import logo from '$lib/assets/full-logo.svg';
+
 	const navLinks = [
 		{ label: 'Wat het is', href: '/wat-het-is' },
 		{ label: 'Waarom Prologg', href: '/waarom-prologg' },
@@ -17,7 +19,7 @@
 	<div class="footer-inner">
 		<div class="footer-brand">
 			<a href="/" class="logo">
-				<img src="/images/prologg-logo.svg" alt="Prologg" />
+				<img src={logo} alt="Prologg" />
 			</a>
 
 			<h2 class="brand-title">Prologg for Legal</h2>
@@ -97,9 +99,10 @@
 		margin-inline: auto;
 	}
 
+	/* Mobiel: één kolom */
 	.footer-inner {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: minmax(0, 1fr);
 		gap: 1.75rem;
 		padding: 1.75rem 1.25rem 1.25rem;
 	}
@@ -223,15 +226,25 @@
 		font-size: 0.8rem;
 	}
 
+	/* Tablet: twee kolommen */
 	@media (min-width: 700px) {
 		.footer-inner {
-			grid-template-columns: 1.4fr 1fr 1fr;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 2rem;
 			padding: 2.5rem 2rem 1.5rem;
 		}
 
 		.footer-bottom {
 			padding: 1rem 2rem;
+		}
+	}
+
+	/* Desktop: drie kolommen */
+	@media (min-width: 1080px) {
+		.footer-inner {
+			grid-template-columns:
+				minmax(0, 1.4fr)
+				repeat(2, minmax(0, 1fr));
 		}
 	}
 </style>
