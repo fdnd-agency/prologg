@@ -25,8 +25,9 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        padding: 0.5rem;
-        margin-block: 2rem;
+        padding: 2rem 0.5rem;
+
+        background-color: var(--background-color-secondary);
 
         @media (width > 709px) {
             gap: 3rem;
