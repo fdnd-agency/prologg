@@ -9,10 +9,10 @@
 
 <main>
     <Hero />
-    <Footer />
     <WhyPrologg />
     <Preview />
     <DemoSection />
+    <Footer />
 </main>
 
 <style>
