@@ -74,8 +74,12 @@
             <Hamburger
                 bind:open={mobileMenuOpen}
                 type="collapse"
-                title="Open menu"
+                title="Toggles menu"
                 --padding="22px"
+                --color="var(--background-color-accent)"
+                --layer-width="20px"
+                --layer-height="3px"
+                --layer-spacing="3px"
             />
         </div>
 
@@ -192,6 +196,7 @@
         background-color: var(--background-color-primary);
         padding: 30px;
         gap: 30px;
+        z-index: 10;
     }
 
     .mobile-menu-top {
