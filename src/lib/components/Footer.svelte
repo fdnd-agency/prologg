@@ -1,5 +1,6 @@
 <script>
 	import logo from '$lib/assets/full-logo.svg';
+	import Button from '$lib/components/Button.svelte';
 
 	const navLinks = [
 		{ label: 'Wat het is', href: '/wat-het-is' },
@@ -51,9 +52,13 @@
 				</a>
 			</address>
 
-			<a href="/kantoordemo" class="cta-button">
-				Vraag kantoordemo aan
-			</a>
+			<div class="footer-demo">
+				<Button
+					href="/kantoordemo"
+					classes="nav"
+					content="Vraag kantoordemo aan"
+				/>
+			</div>
 
 			<div class="lang-switch">
 				<span>Taal:</span>
@@ -86,9 +91,8 @@
 
 <style>
 	.site-footer {
-		background: #eef2fb;
-		color: #1e293b;
-		font-family: system-ui, sans-serif;
+		background: var(--background-color-primary);
+		color: var(--text-color-primary);
 	}
 
 	.footer-inner,
@@ -128,7 +132,7 @@
 
 	.brand-description {
 		margin: 0;
-		color: #475569;
+		color: var(--text-color-accent);
 		font-size: 0.9rem;
 		line-height: 1.5;
 	}
@@ -150,7 +154,7 @@
 
 	.footer-nav a,
 	.footer-contact address a {
-		color: #475569;
+		color: var(--text-color-accent);
 		font-size: 0.9rem;
 		text-decoration: none;
 	}
@@ -166,28 +170,15 @@
 		overflow-wrap: anywhere;
 	}
 
-	.cta-button {
-		display: inline-block;
+	.footer-demo {
 		margin-bottom: 1.1rem;
-		padding: 0.6rem 1.1rem;
-		border-radius: 0.4rem;
-		background: #050505;
-		color: #fff;
-		font-size: 0.9rem;
-		font-weight: 500;
-		text-align: center;
-		text-decoration: none;
-	}
-
-	.cta-button:hover {
-		background: #303030;
 	}
 
 	.lang-switch {
 		display: flex;
 		align-items: center;
 		gap: 0.35rem;
-		color: #475569;
+		color: var(--text-color-accent);
 		font-size: 0.85rem;
 	}
 
@@ -201,28 +192,30 @@
 	}
 
 	.lang-switch button.active {
-		color: #0f172a;
+		color: var(--text-color-primary);
 		font-weight: 700;
 	}
 
 	.lang-divider {
-		color: #64748b;
+		color: var(--text-color-accent);
 	}
 
 	a:focus-visible,
-	button:focus-visible {
-		outline: 2px solid #2563eb;
+	button:focus-visible,
+	.footer-demo :global(a:focus-visible) {
+		outline: 2px solid var(--text-color-primary);
 		outline-offset: 4px;
 	}
 
 	.footer-bottom {
 		padding: 0.9rem 1.25rem;
-		border-top: 1px solid #dde3f0;
+		border-top: 1px solid
+			color-mix(in srgb, var(--text-color-accent) 20%, transparent);
 	}
 
 	.footer-bottom p {
 		margin: 0;
-		color: #64748b;
+		color: var(--text-color-accent);
 		font-size: 0.8rem;
 	}
 
