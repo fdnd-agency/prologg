@@ -73,4 +73,23 @@
         display: flex;
         justify-content: center;
     }
+
+    @media (width >= 768px) {
+        section {
+            padding: 64px 32px;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        .cards {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 960px;
+        }
+    }
 </style>
