@@ -92,8 +92,9 @@
 
             {#each navLinks as link}
                 <a href={link.href} onclick={closeMenu} class="nav-link"
-                    >{link.label}</a
-                >
+                    >{link.label}
+                    <div class="underline-deco"></div>
+                </a>
             {/each}
 
             <div class="language-switch-desktop">
@@ -155,12 +156,25 @@
         .nav-link {
             transition: 0.1s ease-in-out;
 
+            .underline-deco {
+                width: 0%;
+                height: 1px;
+                background-color: var(--background-color-accent);
+                transition: all 0.3s ease;
+            }
+
             &:hover {
                 text-decoration: underline;
                 color: var(--text-color-primary);
+                scale: 1.02;
 
                 @media (prefers-reduced-motion: no-preference) {
-                    scale: 1.1;
+                    text-decoration: unset;
+
+                    .underline-deco {
+                        width: 100%;
+                        transition: all 0.3s ease;
+                    }
                 }
             }
 
@@ -246,12 +260,18 @@
             left: 0;
             right: 0;
             transform: translateY(-100%);
-            transition: all 0.5s ease;
             z-index: 10;
+
+            @media (prefers-reduced-motion: no-preference) {
+                transition: all 0.5s ease;
+            }
         }
         .visible {
             transform: translateY(0);
-            transition: all 0.5s ease;
+
+            @media (prefers-reduced-motion: no-preference) {
+                transition: all 0.5s ease;
+            }
         }
 
         .language-switch-desktop {
