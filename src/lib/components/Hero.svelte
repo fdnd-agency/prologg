@@ -33,6 +33,10 @@
             gap: 3rem;
             padding-block: 4rem;
         }
+
+        @media (width > 1023px) {
+            padding-block: 10rem;
+        }
     }
 
     h1,

@@ -1,8 +1,8 @@
 <script>
-    import fullLogo from '$lib/assets/full-logo.svg';
-    import closeIcon from '$lib/assets/close-icon.svg';
-    import { Hamburger } from 'svelte-hamburgers';
-    import Button from '$lib/components/Button.svelte'
+    import fullLogo from "$lib/assets/full-logo.svg";
+    import closeIcon from "$lib/assets/close-icon.svg";
+    import { Hamburger } from "svelte-hamburgers";
+    import Button from "$lib/components/Button.svelte";
 
     let mobileMenuOpen = $state(false);
 
@@ -11,22 +11,72 @@
     }
 
     const navLinks = [
-        { label: 'Wat het is', href: '#wat-het-is' },
-        { label: 'Waarom Prologg', href: '#waarom-prologg' },
-        { label: 'Hoe het werkt', href: '#hoe-het-werkt' },
-        { label: 'Partners', href: '#partners' },
+        { label: "Wat het is", href: "#wat-het-is" },
+        { label: "Waarom Prologg", href: "#waarom-prologg" },
+        { label: "Hoe het werkt", href: "#hoe-het-werkt" },
+        { label: "Partners", href: "#partners" },
     ];
+
+    let isVisible = $state(true);
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    $effect(() => {
+        const handleScroll = () => {
+            if (ticking) return;
+
+            ticking = true;
+
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+
+                // Always show the navbar at the top of the page
+                if (currentScrollY <= 0) {
+                    isVisible = true;
+                }
+                // Scrolling down
+                else if (currentScrollY > lastScrollY) {
+                    isVisible = false;
+                }
+                // Scrolling up
+                else if (currentScrollY < lastScrollY) {
+                    isVisible = true;
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
 </script>
 
-<header class="nav-bar">
+<header class:visible={isVisible} class="nav-bar">
     <div class="logo">
-    	<a class="logo-link" href="/">
-            <img src={fullLogo} alt="Prologg logo" width="100" height="70" fetchpriority="high">
+        <a class="logo-link" href="/">
+            <img
+                src={fullLogo}
+                alt="Prologg logo"
+                width="100"
+                height="70"
+                fetchpriority="high"
+            />
         </a>
 
         <div class="mobile-menu">
-            <Button href="#" classes="nav" content="Vraag demo aan"/>
-            <Hamburger bind:open={mobileMenuOpen} type="collapse" title="Open menu" --padding="22px" />
+            <Button href="#" classes="nav" content="Vraag demo aan" />
+            <Hamburger
+                bind:open={mobileMenuOpen}
+                type="collapse"
+                title="Open menu"
+                --padding="22px"
+            />
         </div>
 
         <nav class="main-nav" class:open={mobileMenuOpen}>
@@ -36,12 +86,14 @@
                     <button type="button">EN</button>
                 </div>
                 <button type="button" class="close-button" onclick={closeMenu}>
-                    <img src={closeIcon} alt="Sluit menu"/>
+                    <img src={closeIcon} alt="Sluit menu" />
                 </button>
             </div>
 
             {#each navLinks as link}
-                <a href={link.href} onclick={closeMenu} class="nav-link">{link.label}</a>
+                <a href={link.href} onclick={closeMenu} class="nav-link"
+                    >{link.label}</a
+                >
             {/each}
 
             <div class="language-switch-desktop">
@@ -49,7 +101,7 @@
                 <button type="button">EN</button>
             </div>
 
-            <Button href="#" classes="nav" content="Vraag demo aan"/>
+            <Button href="#" classes="nav" content="Vraag demo aan" />
         </nav>
     </div>
 </header>
@@ -58,6 +110,9 @@
     .nav-bar {
         width: 100%;
         background-color: var(--background-color-primary);
+        position: sticky;
+        top: 0;
+        left: 0;
 
         a {
             text-decoration: none;
@@ -98,14 +153,14 @@
         z-index: 10;
 
         .nav-link {
-            transition: .1s ease-in-out;
+            transition: 0.1s ease-in-out;
 
             &:hover {
                 text-decoration: underline;
                 color: var(--text-color-primary);
 
                 @media (prefers-reduced-motion: no-preference) {
-                    scale: 1.1; 
+                    scale: 1.1;
                 }
             }
 
@@ -183,6 +238,20 @@
             z-index: auto;
             gap: 24px;
             padding: 20px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(-100%);
+            transition: all 0.5s ease;
+            z-index: 10;
+        }
+        .visible {
+            transform: translateY(0);
+            transition: all 0.5s ease;
         }
 
         .language-switch-desktop {
