@@ -18,7 +18,7 @@
         <p>Mede ontwikkeld en getoetst in samenwerking met toonaangevende maatschappelijke partners en onderwijsinstellingen.</p>
     </header>
 
-    <ul class="cards" role="list">
+    <ul class="cards">
         {#each partnerCards as card}
             <li>
                 <PartnerCard label={card.label} icon={card.icon} text={card.text} />
@@ -30,7 +30,47 @@
 <style>
     section {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 3rem;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        max-width: 36rem;
+        text-align: center;
+    }
+
+    h4 {
+        font-family: var(--font-mono);
+        font-weight: 700;
+    }
+
+    h2 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        color: var(--text-color-primary);
+    }
+
+    header p {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: var(--text-color-accent);
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 24px;
+        width: 100%;
+    }
+
+    li {
+        display: flex;
+        justify-content: center;
     }
 </style>
