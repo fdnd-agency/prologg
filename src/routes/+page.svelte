@@ -4,12 +4,14 @@
     import Preview from "$lib/components/Preview.svelte";
     import DemoSection from "$lib/components/Demosection.svelte";
     import WhyPrologg from "$lib/components/WhyPrologg.svelte";
+    import PartnerSection from "$lib/components/PartnerSection.svelte";
 </script>
 
 <main>
     <Hero />
     <WhyPrologg />
     <Preview />
+    <PartnerSection />
     <DemoSection />
 </main>
 
