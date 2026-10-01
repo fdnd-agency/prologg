@@ -12,9 +12,19 @@
 </script>
 
 <section>
-    {#each partnerCards as card}
-        <PartnerCard label={card.label} icon={card.icon} text={card.text} />
-    {/each}
+    <header>
+        <h4>Maatschappelijke verankering</h4>
+        <h2>In samenwerking met</h2>
+        <p>Mede ontwikkeld en getoetst in samenwerking met toonaangevende maatschappelijke partners en onderwijsinstellingen.</p>
+    </header>
+
+    <ul class="cards" role="list">
+        {#each partnerCards as card}
+            <li>
+                <PartnerCard label={card.label} icon={card.icon} text={card.text} />
+            </li>
+        {/each}
+    </ul>
 </section>
 
 <style>
