@@ -44,7 +44,7 @@
     --font-heading: 'Space-Grotesk', sans-serif; 
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-    --shadow-card: 0 8px 24px rgb(18 29 38 / 0.05);
+    --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
 }
 
 body {

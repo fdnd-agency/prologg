@@ -23,7 +23,7 @@
         text-align: center;
         gap: 1rem;
         line-height: 1.5;
-        box-shadow: var(--shadow-card);
+        filter: var(--filter-shadow-card);
     }    
 
     h3 {

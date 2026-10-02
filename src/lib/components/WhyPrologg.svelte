@@ -31,14 +31,15 @@
     section {
         background-color: var(--white);
         color: var(--text-color-accent);
-        padding: 35px 35px;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
         align-items: start;
         text-align: start;
-        margin: 2rem 0.5rem;
+        margin: 2rem 1rem;
         max-width: 600px;
         border-radius: 12px;
+        filter: var(--filter-shadow-card);
 
         @media (width > 679px) {
             margin: 3rem;

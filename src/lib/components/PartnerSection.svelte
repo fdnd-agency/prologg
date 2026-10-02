@@ -32,8 +32,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 40px;
-        padding: 3rem;
+        gap: 2rem;
+        padding: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     header {
@@ -65,7 +67,7 @@
     .cards {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 1rem;
         width: 100%;
     }
 
