@@ -38,7 +38,28 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
-	export const TERM_PROGRAM: string;
+	export const ACSetupSvcPort: string;
+	export const ACSvcPort: string;
+	export const ALLUSERSPROFILE: string;
+	export const APPDATA: string;
+	export const COLOR: string;
+	export const COLORTERM: string;
+	export const CommonProgramFiles: string;
+	export const CommonProgramW6432: string;
+	export const COMPUTERNAME: string;
+	export const ComSpec: string;
+	export const DriverData: string;
+	export const EDITOR: string;
+	export const EFC_25400_1592913036: string;
+	export const EnableLog: string;
+	export const GIT_ASKPASS: string;
+	export const HOME: string;
+	export const HOMEDRIVE: string;
+	export const HOMEPATH: string;
+	export const INIT_CWD: string;
+	export const LANG: string;
+	export const LOCALAPPDATA: string;
+	export const LOGONSERVER: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
 	export const SHELL: string;
@@ -180,7 +201,28 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		TERM_PROGRAM: string;
+		ACSetupSvcPort: string;
+		ACSvcPort: string;
+		ALLUSERSPROFILE: string;
+		APPDATA: string;
+		COLOR: string;
+		COLORTERM: string;
+		CommonProgramFiles: string;
+		CommonProgramW6432: string;
+		COMPUTERNAME: string;
+		ComSpec: string;
+		DriverData: string;
+		EDITOR: string;
+		EFC_25400_1592913036: string;
+		EnableLog: string;
+		GIT_ASKPASS: string;
+		HOME: string;
+		HOMEDRIVE: string;
+		HOMEPATH: string;
+		INIT_CWD: string;
+		LANG: string;
+		LOCALAPPDATA: string;
+		LOGONSERVER: string;
 		NODE: string;
 		INIT_CWD: string;
 		SHELL: string;
