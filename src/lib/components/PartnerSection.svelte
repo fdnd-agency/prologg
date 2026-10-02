@@ -11,7 +11,7 @@
     ];
 </script>
 
-<section>
+<section id="partners">
     <header>
         <h4>Maatschappelijke verankering</h4>
         <h2>In samenwerking met</h2>
