@@ -30,7 +30,11 @@
     .demo-section {
         background-color: var(--background-color-accent);
         color: var(--text-color-secondary);
-        font-family: var(--font-heading);
+        font-family: var(--font-heading), sans-serif;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--background-color-secondary);
+        }
     }
 
     .demo-content {
@@ -42,7 +46,7 @@
 
     .demo-label {
         margin: 0 0 24px;
-        color: #b8b8b8;
+        color: var(--alert-color);
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.12em;
@@ -54,19 +58,27 @@
         font-size: clamp(32px, 8vw, 48px);
         line-height: 1.15;
         text-wrap: balance;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-color-primary);
+        }
     }
 
     .demo-description {
         max-width: 600px;
         margin: 24px auto 0;
-        color: #dedede;
+        color: var(--text-color-secondary);
         font-size: 16px;
         line-height: 1.6;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-color-primary);
+        }
     }
 
     .demo-note {
         margin: 40px 0 0;
-        color: #aaa;
+        color: var(--text-color-accent);
         font-size: 16px;
         line-height: 1.6;
     }

@@ -33,5 +33,9 @@
 
     p {
         color: var(--text-color-accent);
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-color-primary);
+        }
     }
 </style>

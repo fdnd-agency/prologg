@@ -45,7 +45,7 @@
     img {
         max-width: 20rem;
         padding: 0.5rem;
-        filter: drop-shadow(0px 0px 15px #d2d2d29f);
+        filter: var(--filter-shadow-card);
         display: flex;
         justify-self: center;
 

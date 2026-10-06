@@ -58,7 +58,17 @@
             align-items: center;
             border-radius: 8px;
             background-color: var(--background-color-secondary);
+
             svg {
+                path {
+                    @media (prefers-color-scheme: dark) {
+                        fill: var(--background-color-accent);
+                    }
+                }
+            }
+
+            @media (prefers-color-scheme: dark) {
+                background-color: var(--background-color-secondary);
             }
         }
 
@@ -73,6 +83,10 @@
                 height: 3px;
                 border-radius: 50%;
                 background-color: var(--background-color-accent);
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: var(--background-color-secondary);
+                }
             }
 
             .sub-title {
@@ -89,6 +103,10 @@
                 font-family: var(--font-heading);
                 font-weight: bold;
                 color: var(--text-color-primary);
+
+                @media (prefers-color-scheme: dark) {
+                    color: var(--text-color-secondary);
+                }
             }
         }
     }

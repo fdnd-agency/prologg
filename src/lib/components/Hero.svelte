@@ -43,6 +43,10 @@
     p {
         max-width: 50rem;
         text-align: center;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--background-color-primary);
+        }
     }
     h1 {
         font-family: var(--font-heading);
