@@ -2,7 +2,7 @@
     import Button from "./Button.svelte";
 </script>
 
-<section class="hero">
+<section class="hero" id="wat-het-is">
     <h1>Bewijsmateriaal dat standhoudt.</h1>
     <p>
         Prologg biedt een betrouwbare digitale bewijskluis voor advocaten en

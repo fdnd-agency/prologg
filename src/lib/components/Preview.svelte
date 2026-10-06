@@ -4,7 +4,7 @@
     import PreviewUsp from "./PreviewUsp.svelte";
 </script>
 
-<article>
+<article id="hoe-het-werkt">
     <div>
         <PreviewInfo />
         <PreviewUsp />
