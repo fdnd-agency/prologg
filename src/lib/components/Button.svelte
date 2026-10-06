@@ -119,7 +119,7 @@
             min-height: 52px;
             margin: 32px auto 0;
             padding: 12px 16px;
-            background-color: #fff;
+            background-color: var(--background-color-primary);
             color: #171717;
             font-size: 16px;
             font-weight: 600;
