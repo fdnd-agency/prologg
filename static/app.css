@@ -6,26 +6,26 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url(/src/lib/assets/Inter-VariableFont_opsz\,wght.ttf);
+    src: url(../src/lib/assets/Inter-VariableFont_opsz\,wght.ttf);
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Space-Grotesk';
-    src: url(/src/lib/assets/SpaceGrotesk-VariableFont_wght.ttf);
+    src: url(../src/lib/assets/SpaceGrotesk-VariableFont_wght.ttf);
     font-display: swap;
 }
 
 @font-face {
     font-family: 'IBM Plex Mono';
-    src: url(/src/lib/assets/IBMPlexMono-Regular.woff2);
+    src: url(../src/lib/assets/IBMPlexMono-Regular.woff2);
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'IBM Plex Mono';
-    src: url(/src/lib/assets/IBMPlexMono-Bold.woff2);
+    src: url(../src/lib/assets/IBMPlexMono-Bold.woff2);
     font-weight: 700;
     font-display: swap;
 }
