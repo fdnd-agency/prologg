@@ -1,13 +1,12 @@
 <script>
-    let { label, icon, text } = $props()
+    let { label, icon, text } = $props();
 </script>
 
 <article>
-    <img src={icon} alt="" width="24" height="24"/>
+    <img src={icon} alt="" width="24" height="24" />
     <h3>{label}</h3>
     <p>{text}</p>
 </article>
-
 
 <style>
     article {
@@ -24,7 +23,11 @@
         gap: 1rem;
         line-height: 1.5;
         filter: var(--filter-shadow-card);
-    }    
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--background-color-primary);
+        }
+    }
 
     h3 {
         margin: 0;
@@ -40,7 +43,7 @@
         line-height: 1.6;
     }
 
-    @media(width >= 425px) {
+    @media (width >= 425px) {
         article {
             max-width: 280px;
         }

@@ -47,9 +47,27 @@
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color-primary: hsl(212 76% 95%);
+        --text-color-secondary: hsl(212 76% 5%);
+        --text-color-accent: hsl(240 6% 29%);
+        --background-color-primary: hsl(212 76% 95%);
+        --background-color-secondary: hsl(212 76% 5%);
+        --background-color-accent: hsl(213, 57%, 92%);
+        --alert-color: hsl(6 61% 41%);
+
+        --filter-shadow-card: drop-shadow(0px 0px 15px #4848489f);
+    }
+}
+
 body {
     font-family: 'Inter';
     background-color: var(--background-color-primary);
+
+    @media (prefers-color-scheme: dark)  {
+        background-color: #121D26;
+    }
 }
 
 h4 {

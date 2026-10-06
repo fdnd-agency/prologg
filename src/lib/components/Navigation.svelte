@@ -76,7 +76,7 @@
                 type="collapse"
                 title="Toggles menu"
                 --padding="22px"
-                --color="var(--background-color-accent)"
+                --color="#030C16"
                 --layer-width="20px"
                 --layer-height="3px"
                 --layer-spacing="3px"
@@ -85,10 +85,6 @@
 
         <nav class="main-nav" class:open={mobileMenuOpen}>
             <div class="mobile-menu-top">
-                <div class="language-switch">
-                    <button type="button" class="active">NL</button>
-                    <button type="button">EN</button>
-                </div>
                 <button type="button" class="close-button" onclick={closeMenu}>
                     <img src={closeIcon} alt="Sluit menu" />
                 </button>
@@ -100,11 +96,6 @@
                     <div class="underline-deco"></div>
                 </a>
             {/each}
-
-            <div class="language-switch-desktop">
-                <button type="button">NL</button>
-                <button type="button">EN</button>
-            </div>
 
             <Button href="#" classes="nav" content="Vraag demo aan" />
         </nav>
@@ -122,7 +113,11 @@
 
         a {
             text-decoration: none;
-            color: var(--text-color-accent);
+            color: var(--text-color-primary);
+
+            @media (prefers-color-scheme: dark) {
+                color: var(--text-color-secondary);
+            }
         }
     }
 
@@ -145,10 +140,6 @@
     .mobile-menu {
         display: flex;
         place-items: center;
-    }
-
-    .language-switch-desktop {
-        display: none;
     }
 
     .main-nav {
@@ -207,31 +198,6 @@
         width: 100%;
     }
 
-    .language-switch {
-        grid-column: 2;
-        padding: 5px;
-        background-color: var(--text-color-primary);
-        border-radius: 12px;
-        display: flex;
-        justify-content: center;
-
-        button {
-            color: var(--white);
-            padding: 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            width: 35px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-
-            &.active {
-                background-color: var(--white);
-                color: var(--text-color-primary);
-            }
-        }
-    }
-
     .close-button {
         grid-column: 3;
         justify-self: end;
@@ -278,10 +244,6 @@
             @media (prefers-reduced-motion: no-preference) {
                 transition: all 0.5s ease;
             }
-        }
-
-        .language-switch-desktop {
-            display: flex;
         }
     }
 </style>

@@ -44,6 +44,10 @@
         @media (width > 679px) {
             margin: 3rem;
         }
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--background-color-accent);
+        }
     }
 
     .flex-icon {
@@ -73,6 +77,10 @@
         line-height: 1.4;
         color: var(--text-color-primary);
         padding: 0 10px;
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--text-color-secondary);
+        }
     }
 
     hr {
@@ -81,6 +89,10 @@
         border: 0.5px solid #e4effc;
         margin: 13px;
         place-self: center;
+
+        @media (prefers-color-scheme: dark) {
+            border-color: #979797;
+        }
     }
 
     .info {

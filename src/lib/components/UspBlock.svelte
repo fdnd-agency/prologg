@@ -28,6 +28,11 @@
         justify-content: center;
         background-color: var(--background-color-accent);
         color: var(--text-color-secondary);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--background-color-secondary);
+            color: var(--text-color-primary);
+        }
     }
 
     article {
@@ -38,8 +43,12 @@
         gap: 1rem;
         background-color: var(--background-color-secondary);
         border-radius: 16px;
-        max-width: max-content;
-        filter: drop-shadow(0px 0px 15px #d2d2d29f);
+        max-width: 100%;
+        filter: var(--filter-shadow-card);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--background-color-accent);
+        }
 
         @media (width > 486px) {
             display: grid;
@@ -71,6 +80,10 @@
                 height: 3px;
                 border-radius: 50%;
                 background-color: var(--background-color-accent);
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: var(--background-color-secondary);
+                }
             }
         }
 
