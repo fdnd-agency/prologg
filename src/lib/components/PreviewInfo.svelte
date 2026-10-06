@@ -21,7 +21,7 @@
 
     h4,
     h2 {
-        font-family: Space-Grotesk, "Times New Roman", Times, serif;
+        font-family: var(--font-heading);
     }
 
     h2 {

@@ -27,19 +27,10 @@
 </section>
 
 <style>
-    @font-face {
-        font-family: "Space Grotesk";
-        src: url("../assets/SpaceGrotesk-VariableFont_wght.ttf")
-            format("truetype");
-        font-weight: 300 700;
-        font-style: normal;
-        font-display: swap;
-    }
-
     .demo-section {
         background-color: var(--background-color-accent);
         color: var(--text-color-secondary);
-        font-family: "Space Grotesk", sans-serif;
+        font-family: var(--font-heading);
     }
 
     .demo-content {

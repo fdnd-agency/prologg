@@ -38,6 +38,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/app.css" | "/robots.txt" | string & {};
+		Asset(): "/app.css" | "/fonts/IBMPlexMono-Bold.woff2" | "/fonts/IBMPlexMono-Regular.woff2" | "/fonts/Inter-VariableFont_opsz,wght.ttf" | "/fonts/SpaceGrotesk-VariableFont_wght.ttf" | "/robots.txt" | string & {};
 	}
 }

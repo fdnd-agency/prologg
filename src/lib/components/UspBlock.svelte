@@ -22,7 +22,7 @@
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
-        font-family: Space-Grotesk, "Times New Roman", Times, serif;
+        font-family: var(--font-heading);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -53,7 +53,7 @@
         h4,
         h3,
         p {
-            font-family: Space-Grotesk, "Times New Roman", Times, serif;
+            font-family: var(--font-heading);
         }
 
         p {

@@ -45,7 +45,7 @@
         text-align: center;
     }
     h1 {
-        font-family: Space-Grotesk;
+        font-family: var(--font-heading);
         font-size: clamp(2rem, 0rem + 8vw, 4.5rem);
         line-height: 0.9;
     }

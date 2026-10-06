@@ -33,7 +33,7 @@
 
 <style>
     section {
-        font-family: Space-Grotesk, "Times New Roman", Times, serif;
+        font-family: var(--font-heading), "Times New Roman", Times, serif;
         grid-column: span 2;
         max-width: max-content;
         place-self: center;
@@ -76,17 +76,17 @@
             }
 
             .sub-title {
-                font-family: Space-Grotesk, "Times New Roman", Times, serif;
+                font-family: var(--font-heading), "Times New Roman", Times, serif;
             }
         }
 
         p {
-            font-family: Inter, Arial, Helvetica, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
             color: var(--text-color-accent);
             max-width: 50rem;
 
             span {
-                font-family: Space-Grotesk, "Times New Roman", Times, serif;
+                font-family: var(--font-heading);
                 font-weight: bold;
                 color: var(--text-color-primary);
             }
