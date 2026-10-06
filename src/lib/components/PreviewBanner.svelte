@@ -33,7 +33,7 @@
 
 <style>
     section {
-        font-family: var(--font-heading), "Times New Roman", Times, serif;
+        font-family: var(--font-heading);
         grid-column: span 2;
         max-width: max-content;
         place-self: center;
@@ -90,7 +90,7 @@
             }
 
             .sub-title {
-                font-family: var(--font-heading), "Times New Roman", Times, serif;
+                font-family: var(--font-heading);
             }
         }
 

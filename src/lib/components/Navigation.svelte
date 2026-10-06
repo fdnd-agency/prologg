@@ -101,7 +101,7 @@
                 </a>
             {/each}
 
-            <Button href="#" classes="nav" content="Vraag demo aan" />
+            <Button href="mailto:frank.kloos@fonetic.studio" classes="nav" content="Vraag demo aan" />
         </nav>
     </div>
 </header>
