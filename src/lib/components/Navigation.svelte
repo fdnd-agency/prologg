@@ -157,12 +157,20 @@
                 height: 1px;
                 background-color: var(--background-color-accent);
                 transition: all 0.3s ease;
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: var(--text-color-secondary);
+                }
             }
 
             &:hover {
                 text-decoration: underline;
                 color: var(--text-color-primary);
                 scale: 1.02;
+
+                @media (prefers-color-scheme: dark) {
+                    color: var(--text-color-secondary);
+                }
 
                 @media (prefers-reduced-motion: no-preference) {
                     text-decoration: unset;
