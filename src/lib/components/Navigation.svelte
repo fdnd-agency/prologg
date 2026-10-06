@@ -70,7 +70,11 @@
         </a>
 
         <div class="mobile-menu">
-            <Button href="#" classes="nav" content="Vraag demo aan" />
+            <Button
+                href="mailto:frank.kloos@fonetic.studio"
+                classes="nav"
+                content="Vraag demo aan"
+            />
             <Hamburger
                 bind:open={mobileMenuOpen}
                 type="collapse"

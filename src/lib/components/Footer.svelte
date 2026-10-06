@@ -48,7 +48,7 @@
 
 			<div class="footer-demo">
 				<Button
-					href="/kantoordemo"
+					href="mailto:frank.kloos@fonetic.studio"
 					classes="nav"
 					content="Vraag kantoordemo aan"
 				/>
