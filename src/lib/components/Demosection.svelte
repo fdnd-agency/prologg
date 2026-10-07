@@ -77,6 +77,7 @@
     }
 
     .demo-note {
+        --text-color-accent: hsl(240 6% 59%);
         margin: 40px 0 0;
         color: var(--text-color-accent);
         font-size: 16px;
