@@ -67,6 +67,30 @@
     }
 }
 
+[id] {
+    scroll-margin-top: 5rem;
+
+    &:nth-of-type(2) {
+        scroll-margin-top: 6rem;
+
+        @media (width >= 768px) {
+            scroll-margin-top: 25rem;
+        }
+    }
+}
+
+@media (width >= 1024px) {
+    [id] {
+        scroll-margin-top: 8rem;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 body {
     font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--background-color-primary);
@@ -82,4 +106,29 @@ h4 {
     letter-spacing: 0.05rem;
     color: var(--alert-color);
     font-weight: 500;
+}
+
+@keyframes land {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+     /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
+    :target > * {
+        animation: land 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+        animation-delay: 250ms;
+    }
+
+    /* Stagger: each child starts 80ms later */
+    :target > :nth-child(2) { animation-delay: 330ms; }
+    :target > :nth-child(3) { animation-delay: 410ms; }
+    :target > :nth-child(4) { animation-delay: 490ms; }
 }
