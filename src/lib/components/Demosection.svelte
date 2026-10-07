@@ -70,6 +70,7 @@
         color: var(--text-color-secondary);
         font-size: 16px;
         line-height: 1.6;
+        text-wrap: balance;
 
         @media (prefers-color-scheme: dark) {
             color: var(--text-color-primary);
