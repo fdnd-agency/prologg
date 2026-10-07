@@ -15,7 +15,11 @@
             classes="hero-primary"
             content="Vraag kantoordemo aan"
         />
-        <Button href="#" classes="hero-secondary" content="Bekijk de casus" />
+        <Button
+            href="#hoe-het-werkt"
+            classes="hero-secondary"
+            content="Bekijk de casus"
+        />
     </div>
 </section>
 
