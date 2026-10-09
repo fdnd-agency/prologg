@@ -26,6 +26,9 @@ In deze powerpoint wordt uitgelegd wat een Pull Request is en hoe je deze gebrui
 ### Snel link naar Figma
 [Dit is ons Figma bestand met het design en TeamCanvas](https://www.figma.com/design/m6gDxMDBp69qJU5f0vGRHF/Prologg?node-id=70-11&p=f&t=Qdg1lGjbk6W1qKhX-0)
 
+### Feedback docenten
+1 keer per sprint (liefst week 2) aan een docent feedback vragen.
+
 ### Definition of Ready
 - As a **[type of user]** , I want **[some goal / action]**, so that **[some value / benefit]**
 - Estimated Effort
