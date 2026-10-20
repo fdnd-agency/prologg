@@ -1,20 +1,20 @@
 <script>
-	import logo from "$lib/assets/full-logo.svg";
-	import Button from "$lib/components/Button.svelte";
+	import fullLogo from '$lib/assets/full-logo.svg'
+	import Button from '$lib/components/Button.svelte'
 
-	const navLinks = [
-		{ label: "Wat het is", href: "/wat-het-is" },
-		{ label: "Waarom Prologg", href: "/waarom-prologg" },
-		{ label: "Hoe het werkt", href: "/hoe-het-werkt" },
-		{ label: "Partners", href: "/partners" },
-	];
+	const navigationLinks = [
+		{ label: 'Wat het is', href: '#wat-het-is' },
+		{ label: 'Waarom Prologg', href: '#waarom-prologg' },
+		{ label: 'Hoe het werkt', href: '#hoe-het-werkt' },
+		{ label: 'Partners', href: '#partners' },
+	]
 </script>
 
 <footer class="site-footer">
 	<div class="footer-inner">
 		<div class="footer-brand">
-			<a href="/" class="logo">
-				<img src={logo} alt="Prologg" />
+			<a href="/" class="footer-logo">
+				<img src={fullLogo} alt="Prologg" />
 			</a>
 
 			<h2 class="brand-title">Prologg for Legal</h2>
@@ -25,13 +25,16 @@
 			</p>
 		</div>
 
-		<nav class="footer-nav">
+		<nav class="footer-navigation" aria-label="Footernavigatie">
 			<h2 class="footer-heading">Navigatie</h2>
 
 			<ul>
-				{#each navLinks as link (link.href)}
+				{#each navigationLinks as { label, href } (href)}
 					<li>
-						<a href={link.href}>{link.label}</a>
+						<a {href} class="footer-link">
+							{label}
+							<span class="link-underline" aria-hidden="true"></span>
+						</a>
 					</li>
 				{/each}
 			</ul>
@@ -63,8 +66,17 @@
 
 <style>
 	.site-footer {
-		background: var(--background-color-primary);
+		--_link-color: var(--text-color-primary);
+		--_underline-color: var(--background-color-accent);
+
+		container-type: inline-size;
+		background-color: var(--background-color-primary);
 		color: var(--text-color-primary);
+
+		@media (prefers-color-scheme: dark) {
+			--_link-color: var(--text-color-secondary);
+			--_underline-color: var(--text-color-secondary);
+		}
 	}
 
 	.footer-inner,
@@ -75,25 +87,52 @@
 		margin-inline: auto;
 	}
 
-	/* Mobiel: één kolom */
+	a {
+		text-decoration: none;
+
+		&:focus-visible {
+			outline: 2px solid var(--_link-color);
+			outline-offset: 6px;
+			border-radius: 5px;
+		}
+	}
+
+	.footer-heading {
+		margin: 0 0 0.9rem;
+		font-size: 0.95rem;
+		font-weight: 700;
+	}
+
 	.footer-inner {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		gap: 1.75rem;
 		padding: 1.75rem 1.25rem 1.25rem;
+
+		@container (width >= 700px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 2rem;
+			padding: 2.5rem 2rem 1.5rem;
+		}
+
+		@container (width >= 1080px) {
+			grid-template-columns:
+				minmax(0, 1.4fr)
+				repeat(2, minmax(0, 1fr));
+		}
 	}
 
-	.logo {
+	.footer-logo {
 		display: inline-flex;
 		align-items: center;
 		margin-bottom: 1rem;
-	}
 
-	.logo img {
-		display: block;
-		width: 110px;
-		max-width: 100%;
-		height: auto;
+		img {
+			display: block;
+			width: 110px;
+			max-width: 100%;
+			height: auto;
+		}
 	}
 
 	.brand-title {
@@ -109,80 +148,88 @@
 		line-height: 1.5;
 	}
 
-	.footer-heading {
-		margin: 0 0 0.9rem;
-		font-size: 0.95rem;
-		font-weight: 700;
+	.footer-navigation {
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 0.65rem;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
 	}
 
-	.footer-nav ul {
-		display: flex;
-		flex-direction: column;
-		gap: 0.65rem;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.footer-nav a,
-	.footer-contact address a {
-		color: var(--text-color-accent);
+	.footer-link {
+		display: block;
+		width: fit-content;
+		max-width: 100%;
+		color: var(--_link-color);
 		font-size: 0.9rem;
-		text-decoration: none;
+		transform-origin: left center;
+
+		.link-underline {
+			display: block;
+			width: 0%;
+			height: 1px;
+			background-color: var(--_underline-color);
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			transition: scale 0.1s ease-in-out;
+
+			.link-underline {
+				transition: width 0.3s ease;
+			}
+
+			&:hover {
+				text-decoration: none;
+				scale: 1.02;
+
+				.link-underline {
+					width: 100%;
+				}
+			}
+		}
 	}
 
-	.footer-nav a:hover,
-	.footer-contact address a:hover {
-		text-decoration: underline;
-	}
+	.footer-contact {
+		address {
+			margin: 0 0 1.1rem;
+			font-style: normal;
+			overflow-wrap: anywhere;
 
-	address {
-		margin: 0 0 1.1rem;
-		font-style: normal;
-		overflow-wrap: anywhere;
+			a {
+				color: var(--text-color-accent);
+				font-size: 0.9rem;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 
 	.footer-demo {
 		margin-bottom: 1.1rem;
 	}
 
-	a:focus-visible,
-	.footer-demo :global(a:focus-visible) {
-		outline: 2px solid var(--text-color-primary);
-		outline-offset: 4px;
-	}
-
 	.footer-bottom {
 		padding: 0.9rem 1.25rem;
 		border-top: 1px solid
 			color-mix(in srgb, var(--text-color-accent) 20%, transparent);
-	}
 
-	.footer-bottom p {
-		margin: 0;
-		color: var(--text-color-accent);
-		font-size: 0.8rem;
-	}
-
-	/* Tablet: twee kolommen */
-	@media (min-width: 700px) {
-		.footer-inner {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 2rem;
-			padding: 2.5rem 2rem 1.5rem;
+		p {
+			margin: 0;
+			color: var(--text-color-accent);
+			font-size: 0.8rem;
 		}
 
-		.footer-bottom {
+		@container (width >= 700px) {
 			padding: 1rem 2rem;
-		}
-	}
-
-	/* Desktop: drie kolommen */
-	@media (min-width: 1080px) {
-		.footer-inner {
-			grid-template-columns:
-				minmax(0, 1.4fr)
-				repeat(2, minmax(0, 1fr));
 		}
 	}
 </style>
