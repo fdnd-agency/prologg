@@ -2,13 +2,20 @@
     import PreviewInfo from "./PreviewInfo.svelte";
     import PreviewBanner from "./PreviewBanner.svelte";
     import PreviewUsp from "./PreviewUsp.svelte";
+
+    import { getSection } from "$lib/content.js";
+
+    const content = {
+        info: getSection("previewInfo.md"),
+        banner: getSection("previewBanner.md"),
+    };
 </script>
 
 <article id="hoe-het-werkt">
     <div>
-        <PreviewInfo />
+        <PreviewInfo content={content.info} />
         <PreviewUsp />
-        <PreviewBanner />
+        <PreviewBanner content={content.banner} />
     </div>
 </article>
 

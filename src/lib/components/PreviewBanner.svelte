@@ -19,9 +19,9 @@
 
     <div>
         <div class="wrapper">
-            <h4>Open source fundament</h4>
+            <h2>Open source fundament</h2>
             <div class="deco-dot"></div>
-            <p class="sub-title">Geauditeerd</p>
+            <h4 class="sub-title">Geauditeerd</h4>
         </div>
         <p>
             <span>Gebouwd op GlobaLeaks:</span> de beproefde open source standaard
@@ -95,7 +95,7 @@
         }
 
         p {
-            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            font-family: "Inter", Arial, Helvetica, sans-serif;
             color: var(--text-color-accent);
             max-width: 50rem;
 

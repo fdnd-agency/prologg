@@ -1,6 +1,8 @@
 <script>
     import lawIcon from "$lib/assets/law-icon.svg";
     import shieldIcon from "$lib/assets/shield-icon.svg";
+
+    let { content } = $props();
 </script>
 
 <section id="waarom-prologg">
@@ -25,6 +27,8 @@
             cryptografische zekerheid.
         </p>
     </div>
+
+    {@html content}
 </section>
 
 <style>
@@ -71,7 +75,8 @@
         letter-spacing: 1px;
     }
 
-    .quote {
+    p.quote,
+    :global(blockquote > p) {
         font-size: 20px;
         font-weight: 500;
         line-height: 1.4;

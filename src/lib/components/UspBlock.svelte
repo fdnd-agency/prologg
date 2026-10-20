@@ -3,12 +3,12 @@
 </script>
 
 <article>
-    <div class="count-circle">{count}</div>
+    <span class="count-circle">{count}</span>
     <section>
         <div class="wrapper">
             <h4>Fase {count}</h4>
             <div class="deco-dot"></div>
-            <p class="sub-title">{subTitle}</p>
+            <h3 class="sub-title">{subTitle}</h3>
         </div>
         <h3>{title}</h3>
         <p>

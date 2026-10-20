@@ -2,6 +2,20 @@
     import UspBlock from "./UspBlock.svelte";
     import img from "$lib/assets/phone-preview.webp";
 
+    import { getSection } from "$lib/content.js";
+
+    // let data = [
+    //     {
+    //         usp1: getSection("usp1.md"),
+    //     },
+    //     {
+    //         usp2: getSection("usp2.md"),
+    //     },
+    //     {
+    //         usp3: getSection("usp3.md"),
+    //     },
+    // ];
+
     let data = [
         {
             id: 1,
