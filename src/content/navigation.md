@@ -9,6 +9,9 @@ links:
   - content: "Bekijk de casus"
     href: "#hoe-het-werkt"
 
+  - content: "Doe mee"
+    href: "#doe-mee"
+
   - content: "Partners"
     href: "#partners"
 ---
