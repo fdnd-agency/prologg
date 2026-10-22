@@ -51,11 +51,8 @@ declare module '$env/static/private' {
 	export const ComSpec: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_12920_1262719628: string;
-	export const EFC_12920_1592913036: string;
-	export const EFC_12920_2283032206: string;
-	export const EFC_12920_3789132940: string;
-	export const EFC_12920_4126798990: string;
+	export const EFC_15200_1592913036: string;
+	export const EFC_15200_4126798990: string;
 	export const EnableLog: string;
 	export const FPS_BROWSER_APP_PROFILE_STRING: string;
 	export const FPS_BROWSER_USER_PROFILE_STRING: string;
@@ -224,11 +221,8 @@ declare module '$env/dynamic/private' {
 		ComSpec: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_12920_1262719628: string;
-		EFC_12920_1592913036: string;
-		EFC_12920_2283032206: string;
-		EFC_12920_3789132940: string;
-		EFC_12920_4126798990: string;
+		EFC_15200_1592913036: string;
+		EFC_15200_4126798990: string;
 		EnableLog: string;
 		FPS_BROWSER_APP_PROFILE_STRING: string;
 		FPS_BROWSER_USER_PROFILE_STRING: string;
