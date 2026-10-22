@@ -6,13 +6,12 @@
     <h4>{subtitle}</h4>
     <h2>{title}</h2>
 
-    <ul>
+    <dl>
         {#each values as value}
-            <li>{value.title}</li>
-            <li>{value.description}</li>
-            <div class="underline"></div>
+            <dt>{value.title}</dt>
+            <dd>{value.description}</dd>
         {/each}
-    </ul>
+    </dl>
 
     <picture>
         <img src={image} alt="" />
@@ -25,36 +24,28 @@
         justify-self: center;
         display: grid;
 
-        ul {
-            padding-block: 2rem;
-
+        dl {
+            padding-block: 1rem;
             @media (width > 890px) {
                 display: grid;
                 grid-template-columns: 1fr max-content;
             }
-
-            li {
-                list-style: none;
-                padding-block: 0.25rem;
+            dt {
+                font-weight: 600;
 
                 @media (width > 890px) {
-                    padding-block: 1rem;
-                }
-
-                &:nth-of-type(odd) {
-                    font-weight: 600;
-                }
-                &:nth-of-type(even) {
-                    color: var(--text-color-accent);
-                    padding-bottom: 1rem;
+                    border-bottom: 1px solid var(--white);
+                    margin-block: 0.5rem 1rem;
+                    padding-bottom: 0.5rem;
                 }
             }
 
-            div.underline {
-                grid-column: span 2;
-                height: 1px;
-                width: 100%;
-                background-color: var(--white);
+            dd {
+                color: var(--text-color-accent);
+                margin-block: 0.5rem 1rem;
+                padding-bottom: 0.5rem;
+
+                border-bottom: 1px solid var(--white);
             }
         }
 
