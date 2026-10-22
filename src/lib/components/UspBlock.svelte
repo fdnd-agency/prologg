@@ -6,8 +6,6 @@
     <div class="count-circle">{count}</div>
     <section>
         <div class="wrapper">
-            <h4>Fase {count}</h4>
-            <div class="deco-dot"></div>
             <p class="sub-title">{subTitle}</p>
         </div>
         <h3>{title}</h3>
@@ -58,11 +56,13 @@
 
             padding: 2.5rem 2rem;
         }
-
-        h4,
         h3,
         p {
             font-family: var(--font-heading);
+        }
+
+        h3 {
+            max-width: 45rem;
         }
 
         p {
@@ -74,17 +74,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-
-            .deco-dot {
-                width: 3px;
-                height: 3px;
-                border-radius: 50%;
-                background-color: var(--background-color-accent);
-
-                @media (prefers-color-scheme: dark) {
-                    background-color: var(--background-color-secondary);
-                }
-            }
         }
 
         section {

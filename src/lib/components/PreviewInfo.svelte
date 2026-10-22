@@ -1,11 +1,12 @@
-<script></script>
+<script>
+    let { subtitle, title, description } = $props();
+</script>
 
 <section class="preview-info">
-    <h4>Oplossing in de praktijk</h4>
-    <h2>Van incident naar onwrikbaar dossier</h2>
+    <h4>{subtitle}</h4>
+    <h2>{title}</h2>
     <p>
-        Een gecontroleerde bewijsketen van mobiele bronregistratie tot juridisch
-        gereed kantoordossier.
+        {description}
     </p>
 </section>
 

@@ -1,17 +1,18 @@
 <script>
     import lawIcon from "$lib/assets/law-icon.svg";
     import shieldIcon from "$lib/assets/shield-icon.svg";
+
+    let { title, quote, description } = $props();
 </script>
 
 <section id="waarom-prologg">
     <div class="flex-icon label">
         <img src={lawIcon} alt="" width="20" height="20" />
-        <h2>De realiteit in recht</h2>
+        <h2>{title}</h2>
     </div>
 
     <p class="quote">
-        "Zonder verifieerbaar bewijs geen zaak. Slachtoffers verliezen hun stem
-        wanneer foto's, locaties en werkuren niet forensisch zijn vastgelegd."
+        "{quote}"
     </p>
 
     <hr />
@@ -19,10 +20,7 @@
     <div class="info">
         <img src={shieldIcon} alt="" width="17" height="17" />
         <p>
-            In de praktijk strandt vervolging of civiele vordering vaak op
-            betwisting van screenshots en losse WhatsApp-berichten. Prologg
-            borgt de bewijsketen direct vanaf het eerste moment met
-            cryptografische zekerheid.
+            {description}
         </p>
     </div>
 </section>
