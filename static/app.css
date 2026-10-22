@@ -46,6 +46,10 @@
     --background-color-accent: var(--text-color-primary);
     --alert-color: hsl(6 61% 41%);
 
+    --card-background: var(--white);
+    --card-background-alt: hsl(217 56% 38%);
+    --card-text: var(--text-color-primary);
+
     /* FONTS */
     --font-heading: 'Space Grotesk', sans-serif; 
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
@@ -62,7 +66,11 @@
         --background-color-secondary: hsl(212 76% 5%);
         --background-color-accent: hsl(213, 57%, 92%);
         --alert-color: hsl(6 61% 41%);
-
+        
+        --card-background: hsl(217 56% 38%);
+        --card-background-alt: var(--alert-color);
+        --card-text: var(--white);
+    
         --filter-shadow-card: drop-shadow(0px 0px 15px #4848489f);
     }
 }
