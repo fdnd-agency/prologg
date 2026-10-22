@@ -1,147 +1,149 @@
 <script>
-    import lawIcon from "$lib/assets/law-icon.svg";
-    import shieldIcon from "$lib/assets/shield-icon.svg";
-
-    let { title, quote, description } = $props();
+	let { subtitle, title, reasons = [], conclusion } = $props()
 </script>
 
-<section id="waarom-prologg">
-    <div class="flex-icon label">
-        <img src={lawIcon} alt="" width="20" height="20" />
-        <h2>{title}</h2>
-    </div>
+<section id="waarom-prologg" class="why-section">
+	<div class="why-content">
+		<header class="why-header">
+			<p class="why-label">{subtitle}</p>
+			<h2>{title}</h2>
+		</header>
 
-    <p class="quote">
-        "{quote}"
-    </p>
+		<ul class="why-reasons">
+			{#each reasons as { title, description } (title)}
+				<li>
+					<h3>{title}</h3>
+					<p>{description}</p>
+				</li>
+			{/each}
+		</ul>
 
-    <hr />
-
-    <div class="info">
-        <img src={shieldIcon} alt="" width="17" height="17" />
-        <p>
-            {description}
-        </p>
-    </div>
+		<p class="why-conclusion">{conclusion}</p>
+	</div>
 </section>
 
 <style>
-    section {
-        background-color: var(--white);
-        color: var(--text-color-accent);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        text-align: start;
-        margin: 2rem 1rem;
-        max-width: 600px;
-        border-radius: 12px;
-        filter: var(--filter-shadow-card);
+	.why-section {
+		--_heading: var(--text-color-primary);
+		--_text: var(--text-color-accent);
+		--_accent: var(--alert-color);
+		--_border: color-mix(in srgb, var(--_text) 25%, transparent);
 
-        @media (width > 679px) {
-            margin: 3rem;
-        }
+		container: why-prologg / inline-size;
+		inline-size: 100%;
+		min-inline-size: 0;
+		color: var(--_text);
+		overflow-wrap: anywhere;
 
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-accent);
-        }
-    }
+		@media (prefers-color-scheme: dark) {
+			--_text: hsl(213 18% 80%);
+			--_accent: hsl(20 100% 64%);
+		}
+	}
 
-    .flex-icon {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
+	#waarom-prologg {
+		scroll-margin-block-start: 6rem;
+	}
 
-    .label {
-        margin-bottom: 20px;
-        font-weight: 400;
-    }
+	.why-content {
+		box-sizing: border-box;
+		inline-size: 100%;
+		max-inline-size: 75rem;
+		margin-inline: auto;
+		padding: 2.5rem 1.5rem;
 
-    h2 {
-        font-size: 10px;
-        text-transform: uppercase;
-        color: var(--alert-color);
-        word-spacing: 4px;
-        letter-spacing: 1px;
-    }
+		@container why-prologg (width >= 640px) {
+			padding: 3.5rem 2rem;
+		}
 
-    .quote {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.4;
-        color: var(--text-color-primary);
-        padding: 0 10px;
+		@container why-prologg (width >= 960px) {
+			padding: 4rem;
+		}
+	}
 
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-secondary);
-        }
-    }
+	.why-header {
+		margin-block-end: 3rem;
 
-    hr {
-        width: 100%;
-        max-width: 480px;
-        border: 0.5px solid #e4effc;
-        margin: 13px;
-        place-self: center;
+		@container why-prologg (width >= 960px) {
+			margin-block-end: 3.5rem;
+		}
+	}
 
-        @media (prefers-color-scheme: dark) {
-            border-color: #979797;
-        }
-    }
+	.why-label {
+		margin: 0 0 0.75rem;
+		color: var(--_accent);
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		line-height: 1.5;
+		text-transform: uppercase;
+	}
 
-    .info {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        max-width: 480px;
-        text-align: left;
-        gap: 10px;
+	h2 {
+		max-inline-size: 32ch;
+		margin: 0;
+		color: var(--_heading);
+		font-family: var(--font-heading);
+		font-size: 1.875rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-wrap: balance;
 
-        img {
-            margin-top: 1.5px;
-        }
+		@container why-prologg (width >= 640px) {
+			font-size: 2rem;
+			line-height: 1.25;
+		}
+	}
 
-        p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
-            font-weight: 400;
-        }
-    }
+	.why-reasons {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 3rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
 
-    @media (width >=768px) {
-        section {
-            border-radius: 12px;
-            max-width: 580px;
-            justify-self: center;
-            text-align: start;
-        }
+		@container why-prologg (width >= 960px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2rem;
+		}
 
-        .flex-icon {
-            align-self: flex-start;
-        }
+		li {
+			min-inline-size: 0;
+			padding-block-start: 1.25rem;
+			border-block-start: 1px solid var(--_border);
+		}
 
-        hr {
-            max-width: 580px;
-        }
+		h3 {
+			margin: 0 0 0.625rem;
+			color: var(--_heading);
+			font-size: 1.0625rem;
+			font-weight: 700;
+			line-height: 1.4;
+		}
 
-        .info {
-            max-width: 580px;
-        }
-    }
+		p {
+			max-inline-size: 60ch;
+			margin: 0;
+			font-size: 0.875rem;
+			line-height: 1.6;
 
-    @media (width >=1024px) {
-        section {
-            max-width: 900px;
-            padding-left: 63px;
-        }
+			@container why-prologg (width >= 640px) {
+				font-size: 1rem;
+			}
+		}
+	}
 
-        .info {
-            max-width: 800px;
-        }
-    }
+	.why-conclusion {
+		max-inline-size: 60ch;
+		margin: 3rem 0 0;
+		color: var(--_accent);
+		font-size: 1rem;
+		font-weight: 500;
+		line-height: 1.6;
+
+		@container why-prologg (width >= 960px) {
+			margin-block-start: 3.5rem;
+		}
+	}
 </style>
