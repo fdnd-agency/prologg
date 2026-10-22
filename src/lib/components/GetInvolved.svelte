@@ -10,9 +10,9 @@
         {#each cards as card (card.number)}
             <li>
                 <article>
-                    <p>{card.number}</p>
+                    <p class="number">{card.number}</p>
                     <h3>{card.title}</h3>
-                    <p>{card.description}</p>
+                    <p class="description">{card.description}</p>
                 </article>
             </li>
         {/each}
@@ -23,11 +23,15 @@
     section {
         background-color: var(--background-color-secondary);
         padding: 1rem;
-        list-style: none;
+        color: var(--text-color-primary);
 
         @media (prefers-color-scheme: dark) {
             color: var(--card-text);
             background-color: var(--background-color-secondary);
+        }
+
+        @media (width >= 768px) {
+            padding: 3.5rem 3rem;
         }
     }
 
@@ -52,29 +56,63 @@
     }
 
     ol {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 2rem;
         list-style: none;
-        margin: 1rem;
+
+        @media (width >= 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     li {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
         border-radius: 1rem;
+        filter: var(--filter-shadow-card);
     }
 
     li:first-child {
         background-color: var(--card-background);
-        margin-top: .5rem;
-        
-        @media (prefers-color-scheme: dark) {
-            color: var(--card-text);
-        }
+        color: var(--card-text);
     }
 
     li:last-child {
         background-color: var(--card-background-alt);
         color: var(--white);
+    }
+
+    .number {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+
+    li:first-child .number {
+        color: var(--alert-color);
+
+        @media (prefers-color-scheme: dark) {
+            color: var(--white);
+        }
+    }
+
+    h3 {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 15rem;
+        font-weight: 300;
+
+        @media (width >= 1040px) {
+            max-width: unset;
+        }
     }
 </style>
