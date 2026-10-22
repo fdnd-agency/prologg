@@ -22,13 +22,14 @@
     article {
         background-color: var(--background-color-secondary);
         padding: 2rem 0.5rem;
+        display: grid;
     }
     div {
         @media (width > 890px) {
             display: grid;
             grid-template-columns: max-content 1fr;
-
             justify-self: center;
+            max-width: var(--max-width);
         }
     }
 </style>

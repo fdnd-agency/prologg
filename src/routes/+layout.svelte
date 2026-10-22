@@ -1,6 +1,7 @@
 <script>
 	import favicon from "$lib/assets/favicon.svg";
 	import Navigation from "$lib/components/Navigation.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
 	let { children } = $props();
 
@@ -16,5 +17,5 @@
 </svelte:head>
 
 <Navigation {...content.navigation} />
-
 {@render children()}
+<Footer />
