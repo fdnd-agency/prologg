@@ -100,6 +100,17 @@ body {
     }
 }
 
+h2, h4 {
+    font-family: var(--font-heading);
+}
+
+h2 {
+    margin-block: 0.5rem;
+    font-size: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
+    line-height: 0.95;
+    color: var(--text-color-primary);
+}
+
 h4 {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -107,6 +118,7 @@ h4 {
     color: var(--alert-color);
     font-weight: 500;
 }
+
 
 @keyframes land {
     from {
