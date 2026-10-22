@@ -1,17 +1,23 @@
 <script>
     import Button from "$lib/components/Button.svelte";
+
+    let { subtitle, title, description, items = [] } = $props();
 </script>
 
 <section class="demo-section">
     <div class="demo-content">
-        <p class="demo-label">BEVEILIGDE BEWIJSLUIS</p>
+        <p class="demo-label">{subtitle}</p>
 
-        <h2>Versterk uw dossiers met betrouwbaar bewijs.</h2>
+        <h2>{title}</h2>
 
         <p class="demo-description">
-            Plan een compacte demonstratie van Prologg voor uw kantoor of
-            praktijkgroep.
+            {description}
         </p>
+        <ol>
+            {#each items as item}
+                <li>{item.title}</li>
+            {/each}
+        </ol>
 
         <Button
             href="mailto:frank.kloos@fonetic.studio"
@@ -42,6 +48,12 @@
         margin-inline: auto;
         padding: 72px 24px 56px;
         text-align: center;
+
+        ol {
+            li {
+                list-style: none;
+            }
+        }
     }
 
     .demo-label {
@@ -71,6 +83,7 @@
         font-size: 16px;
         line-height: 1.6;
         text-wrap: balance;
+        font-weight: bold;
 
         @media (prefers-color-scheme: dark) {
             color: var(--text-color-primary);

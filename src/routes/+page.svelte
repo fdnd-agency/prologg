@@ -12,6 +12,8 @@
     const content = {
         hero: getSection("hero.md"),
         why: getSection("why.md"),
+        partners: getSection("partners.md"),
+        demo: getSection("demo.md"),
     };
 </script>
 
@@ -19,8 +21,8 @@
     <Hero {...content.hero} />
     <WhyPrologg {...content.why} />
     <Preview />
-    <PartnerSection />
-    <DemoSection />
+    <PartnerSection {...content.partners} />
+    <DemoSection {...content.demo} />
     <Footer />
 </main>
 
