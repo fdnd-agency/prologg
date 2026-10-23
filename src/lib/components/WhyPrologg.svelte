@@ -53,6 +53,12 @@
 		margin-block-end: 3rem;
 	}
 
+	h4 {
+		@media (prefers-color-scheme: dark) {
+			color: hsl(6 85% 72%);
+		}
+	}
+
 	.why-reasons {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
