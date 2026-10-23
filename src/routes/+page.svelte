@@ -8,10 +8,12 @@
     import Value from "$lib/components/Value.svelte";
 
     import { getSection } from "$lib/content.js";
+    import GetInvolved from "$lib/components/GetInvolved.svelte";
 
     const content = {
         hero: getSection("hero.md"),
         why: getSection("why.md"),
+        getinvolved: getSection("get-involved.md"),
         partners: getSection("partners.md"),
         demo: getSection("demo.md"),
         value: getSection("value.md"),
@@ -22,6 +24,7 @@
     <Hero {...content.hero} />
     <WhyPrologg {...content.why} />
     <Preview />
+    <GetInvolved {...content.getinvolved} />
     <Value {...content.value} />
     <PartnerSection {...content.partners} />
     <DemoSection {...content.demo} />
