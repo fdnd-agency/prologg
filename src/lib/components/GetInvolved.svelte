@@ -1,10 +1,10 @@
 <script>
+    import Sectiontitle from "./Sectiontitle.svelte";
     let { subtitle, title, description, cards = [] } = $props();
 </script>
 
 <section id="doe-mee">
-    <h4>{subtitle}</h4>
-    <h2>{title}</h2>
+    <Sectiontitle h4={subtitle} h2={title} />
 
     <ol>
         {#each cards as card (card.number)}
@@ -33,26 +33,6 @@
         @media (width >= 768px) {
             padding: 3.5rem 3rem;
         }
-    }
-
-    h4 {
-        font-family: var(--font-mono);
-        font-weight: 700;
-        line-height: 1.6;
-        margin-top: 1.5rem;
-
-        @media (prefers-color-scheme: dark) {
-            color: hsl(213, 78%, 79%);
-        }
-    }
-
-    h2 {
-        font-family: var(--font-heading);
-        font-size: 1.3rem;
-        line-height: 1.4;
-        font-weight: 600;
-        margin-top: .5rem;
-        margin-bottom: 2rem;
     }
 
     ol {

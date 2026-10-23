@@ -1,12 +1,13 @@
 <script>
 	let { subtitle, title, reasons = [] } = $props();
+
+	import Sectiontitle from "./Sectiontitle.svelte";
 </script>
 
 <section id="waarom-prologg" class="why-section">
 	<div class="why-content">
 		<header>
-			<h4>{subtitle}</h4>
-			<h2>{title}</h2>
+			<Sectiontitle h4={subtitle} h2={title} />
 		</header>
 
 		<dl class="why-reasons">
@@ -51,12 +52,6 @@
 
 	header {
 		margin-block-end: 3rem;
-	}
-
-	h4 {
-		@media (prefers-color-scheme: dark) {
-			color: hsl(6 85% 72%);
-		}
 	}
 
 	.why-reasons {
