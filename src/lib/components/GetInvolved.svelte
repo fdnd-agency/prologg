@@ -78,7 +78,6 @@
 
     li:last-child {
         background-color: var(--card-background-alt);
-        color: var(--white);
     }
 
     .number {
@@ -89,7 +88,7 @@
         margin-bottom: 1rem;
     }
 
-    li:first-child .number {
+    li .number {
         color: var(--alert-color);
 
         @media (prefers-color-scheme: dark) {
@@ -108,11 +107,7 @@
     .description {
         font-size: 1rem;
         line-height: 1.6;
-        max-width: 15rem;
+        width: 100%;
         font-weight: 300;
-
-        @media (width >= 1040px) {
-            max-width: unset;
-        }
     }
 </style>

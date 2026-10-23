@@ -47,7 +47,7 @@
     --alert-color: hsl(6 61% 41%);
 
     --card-background: var(--white);
-    --card-background-alt: hsl(217 56% 38%);
+    --card-background-alt: var(--background-color-primary);
     --card-text: var(--text-color-primary);
 
     /* FONTS */
