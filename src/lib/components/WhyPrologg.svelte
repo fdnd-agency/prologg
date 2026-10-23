@@ -11,10 +11,8 @@
 
 		<dl class="why-reasons">
 			{#each reasons as { title, description } (title)}
-				<div>
-					<dt>{title}</dt>
-					<dd>{description}</dd>
-				</div>
+				<dt>{title}</dt>
+				<dd>{description}</dd>
 			{/each}
 		</dl>
 	</div>
@@ -62,32 +60,42 @@
 	.why-reasons {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
-		gap: 3rem;
 		margin: 0;
 
 		@container why-prologg (width >= 960px) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: 2rem;
-		}
-
-		div {
-			min-inline-size: 0;
-			padding-block-start: 1.25rem;
-			border-block-start: 1px solid
-				color-mix(in srgb, var(--text-color-primary) 25%, transparent);
+			grid-template-rows: auto 1fr;
+			grid-auto-flow: column;
+			column-gap: 2rem;
 		}
 
 		dt {
-			margin-block-end: 0.625rem;
+			min-inline-size: 0;
+			margin-block-start: 3rem;
+			padding-block-start: 1.25rem;
+			border-block-start: 1px solid var(
+				--border-usp,
+				color-mix(in srgb, var(--text-color-primary) 25%, transparent)
+			);
 			font-family: var(--font-heading);
 			font-size: 1.125rem;
 			font-weight: 700;
 			line-height: 1.4;
+
+			&:first-of-type {
+				margin-block-start: 0;
+			}
+
+			@container why-prologg (width >= 960px) {
+				margin-block-start: 0;
+			}
 		}
 
 		dd {
+			min-inline-size: 0;
 			max-inline-size: 60ch;
 			margin: 0;
+			padding-block-start: 0.625rem;
 			font-size: 1rem;
 			line-height: 1.6;
 		}
