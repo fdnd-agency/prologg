@@ -4,19 +4,21 @@
 </script>
 
 <section id="doe-mee">
-    <Sectiontitle h4={subtitle} h2={title} />
+    <div>
+        <Sectiontitle h4={subtitle} h2={title} />
 
-    <ol>
-        {#each cards as card (card.number)}
-            <li>
-                <article>
-                    <p class="number">{card.number}</p>
-                    <h3>{card.title}</h3>
-                    <p class="description">{card.description}</p>
-                </article>
-            </li>
-        {/each}
-    </ol>
+        <ol>
+            {#each cards as card (card.number)}
+                <li>
+                    <article>
+                        <p class="number">{card.number}</p>
+                        <h3>{card.title}</h3>
+                        <p class="description">{card.description}</p>
+                    </article>
+                </li>
+            {/each}
+        </ol>
+    </div>
 </section>
 
 <style>
@@ -24,6 +26,7 @@
         background-color: var(--background-color-secondary);
         padding: 1rem;
         color: var(--text-color-primary);
+        display: grid;
 
         @media (prefers-color-scheme: dark) {
             color: var(--card-text);
@@ -32,6 +35,11 @@
 
         @media (width >= 768px) {
             padding: 3.5rem 3rem;
+        }
+
+        div {
+            max-width: var(--max-width);
+            justify-self: center;
         }
     }
 

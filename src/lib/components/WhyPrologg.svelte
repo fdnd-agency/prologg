@@ -39,7 +39,6 @@
 		inline-size: 100%;
 		max-inline-size: 75rem;
 		margin-inline: auto;
-		padding: 2.5rem 1.5rem;
 
 		@container why-prologg (width >= 640px) {
 			padding: 3.5rem 2rem;
@@ -50,15 +49,10 @@
 		}
 	}
 
-	header {
-		margin-block-end: 3rem;
-	}
-
 	.why-reasons {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
-		gap: 3rem;
-		margin: 0;
+		gap: 0.5rem;
 
 		@container why-prologg (width >= 960px) {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -68,7 +62,7 @@
 		div {
 			min-inline-size: 0;
 			padding-block-start: 1.25rem;
-			border-block-start: var(--border-usp);
+			border-block-end: var(--border-usp);
 		}
 
 		dt {

@@ -9,7 +9,7 @@
 
 <style>
     section {
-        padding: 1rem;
+        padding: 0;
         grid-column: span 2;
 
         @media (width > 890px) {
