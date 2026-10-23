@@ -61,7 +61,7 @@
     --border-usp: 1px solid color-mix(in srgb, var(--text-color-primary) 25%, transparent);
     
     /* SPACINGS */
-    --space-xl: 2.5rem;
+    --space-xl: 2rem;
 	--space-lg: 1.5rem;
 	--space-md: 1rem;
 	--space-sm: 0.5rem;
@@ -143,7 +143,7 @@ h4 {
 }
 
 section {
-    padding: 2rem 1.5rem;
+    padding: var(--space-xl) var(--space-lg);
 }
 
 
