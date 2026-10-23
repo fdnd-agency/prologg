@@ -70,6 +70,7 @@
         font-size: clamp(32px, 8vw, 48px);
         line-height: 1.15;
         text-wrap: balance;
+        color: var(--text-color-secondary);
 
         @media (prefers-color-scheme: dark) {
             color: var(--text-color-primary);
