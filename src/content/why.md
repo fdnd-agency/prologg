@@ -10,6 +10,4 @@ reasons:
 
   - title: 'Bewijs verdwijnt'
     description: "Losse foto's en appjes zonder aantoonbare herkomst zijn makkelijk te betwisten."
-
-conclusion: 'Met Prologg is het bewijs er al voordat de zaak begint.'
 ---
