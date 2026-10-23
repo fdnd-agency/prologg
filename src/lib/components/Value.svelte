@@ -23,6 +23,7 @@
         padding: 2rem 1.5rem 0 1.5rem;
         justify-self: center;
         display: grid;
+        max-width: var(--max-width);
 
         dl {
             padding-block: 1rem;
