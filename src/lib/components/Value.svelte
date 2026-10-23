@@ -35,7 +35,7 @@
                 font-weight: 600;
 
                 @media (width > 890px) {
-                    border-bottom: 1px solid var(--white);
+                    border-bottom: var(--border-usp);
                     margin-block: 0.5rem 1rem;
                     padding-bottom: 0.5rem;
                 }
@@ -46,7 +46,7 @@
                 margin-block: 0.5rem 1rem;
                 padding-bottom: 0.5rem;
 
-                border-bottom: 1px solid var(--white);
+                border-bottom: var(--border-usp);
             }
         }
 

@@ -24,8 +24,8 @@
     <Hero {...content.hero} />
     <WhyPrologg {...content.why} />
     <Preview />
-    <GetInvolved {...content.getinvolved} />
     <Value {...content.value} />
+    <GetInvolved {...content.getinvolved} />
     <PartnerSection {...content.partners} />
     <DemoSection {...content.demo} />
     <!-- <Footer /> -->

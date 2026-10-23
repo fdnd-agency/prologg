@@ -57,6 +57,8 @@
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
 
     --max-width: 1200px;
+
+    --border-usp: 1px solid color-mix(in srgb, var(--text-color-primary) 25%, transparent);
 }
 
 @media (prefers-color-scheme: dark) {

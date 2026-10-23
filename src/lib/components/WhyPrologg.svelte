@@ -1,5 +1,5 @@
 <script>
-	let { subtitle, title, reasons = [] } = $props()
+	let { subtitle, title, reasons = [] } = $props();
 </script>
 
 <section id="waarom-prologg" class="why-section">
@@ -73,8 +73,7 @@
 		div {
 			min-inline-size: 0;
 			padding-block-start: 1.25rem;
-			border-block-start: 1px solid
-				color-mix(in srgb, var(--text-color-primary) 25%, transparent);
+			border-block-start: var(--border-usp);
 		}
 
 		dt {
