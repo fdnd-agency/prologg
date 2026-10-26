@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+* {
+    /* background-color: #2acc6345; */
+}
+
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format("truetype");
@@ -121,9 +125,10 @@ body {
 
 main {
     display: grid;
+    overflow-x: hidden;
 }
 
-h2, h4 {
+h2, hgroup span {
     font-family: var(--font-heading);
 }
 
@@ -134,7 +139,7 @@ h2 {
     color: var(--text-color-primary);
 }
 
-h4 {
+hgroup span {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
@@ -143,7 +148,7 @@ h4 {
 }
 
 section {
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
 }
 
 

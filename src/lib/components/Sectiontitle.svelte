@@ -2,14 +2,20 @@
     let { h4, h2, p } = $props();
 </script>
 
-{#if h4}
-    <h4>{h4}</h4>
-{/if}
-{#if h2}
-    <h2>{h2}</h2>
-{/if}
-{#if p}
-    <p>{p}</p>
-{/if}
+<hgroup>
+    {#if h4}
+        <span>{h4}</span>
+    {/if}
+    {#if h2}
+        <h2>{h2}</h2>
+    {/if}
+    {#if p}
+        <p>{p}</p>
+    {/if}
+</hgroup>
 
-<style></style>
+<style>
+    hgroup {
+        padding-block: 0.5rem;
+    }
+</style>
