@@ -78,6 +78,7 @@
 			margin: 0;
 			font-size: 1rem;
 			line-height: 1.6;
+			padding-bottom: var(--space-sm);
 		}
 	}
 </style>
