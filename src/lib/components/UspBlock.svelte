@@ -80,7 +80,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.4rem;
-
+            padding: 0;
             h3 {
                 font-size: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
                 line-height: 0.95;

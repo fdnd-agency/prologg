@@ -1,13 +1,13 @@
 <script>
-	import fullLogo from '$lib/assets/full-logo.svg'
-	import Button from '$lib/components/Button.svelte'
+	import fullLogo from "$lib/assets/full-logo.svg";
+	import Button from "$lib/components/Button.svelte";
 
 	const navigationLinks = [
-		{ label: 'Wat het is', href: '#wat-het-is' },
-		{ label: 'Waarom Prologg', href: '#waarom-prologg' },
-		{ label: 'Hoe het werkt', href: '#hoe-het-werkt' },
-		{ label: 'Partners', href: '#partners' },
-	]
+		{ label: "Waarom Prologg", href: "#waarom-prologg" },
+		{ label: "Hoe het werkt", href: "#hoe-het-werkt" },
+		{ label: "Waarde levering", href: "#waarde-levering" },
+		{ label: "Partners", href: "#partners" },
+	];
 </script>
 
 <footer class="site-footer">
@@ -33,7 +33,8 @@
 					<li>
 						<a {href} class="footer-link">
 							{label}
-							<span class="link-underline" aria-hidden="true"></span>
+							<span class="link-underline" aria-hidden="true"
+							></span>
 						</a>
 					</li>
 				{/each}

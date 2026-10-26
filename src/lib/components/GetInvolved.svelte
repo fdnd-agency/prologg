@@ -1,22 +1,24 @@
 <script>
+    import Sectiontitle from "./Sectiontitle.svelte";
     let { subtitle, title, description, cards = [] } = $props();
 </script>
 
 <section id="doe-mee">
-    <h4>{subtitle}</h4>
-    <h2>{title}</h2>
+    <div>
+        <Sectiontitle {subtitle} h2={title} />
 
-    <ol>
-        {#each cards as card (card.number)}
-            <li>
-                <article>
-                    <p class="number">{card.number}</p>
-                    <h3>{card.title}</h3>
-                    <p class="description">{card.description}</p>
-                </article>
-            </li>
-        {/each}
-    </ol>
+        <ol>
+            {#each cards as card (card.number)}
+                <li>
+                    <article>
+                        <p class="number">{card.number}</p>
+                        <h3>{card.title}</h3>
+                        <p class="description">{card.description}</p>
+                    </article>
+                </li>
+            {/each}
+        </ol>
+    </div>
 </section>
 
 <style>
@@ -24,6 +26,7 @@
         background-color: var(--background-color-secondary);
         padding: 1rem;
         color: var(--text-color-primary);
+        display: grid;
 
         @media (prefers-color-scheme: dark) {
             color: var(--card-text);
@@ -33,26 +36,11 @@
         @media (width >= 768px) {
             padding: 3.5rem 3rem;
         }
-    }
 
-    h4 {
-        font-family: var(--font-mono);
-        font-weight: 700;
-        line-height: 1.6;
-        margin-top: 1.5rem;
-
-        @media (prefers-color-scheme: dark) {
-            color: hsl(213, 78%, 79%);
+        div {
+            max-width: var(--max-width);
+            justify-self: center;
         }
-    }
-
-    h2 {
-        font-family: var(--font-heading);
-        font-size: 1.3rem;
-        line-height: 1.4;
-        font-weight: 600;
-        margin-top: .5rem;
-        margin-bottom: 2rem;
     }
 
     ol {

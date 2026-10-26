@@ -9,18 +9,17 @@
     const c = $derived(content[lang.current]);
 </script>
 
-<article id="hoe-het-werkt">
+<section id="hoe-het-werkt">
     <div>
         <PreviewInfo {...c.preview} />
         <PreviewUsp {...c.preview} />
         <PreviewBanner />
     </div>
-</article>
+</section>
 
 <style>
-    article {
+    section {
         background-color: var(--background-color-secondary);
-        padding: 2rem 0.5rem;
         display: grid;
     }
     div {
