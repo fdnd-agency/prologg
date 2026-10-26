@@ -3,17 +3,16 @@
     import PreviewBanner from "./PreviewBanner.svelte";
     import PreviewUsp from "./PreviewUsp.svelte";
 
-    import { getSection } from "$lib/content.js";
+    import { lang } from "$lib/lang.svelte.js";
+    import { content } from "$lib/content.js";
 
-    const content = {
-        preview: getSection("preview.md"),
-    };
+    const c = $derived(content[lang.current]);
 </script>
 
 <article id="hoe-het-werkt">
     <div>
-        <PreviewInfo {...content.preview} />
-        <PreviewUsp {...content.preview} />
+        <PreviewInfo {...c.preview} />
+        <PreviewUsp {...c.preview} />
         <PreviewBanner />
     </div>
 </article>

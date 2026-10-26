@@ -3,6 +3,7 @@
     import closeIcon from "$lib/assets/close-icon.svg";
     import { Hamburger } from "svelte-hamburgers";
     import Button from "$lib/components/Button.svelte";
+    import Languagetoggle from "$lib/components/Languagetoggle.svelte";
 
     let mobileMenuOpen = $state(false);
 
@@ -95,6 +96,8 @@
                     <div class="underline-deco"></div>
                 </a>
             {/each}
+
+            <Languagetoggle />
 
             <Button
                 href="mailto:frank.kloos@fonetic.studio"

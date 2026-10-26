@@ -53,6 +53,8 @@
         font-family: var(--font-heading);
         font-size: clamp(2rem, 0rem + 8vw, 4.5rem);
         line-height: 0.9;
+        text-wrap: balance;
+        max-width: 64rem;
     }
     p {
         font-size: clamp(1rem, 0.8171rem + 0.9756vw, 1.25rem);
