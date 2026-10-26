@@ -1,33 +1,14 @@
-import { marked } from 'marked';
-import YAML from 'yaml';
+// CODE VAN CLAUDE
+// https://claude.ai/share/56d1388d-35c2-4c56-8a58-8d992f9bcea0
 
-const files = import.meta.glob('/src/content/*.md', {
-    query: '?raw',
-    import: 'default',
-    eager: true
-});
+import { parse } from 'yaml';
+import nlRaw from '../content/nl/content.md?raw';
+import enRaw from '../content/en/content.md?raw';
 
-export function getSection(filename) {
-    const path = `/src/content/${filename}`;
-    const rawMarkdown = files[path];
+// grab the text between the two --- lines and parse it as YAML
+const frontmatter = (raw) => parse(raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)[1]);
 
-    if (!rawMarkdown) {
-        throw new Error(`Markdown file not found: ${filename}`);
-    }
-
-    const match = rawMarkdown.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
-
-    if (!match) {
-        return {
-            body: marked.parse(rawMarkdown)
-        };
-    }
-
-    const frontMatter = YAML.parse(match[1]);
-    const markdownBody = match[2];
-
-    return {
-        ...frontMatter,
-        body: marked.parse(markdownBody)
-    };
-}
+export const content = {
+    nl: frontmatter(nlRaw),
+    en: frontmatter(enRaw)
+};

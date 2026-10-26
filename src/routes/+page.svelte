@@ -1,28 +1,21 @@
 <script>
-    import Button from "$lib/components/Button.svelte";
     import Hero from "$lib/components/Hero.svelte";
     import Preview from "$lib/components/Preview.svelte";
     import DemoSection from "$lib/components/Demosection.svelte";
     import WhyPrologg from "$lib/components/WhyPrologg.svelte";
     import PartnerSection from "$lib/components/PartnerSection.svelte";
     import Value from "$lib/components/Value.svelte";
-
-    import { getSection } from "$lib/content.js";
     import GetInvolved from "$lib/components/GetInvolved.svelte";
 
-    const content = {
-        hero: getSection("hero.md"),
-        why: getSection("why.md"),
-        getinvolved: getSection("get-involved.md"),
-        partners: getSection("partners.md"),
-        demo: getSection("demo.md"),
-        value: getSection("value.md"),
-    };
+    import { lang } from "$lib/lang.svelte.js";
+    import { content } from "$lib/content.js";
+
+    const c = $derived(content[lang.current]);
 </script>
 
 <main>
-    <Hero {...content.hero} />
-    <WhyPrologg {...content.why} />
+    <Hero {...c.hero} />
+    <WhyPrologg {...c.why} />
     <Preview />
     <Value {...content.value} />
     <GetInvolved {...content.getinvolved} />

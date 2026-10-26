@@ -5,17 +5,16 @@
 
 	let { children } = $props();
 
-	import { getSection } from "$lib/content.js";
+	import { lang } from "$lib/lang.svelte.js";
+	import { content } from "$lib/content.js";
 
-	const content = {
-		navigation: getSection("navigation.md"),
-	};
+	const c = $derived(content[lang.current]);
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<Navigation {...content.navigation} />
+<Navigation {...c.navigation} />
 {@render children()}
 <Footer />
