@@ -61,12 +61,8 @@
 
 		dt {
 			min-inline-size: 0;
-			margin-block-start: 3rem;
 			padding-block-start: 1.25rem;
-			border-block-start: 1px solid var(
-				--border-usp,
-				color-mix(in srgb, var(--text-color-primary) 25%, transparent)
-			);
+			border-block-start: var(--border-usp);
 			font-family: var(--font-heading);
 			font-size: 1.125rem;
 			font-weight: 700;
