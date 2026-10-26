@@ -3,9 +3,9 @@
 	import Button from "$lib/components/Button.svelte";
 
 	const navigationLinks = [
-		{ label: "Wat het is", href: "#wat-het-is" },
 		{ label: "Waarom Prologg", href: "#waarom-prologg" },
 		{ label: "Hoe het werkt", href: "#hoe-het-werkt" },
+		{ label: "Waarde levering", href: "#waarde-levering" },
 		{ label: "Partners", href: "#partners" },
 	];
 </script>
