@@ -1,15 +1,12 @@
 <script>
     import PartnerCard from "./PartnerCard.svelte";
+    import Sectiontitle from "./Sectiontitle.svelte";
     let { subtitle, title, description, partners = [] } = $props();
 </script>
 
 <section id="partners">
     <header>
-        <h4>{subtitle}</h4>
-        <h2>{title}</h2>
-        <p>
-            {description}
-        </p>
+        <Sectiontitle {subtitle} h2={title} p={description} />
     </header>
 
     <ul class="cards">
@@ -40,30 +37,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
         max-width: 36rem;
         text-align: center;
-    }
-
-    h4 {
-        font-family: var(--font-mono);
-        font-weight: 700;
-    }
-
-    h2 {
-        font-family: var(--font-heading);
-        font-size: 1.5rem;
-        color: var(--text-color-primary);
-    }
-
-    header p {
-        font-size: 0.875rem;
-        line-height: 1.6;
-        color: var(--text-color-accent);
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-primary);
-        }
     }
 
     .cards {
@@ -81,14 +56,6 @@
     @media (width >= 768px) {
         section {
             padding: 64px 32px;
-        }
-
-        h2 {
-            font-size: 2rem;
-        }
-
-        header p {
-            font-size: 1rem;
         }
 
         .cards {

@@ -1,12 +1,13 @@
 <script>
-	let { subtitle, title, reasons = [] } = $props()
+	let { subtitle, title, reasons = [] } = $props();
+
+	import Sectiontitle from "./Sectiontitle.svelte";
 </script>
 
 <section id="waarom-prologg" class="why-section">
 	<div class="why-content">
 		<header>
-			<h4>{subtitle}</h4>
-			<h2>{title}</h2>
+			<Sectiontitle {subtitle} h2={title} />
 		</header>
 
 		<dl class="why-reasons">
@@ -36,7 +37,6 @@
 		inline-size: 100%;
 		max-inline-size: 75rem;
 		margin-inline: auto;
-		padding: 2.5rem 1.5rem;
 
 		@container why-prologg (width >= 640px) {
 			padding: 3.5rem 2rem;
@@ -44,16 +44,6 @@
 
 		@container why-prologg (width >= 960px) {
 			padding: 4rem;
-		}
-	}
-
-	header {
-		margin-block-end: 3rem;
-	}
-
-	h4 {
-		@media (prefers-color-scheme: dark) {
-			color: hsl(6 85% 72%);
 		}
 	}
 
@@ -98,6 +88,7 @@
 			padding-block-start: 0.625rem;
 			font-size: 1rem;
 			line-height: 1.6;
+			padding-bottom: var(--space-sm);
 		}
 	}
 </style>

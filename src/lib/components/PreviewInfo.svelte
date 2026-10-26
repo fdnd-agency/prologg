@@ -1,30 +1,19 @@
 <script>
+    import Sectiontitle from "./Sectiontitle.svelte";
     let { subtitle, title, description } = $props();
 </script>
 
 <section class="preview-info">
-    <h4>{subtitle}</h4>
-    <h2>{title}</h2>
-    <p>
-        {description}
-    </p>
+    <Sectiontitle {subtitle} h2={title} p={description} />
 </section>
 
 <style>
     section {
-        padding: 1rem;
+        padding: 0;
         grid-column: span 2;
 
         @media (width > 890px) {
             padding: 1rem 1rem 1rem 3.5rem;
-        }
-    }
-
-    p {
-        color: var(--text-color-accent);
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-primary);
         }
     }
 </style>

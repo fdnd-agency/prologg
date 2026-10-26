@@ -1,15 +1,14 @@
 <script>
     import Button from "$lib/components/Button.svelte";
+    import Sectiontitle from "./Sectiontitle.svelte";
 
     let { subtitle, title, description, items = [] } = $props();
 </script>
 
 <section class="demo-section">
     <div class="demo-content">
-        <p class="demo-label">{subtitle}</p>
-
+        <span class="demo-label">{subtitle}</span>
         <h2>{title}</h2>
-
         <p class="demo-description">
             {description}
         </p>
@@ -56,14 +55,6 @@
         }
     }
 
-    .demo-label {
-        margin: 0 0 24px;
-        color: var(--alert-color);
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-    }
-
     h2 {
         max-width: 700px;
         margin-inline: auto;
@@ -77,12 +68,16 @@
         }
     }
 
+    .demo-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        color: var(--alert-color);
+        font-weight: 500;
+    }
+
     .demo-description {
-        max-width: 600px;
-        margin: 24px auto 0;
         color: var(--text-color-secondary);
-        font-size: 16px;
-        line-height: 1.6;
         text-wrap: balance;
         font-weight: bold;
 
@@ -93,6 +88,7 @@
 
     .demo-note {
         --text-color-accent: hsl(240 6% 59%);
+
         margin: 40px 0 0;
         color: var(--text-color-accent);
         font-size: 16px;
