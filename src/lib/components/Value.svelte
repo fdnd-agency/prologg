@@ -4,7 +4,7 @@
 </script>
 
 <section id="waarde-levering" class="value">
-    <Sectiontitle h4={subtitle} h2={title} />
+    <Sectiontitle {subtitle} h2={title} />
 
     <dl>
         {#each values as value}

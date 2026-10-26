@@ -7,7 +7,7 @@
 
 <section class="demo-section">
     <div class="demo-content">
-        <h4 class="demo-label">{subtitle}</h4>
+        <span class="demo-label">{subtitle}</span>
         <h2>{title}</h2>
         <p class="demo-description">
             {description}
@@ -66,6 +66,14 @@
         @media (prefers-color-scheme: dark) {
             color: var(--text-color-primary);
         }
+    }
+
+    .demo-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        color: var(--alert-color);
+        font-weight: 500;
     }
 
     .demo-description {

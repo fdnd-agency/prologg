@@ -4,7 +4,7 @@
 </script>
 
 <section class="preview-info">
-    <Sectiontitle h4={subtitle} h2={title} p={description} />
+    <Sectiontitle {subtitle} h2={title} p={description} />
 </section>
 
 <style>

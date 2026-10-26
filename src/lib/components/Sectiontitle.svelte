@@ -1,10 +1,10 @@
 <script>
-    let { h4, h2, p } = $props();
+    let { subtitle, h2, p } = $props();
 </script>
 
 <hgroup>
-    {#if h4}
-        <span>{h4}</span>
+    {#if subtitle}
+        <span>{subtitle}</span>
     {/if}
     {#if h2}
         <h2>{h2}</h2>

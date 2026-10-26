@@ -6,7 +6,7 @@
 
 <section id="partners">
     <header>
-        <Sectiontitle h4={subtitle} h2={title} p={description} />
+        <Sectiontitle {subtitle} h2={title} p={description} />
     </header>
 
     <ul class="cards">

@@ -19,7 +19,7 @@
 
     <div>
         <div class="wrapper">
-            <h4>Open source fundament</h4>
+            <span>Open source fundament</span>
             <div class="deco-dot"></div>
             <p class="sub-title">Geauditeerd</p>
         </div>
@@ -95,7 +95,7 @@
         }
 
         p {
-            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            font-family: "Inter", Arial, Helvetica, sans-serif;
             color: var(--text-color-accent);
             max-width: 50rem;
 

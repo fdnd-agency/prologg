@@ -7,7 +7,7 @@
 <section id="waarom-prologg" class="why-section">
 	<div class="why-content">
 		<header>
-			<Sectiontitle h4={subtitle} h2={title} />
+			<Sectiontitle {subtitle} h2={title} />
 		</header>
 
 		<dl class="why-reasons">

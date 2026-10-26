@@ -5,7 +5,7 @@
 
 <section id="doe-mee">
     <div>
-        <Sectiontitle h4={subtitle} h2={title} />
+        <Sectiontitle {subtitle} h2={title} />
 
         <ol>
             {#each cards as card (card.number)}
