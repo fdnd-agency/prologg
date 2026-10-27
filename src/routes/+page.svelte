@@ -17,10 +17,10 @@
     <Hero {...c.hero} />
     <WhyPrologg {...c.why} />
     <Preview />
-    <Value {...content.value} />
-    <GetInvolved {...content.getinvolved} />
-    <PartnerSection {...content.partners} />
-    <DemoSection {...content.demo} />
+    <Value {...c.value} />
+    <GetInvolved {...c.getInvolved} />
+    <PartnerSection {...c.partners} />
+    <DemoSection {...c.demo} />
     <!-- <Footer /> -->
 </main>
 
