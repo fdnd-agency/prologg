@@ -169,21 +169,23 @@
                 }
             }
 
-            &:hover {
-                text-decoration: underline;
-                color: var(--text-color-primary);
-                scale: 1.02;
+            @media (any-pointer: fine) {
+                &:hover {
+                    text-decoration: underline;
+                    color: var(--text-color-primary);
+                    scale: 1.02;
 
-                @media (prefers-color-scheme: dark) {
-                    color: var(--text-color-secondary);
-                }
+                    @media (prefers-color-scheme: dark) {
+                        color: var(--text-color-secondary);
+                    }
 
-                @media (prefers-reduced-motion: no-preference) {
-                    text-decoration: unset;
+                    @media (prefers-reduced-motion: no-preference) {
+                        text-decoration: unset;
 
-                    .underline-deco {
-                        width: 100%;
-                        transition: all 0.3s ease;
+                        .underline-deco {
+                            width: 100%;
+                            transition: all 0.3s ease;
+                        }
                     }
                 }
             }
