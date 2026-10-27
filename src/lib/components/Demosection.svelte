@@ -33,13 +33,9 @@
 
 <style>
     .demo-section {
-        background-color: var(--background-color-accent);
-        color: var(--text-color-secondary);
+        background-color: var(--color-background-dark);
+        color: var(--white);
         font-family: var(--font-heading), sans-serif;
-
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-secondary);
-        }
     }
 
     .demo-content {
@@ -61,11 +57,6 @@
         font-size: clamp(32px, 8vw, 48px);
         line-height: 1.15;
         text-wrap: balance;
-        color: var(--text-color-secondary);
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-primary);
-        }
     }
 
     .demo-label {
@@ -77,20 +68,13 @@
     }
 
     .demo-description {
-        color: var(--text-color-secondary);
         text-wrap: balance;
         font-weight: bold;
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-primary);
-        }
     }
 
     .demo-note {
-        --text-color-accent: hsl(240 6% 59%);
-
         margin: 40px 0 0;
-        color: var(--text-color-accent);
+        color: var( --color-text-primary);
         font-size: 16px;
         line-height: 1.6;
     }

@@ -23,7 +23,6 @@
         gap: 1rem;
         line-height: 1.5;
         filter: var(--filter-shadow-card);
-
     }
 
     .icon {
