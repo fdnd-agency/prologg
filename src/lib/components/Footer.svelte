@@ -2,12 +2,7 @@
 	import fullLogo from '$lib/assets/full-logo.svg'
 	import Button from '$lib/components/Button.svelte'
 
-	const navigationLinks = [
-		{ label: 'Wat het is', href: '#wat-het-is' },
-		{ label: 'Waarom Prologg', href: '#waarom-prologg' },
-		{ label: 'Hoe het werkt', href: '#hoe-het-werkt' },
-		{ label: 'Partners', href: '#partners' },
-	]
+	let { links = [] } = $props()
 </script>
 
 <footer class="site-footer">
@@ -29,9 +24,9 @@
 			<h2 class="footer-heading">Navigatie</h2>
 
 			<ul>
-				{#each navigationLinks as { label, href } (href)}
+				{#each links as { content, href } (href)}
 					<li>
-						<a {href} class="footer-link">{label}</a>
+						<a {href} class="footer-link">{content}</a>
 					</li>
 				{/each}
 			</ul>
