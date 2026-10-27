@@ -1,13 +1,13 @@
 ---
 navigation:
   links:
-    - content: "Waarom Prologg"
+    - content: "Why Prologg"
       href: "#waarom-prologg"
-    - content: "Casus"
+    - content: "Case"
       href: "#hoe-het-werkt"
-    - content: "Doe mee"
+    - content: "Join us"
       href: "#doe-mee"
-    - content: "Waarde Levering"
+    - content: "Value"
       href: "#waarde-levering"
     - content: "Partners"
       href: "#partners"
