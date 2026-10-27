@@ -83,7 +83,7 @@
 	.footer-inner,
 	.footer-bottom {
 		width: 100%;
-		max-width: 1200px;
+		max-width: var(--max-width);
 		margin-inline: auto;
 	}
 
