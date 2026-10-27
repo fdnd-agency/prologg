@@ -1,25 +1,22 @@
 <script>
     import Button from "./Button.svelte";
+
+    let { title, description, buttons = [] } = $props();
 </script>
 
-<section class="hero" id="wat-het-is">
-    <h1>Bewijsmateriaal dat standhoudt.</h1>
+<section class="hero">
+    <h1>{title}</h1>
     <p>
-        Prologg biedt een betrouwbare digitale bewijskluis voor advocaten en
-        rechtshulpverleners in arbeidsuitbuiting, mensenhandel en kwetsbare
-        arbeidsverhoudingen.
+        {description}
     </p>
     <div class="button-wrapper">
-        <Button
-            href="mailto:frank.kloos@fonetic.studio"
-            classes="hero-primary"
-            content="Vraag kantoordemo aan"
-        />
-        <Button
-            href="#hoe-het-werkt"
-            classes="hero-secondary"
-            content="Bekijk de casus"
-        />
+        {#each buttons as button}
+            <Button
+                href={button.href}
+                classes={button.variant}
+                content={button.content}
+            />
+        {/each}
     </div>
 </section>
 

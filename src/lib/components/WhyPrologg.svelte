@@ -1,149 +1,103 @@
 <script>
-    import lawIcon from "$lib/assets/law-icon.svg";
-    import shieldIcon from "$lib/assets/shield-icon.svg";
+	let { subtitle, title, reasons = [] } = $props()
 </script>
 
-<section id="waarom-prologg">
-    <div class="flex-icon label">
-        <img src={lawIcon} alt="" width="20" height="20" />
-        <h2>De realiteit in recht</h2>
-    </div>
+<section id="waarom-prologg" class="why-section">
+	<div class="why-content">
+		<header>
+			<h4>{subtitle}</h4>
+			<h2>{title}</h2>
+		</header>
 
-    <p class="quote">
-        "Zonder verifieerbaar bewijs geen zaak. Slachtoffers verliezen hun stem
-        wanneer foto's, locaties en werkuren niet forensisch zijn vastgelegd."
-    </p>
-
-    <hr />
-
-    <div class="info">
-        <img src={shieldIcon} alt="" width="17" height="17" />
-        <p>
-            In de praktijk strandt vervolging of civiele vordering vaak op
-            betwisting van screenshots en losse WhatsApp-berichten. Prologg
-            borgt de bewijsketen direct vanaf het eerste moment met
-            cryptografische zekerheid.
-        </p>
-    </div>
+		<dl class="why-reasons">
+			{#each reasons as { title, description } (title)}
+				<dt>{title}</dt>
+				<dd>{description}</dd>
+			{/each}
+		</dl>
+	</div>
 </section>
 
 <style>
-    section {
-        background-color: var(--white);
-        color: var(--text-color-accent);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        text-align: start;
-        margin: 2rem 1rem;
-        max-width: 600px;
-        border-radius: 12px;
-        filter: var(--filter-shadow-card);
+	.why-section {
+		container: why-prologg / inline-size;
+		inline-size: 100%;
+		min-inline-size: 0;
+		color: var(--text-color-primary);
+		overflow-wrap: anywhere;
+	}
 
-        @media (width > 679px) {
-            margin: 3rem;
-        }
+	#waarom-prologg {
+		scroll-margin-block-start: 6rem;
+	}
 
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-accent);
-        }
-    }
+	.why-content {
+		box-sizing: border-box;
+		inline-size: 100%;
+		max-inline-size: 75rem;
+		margin-inline: auto;
+		padding: 2.5rem 1.5rem;
 
-    .flex-icon {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
+		@container why-prologg (width >= 640px) {
+			padding: 3.5rem 2rem;
+		}
 
-    .label {
-        margin-bottom: 20px;
-        font-weight: 400;
-    }
+		@container why-prologg (width >= 960px) {
+			padding: 4rem;
+		}
+	}
 
-    h2 {
-        font-size: 10px;
-        text-transform: uppercase;
-        color: var(--alert-color);
-        word-spacing: 4px;
-        letter-spacing: 1px;
-    }
+	header {
+		margin-block-end: 3rem;
+	}
 
-    .quote {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.4;
-        color: var(--text-color-primary);
-        padding: 0 10px;
+	h4 {
+		@media (prefers-color-scheme: dark) {
+			color: hsl(6 85% 72%);
+		}
+	}
 
-        @media (prefers-color-scheme: dark) {
-            color: var(--text-color-secondary);
-        }
-    }
+	.why-reasons {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		margin: 0;
 
-    hr {
-        width: 100%;
-        max-width: 480px;
-        border: 0.5px solid #e4effc;
-        margin: 13px;
-        place-self: center;
+		@container why-prologg (width >= 960px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-rows: auto 1fr;
+			grid-auto-flow: column;
+			column-gap: 2rem;
+		}
 
-        @media (prefers-color-scheme: dark) {
-            border-color: #979797;
-        }
-    }
+		dt {
+			min-inline-size: 0;
+			margin-block-start: 3rem;
+			padding-block-start: 1.25rem;
+			border-block-start: 1px solid var(
+				--border-usp,
+				color-mix(in srgb, var(--text-color-primary) 25%, transparent)
+			);
+			font-family: var(--font-heading);
+			font-size: 1.125rem;
+			font-weight: 700;
+			line-height: 1.4;
 
-    .info {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        max-width: 480px;
-        text-align: left;
-        gap: 10px;
+			&:first-of-type {
+				margin-block-start: 0;
+			}
 
-        img {
-            margin-top: 1.5px;
-        }
+			@container why-prologg (width >= 960px) {
+				margin-block-start: 0;
+			}
+		}
 
-        p {
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
-            font-weight: 400;
-        }
-    }
-
-    @media (width >=768px) {
-        section {
-            border-radius: 12px;
-            max-width: 580px;
-            justify-self: center;
-            text-align: start;
-        }
-
-        .flex-icon {
-            align-self: flex-start;
-        }
-
-        hr {
-            max-width: 580px;
-        }
-
-        .info {
-            max-width: 580px;
-        }
-    }
-
-    @media (width >=1024px) {
-        section {
-            max-width: 900px;
-            padding-left: 63px;
-        }
-
-        .info {
-            max-width: 800px;
-        }
-    }
+		dd {
+			min-inline-size: 0;
+			max-inline-size: 60ch;
+			margin: 0;
+			padding-block-start: 0.625rem;
+			font-size: 1rem;
+			line-height: 1.6;
+		}
+	}
 </style>

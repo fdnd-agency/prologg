@@ -10,12 +10,7 @@
         mobileMenuOpen = false;
     }
 
-    const navLinks = [
-        { label: "Wat het is", href: "#wat-het-is" },
-        { label: "Waarom Prologg", href: "#waarom-prologg" },
-        { label: "Hoe het werkt", href: "#hoe-het-werkt" },
-        { label: "Partners", href: "#partners" },
-    ];
+    let { links = [] } = $props();
 
     let isVisible = $state(true);
 
@@ -94,14 +89,18 @@
                 </button>
             </div>
 
-            {#each navLinks as link}
+            {#each links as link}
                 <a href={link.href} onclick={closeMenu} class="nav-link"
-                    >{link.label}
+                    >{link.content}
                     <div class="underline-deco"></div>
                 </a>
             {/each}
 
-            <Button href="mailto:frank.kloos@fonetic.studio" classes="nav" content="Vraag demo aan" />
+            <Button
+                href="mailto:frank.kloos@fonetic.studio"
+                classes="nav"
+                content="Vraag demo aan"
+            />
         </nav>
     </div>
 </header>
