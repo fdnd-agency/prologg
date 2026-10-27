@@ -15,8 +15,8 @@
 			<h2 class="brand-title">{title}</h2>
 
 			<p class="brand-description">
-				{descriptionFirst}<br />
-				{descriptionSecond}
+				<span>{descriptionFirst}</span>
+				<span>{descriptionSecond}</span>
 			</p>
 		</div>
 
@@ -125,6 +125,8 @@
 	}
 
 	.brand-description {
+		display: flex;
+		flex-direction: column;
 		color: var(--text-color-accent);
 		font-size: 0.9rem;
 		line-height: 1.5;
