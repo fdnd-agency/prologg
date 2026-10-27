@@ -2,7 +2,7 @@
 	import fullLogo from '$lib/assets/full-logo.svg'
 	import Button from '$lib/components/Button.svelte'
 
-	let { links = [] } = $props()
+	let { links = [], title, descriptionFirst, descriptionSecond } = $props()
 </script>
 
 <footer class="site-footer">
@@ -12,11 +12,11 @@
 				<img src={fullLogo} alt="Prologg" />
 			</a>
 
-			<h2 class="brand-title">Prologg for Legal</h2>
+			<h2 class="brand-title">{title}</h2>
 
 			<p class="brand-description">
-				Digitale Bewijskracht &amp;<br />
-				Forensische Keten van Bewijs
+				{descriptionFirst}<br />
+				{descriptionSecond}
 			</p>
 		</div>
 

@@ -103,4 +103,9 @@ demo:
   items:
     - title: "Hoe clienten veilig bewijs kunnen opslaan."
     - title: "Hoe een dossier binnenkomt en hoe u het controleert."
+
+footer:
+  title: "Prologg for Legal"
+  descriptionFirst: "Digitale Bewijskracht &"
+  descriptionSecond: "Forensische Keten van Bewijs"
 ---

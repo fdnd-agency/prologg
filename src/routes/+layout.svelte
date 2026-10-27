@@ -17,4 +17,4 @@
 
 <Navigation {...c.navigation} />
 {@render children()}
-<Footer links={c.navigation.links} />
+<Footer links={c.navigation.links} {...c.footer} />
