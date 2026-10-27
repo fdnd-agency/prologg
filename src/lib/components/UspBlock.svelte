@@ -24,13 +24,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--background-color-accent);
+        background-color: var(--alert-color);
         color: var(--text-color-secondary);
-
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-secondary);
-            color: var(--text-color-primary);
-        }
     }
 
     article {
@@ -39,13 +34,13 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        background-color: var(--background-color-secondary);
+        background-color: var(--color-background-card);
         border-radius: 16px;
         max-width: 100%;
         filter: var(--filter-shadow-card);
 
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-accent);
+        @media(prefers-color-scheme: dark) {
+            background-color: var(--color-background-card-alt);
         }
 
         @media (width > 486px) {
@@ -66,7 +61,7 @@
         }
 
         p {
-            color: var(--text-color-accent);
+            color: var(--text-color-highlight);
             max-width: 40rem;
         }
 
@@ -74,6 +69,10 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+
+            .sub-title {
+                color: var(--alert-color);
+            }
         }
 
         section {

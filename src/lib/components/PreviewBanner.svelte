@@ -62,13 +62,9 @@
             svg {
                 path {
                     @media (prefers-color-scheme: dark) {
-                        fill: var(--background-color-accent);
+                        fill: var(--alert-color);
                     }
                 }
-            }
-
-            @media (prefers-color-scheme: dark) {
-                background-color: var(--background-color-secondary);
             }
         }
 
@@ -77,16 +73,13 @@
             align-items: center;
             gap: 0.5rem;
             margin-block: 0.5rem;
+            color: var(--alert-color);
 
             .deco-dot {
                 width: 3px;
                 height: 3px;
                 border-radius: 50%;
-                background-color: var(--background-color-accent);
-
-                @media (prefers-color-scheme: dark) {
-                    background-color: var(--background-color-secondary);
-                }
+                background-color: var(--alert-color);
             }
 
             .sub-title {
@@ -96,17 +89,11 @@
 
         p {
             font-family: "Inter", Arial, Helvetica, sans-serif;
-            color: var(--text-color-accent);
             max-width: 50rem;
 
             span {
                 font-family: var(--font-heading);
                 font-weight: bold;
-                color: var(--text-color-primary);
-
-                @media (prefers-color-scheme: dark) {
-                    color: var(--text-color-secondary);
-                }
             }
         }
     }
