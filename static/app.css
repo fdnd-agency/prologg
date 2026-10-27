@@ -102,6 +102,7 @@
         --alert-color: var(--color-coral);
 
         --filter-shadow-card: drop-shadow(0px 0px 15px #4848489f);
+        --border-usp: 1px solid color-mix(in srgb, var(--white) 25%, transparent);
     }
 }
 

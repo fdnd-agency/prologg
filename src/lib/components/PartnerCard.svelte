@@ -3,7 +3,7 @@
 </script>
 
 <article>
-    <img src={icon} alt="" width="24" height="24" />
+    <span class="icon" style="--icon: url({icon})"></span>
     <h3>{label}</h3>
     <p>{text}</p>
 </article>
@@ -24,6 +24,13 @@
         line-height: 1.5;
         filter: var(--filter-shadow-card);
 
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        background-color: var(--alert-color);
+        mask: var(--icon) center / contain no-repeat;
     }
 
     h3 {

@@ -42,7 +42,7 @@
             }
 
             dd {
-                color: var(--text-color-accent);
+                color: var(--text-color-higlight);
                 margin-block: 0.5rem 1rem;
                 padding-bottom: 0.5rem;
 
