@@ -84,7 +84,7 @@
                 type="collapse"
                 title="Toggles menu"
                 --padding="22px"
-                --color="#030C16"
+                --color="var(--color-text-primary)"
                 --layer-width="20px"
                 --layer-height="3px"
                 --layer-spacing="3px"
@@ -127,7 +127,7 @@
 
         a {
             text-decoration: none;
-            color: var(--color-tex-primary);
+            color: var(--color-text-primary);
         }
     }
 
@@ -159,6 +159,12 @@
         inset: 0;
         z-index: 10;
 
+        @media (prefers-color-scheme: dark) {
+            .close-button img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
         .nav-link {
             transition: 0.1s ease-in-out;
 
@@ -167,20 +173,12 @@
                 height: 1px;
                 background-color: var(--background-color-accent);
                 transition: all 0.3s ease;
-
-                @media (prefers-color-scheme: dark) {
-                    background-color: var(--text-color-secondary);
-                }
             }
 
             &:hover {
                 text-decoration: underline;
-                color: var(--text-color-primary);
+                color: var(--text-color-accent);
                 scale: 1.02;
-
-                @media (prefers-color-scheme: dark) {
-                    color: var(--text-color-secondary);
-                }
 
                 @media (prefers-reduced-motion: no-preference) {
                     text-decoration: unset;
