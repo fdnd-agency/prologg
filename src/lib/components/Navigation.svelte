@@ -1,5 +1,6 @@
 <script>
     import fullLogo from "$lib/assets/full-logo.svg";
+    import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
     import { Hamburger } from "svelte-hamburgers";
     import Button from "$lib/components/Button.svelte";
@@ -56,13 +57,19 @@
 <header class:visible={isVisible} class="nav-bar">
     <div class="logo">
         <a class="logo-link" href="/">
-            <img
-                src={fullLogo}
-                alt="Prologg logo"
-                width="100"
-                height="70"
-                fetchpriority="high"
-            />
+                <picture>
+        <source
+            srcset={fullLogoWhite}
+            media="(prefers-color-scheme: dark)"
+        />
+        <img
+            src={fullLogo}
+            alt="Prologg logo"
+            width="100"
+            height="70"
+            fetchpriority="high"
+        />
+    </picture>
         </a>
 
         <div class="mobile-menu">
@@ -119,11 +126,7 @@
 
         a {
             text-decoration: none;
-            color: var(--text-color-primary);
-
-            @media (prefers-color-scheme: dark) {
-                color: var(--text-color-secondary);
-            }
+            color: var(--color-tex-primary);
         }
     }
 

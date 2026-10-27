@@ -42,11 +42,8 @@
     p {
         max-width: 50rem;
         text-align: center;
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--background-color-primary);
-        }
     }
+    
     h1 {
         font-family: var(--font-heading);
         font-size: clamp(2rem, 0rem + 8vw, 4.5rem);

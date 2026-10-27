@@ -24,11 +24,7 @@
 
         &.hero-primary {
             color: var(--text-color-secondary);
-            background-color: var(--background-color-accent);
-
-            @media (prefers-color-scheme: dark) {
-                background-color: var(--background-color-primary);
-            }
+            background-color: var(--color-background-button);
         }
 
         &.hero-primary {
@@ -58,7 +54,7 @@
 
         &.hero-secondary {
             color: var(--text-color-primary);
-            background-color: var(--background-color-primary);
+            background-color: var(--color-background-button-alt);
 
             @media (any-pointer: fine) and (width > 280px) {
                 &:hover {
@@ -80,29 +76,18 @@
                     }
                 }
             }
-
-            @media (prefers-color-scheme: dark) {
-                background-color: #134886;
-            }
         }
 
         &.nav {
             padding: 10px 16px;
             font-size: 12px;
-            background-color: var(--background-color-accent);
             color: var(--text-color-secondary);
-
-            @media (prefers-color-scheme: dark) {
-                background-color: var(--background-color-secondary);
-                color: var(--text-color-primary);
-            }
+            background-color: var(--color-background-button);
         }
 
         &.footer {
             align-items: center;
             justify-content: center;
-            color: var(--text-color-primary);
-            background-color: var(--white);
 
             @media (width > 280px) {
                 &::after {
@@ -120,7 +105,7 @@
             min-height: 52px;
             margin: 32px auto 0;
             padding: 12px 16px;
-            background-color: var(--background-color-primary);
+            background-color: var(--color-background-button-light);
             color: #171717;
             font-size: 16px;
             font-weight: 600;

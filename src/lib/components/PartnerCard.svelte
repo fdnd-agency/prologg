@@ -10,7 +10,7 @@
 
 <style>
     article {
-        background-color: var(--white);
+        background-color: var(--color-background-card);
         width: 100%;
         max-width: 300px;
         padding: 1rem;
@@ -24,9 +24,6 @@
         line-height: 1.5;
         filter: var(--filter-shadow-card);
 
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-primary);
-        }
     }
 
     h3 {

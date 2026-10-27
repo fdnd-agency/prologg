@@ -41,29 +41,43 @@
 }
 
 :root {
-    --text-color-primary: hsl(212 76% 5%);
-    --text-color-secondary: hsl(225 100% 98%);
-    --text-color-accent: hsl(240 6% 29%);
+
+    /* Colors (niet direct gebruiken in componenten) */
+    --color-navy-darkest: hsl(212 76% 5%); 
+    --color-navy-dark: hsl(212 76% 10%);
+    --color-blue-light: hsl(213 78% 79%);
+    --color-blue-lightest: hsl(213 80% 94%);
+    --color-coral: hsl(9 100% 73%);    
+    --color-terracotta: hsl(6 61% 41%);
+    --white: #fff;
+
+    /* Background colors */
     --background-color-primary: hsl(212 76% 95%);
     --background-color-secondary: hsl(225 100% 99%);
-    --white: #fff;
-    --background-color-accent: var(--text-color-primary);
-    --alert-color: hsl(6 61% 41%);
+    --color-background-accent: var(--color-navy-darkest);
+    --color-background-card: var(--white);
+    --color-background-card-alt: var(--background-color-primary);
+    --color-background-button: var(--color-navy-darkest);
+    --color-background-button-alt: var(--background-color-primary);
+    --color-background-button-light: var(--white);
 
-    --card-background: var(--white);
-    --card-background-alt: var(--background-color-primary);
+    --text-color-primary: var(--color-navy-darkest);
+    --text-color-secondary: hsl(225 100% 98%);
+    --text-color-accent: hsl(240 6% 29%);
+    --text-color-button: var(--color-navy-darkest);
+
     --card-text: var(--text-color-primary);
+    --alert-color: var(--color-terracotta);
 
     /* FONTS */
     --font-heading: 'Space Grotesk', sans-serif; 
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
-
-    --max-width: 1200px;
-
     --border-usp: 1px solid color-mix(in srgb, var(--text-color-primary) 25%, transparent);
     
+    --max-width: 1200px;
+
     /* SPACINGS */
     --space-xl: 2rem;
 	--space-lg: 1.5rem;
@@ -74,53 +88,27 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-color-primary: hsl(212 76% 95%);
-        --text-color-secondary: hsl(212 76% 5%);
-        --text-color-accent: hsl(240 6% 29%);
-        --background-color-primary: hsl(212 76% 95%);
-        --background-color-secondary: hsl(212 76% 5%);
-        --background-color-accent: hsl(213, 57%, 92%);
-        --alert-color: hsl(6 61% 41%);
+        --background-color-primary: var(--color-navy-dark);
+        --background-color-secondary: var(--color-navy-darkest);
+        --color-background-accent: var(--color-blue-light);
+        --color-background-card: var(--color-navy-darkest);
+        --color-background-card-alt: var(--color-navy-dark);
+        --color-background-button: var(--color-blue-light);
+        --color-background-button-alt: var(--white);
         
-        --card-background: hsl(217 56% 38%);
-        --card-background-alt: var(--alert-color);
-        --card-text: var(--white);
-    
+        --text-color-secondary: var(--color-navy-darkest);
+        --color-text-primary: var(--white);
+        --color-text-secondary: var(--color-blue-lightest);
+        --alert-color: var(--color-coral);
+
         --filter-shadow-card: drop-shadow(0px 0px 15px #4848489f);
-    }
-}
-
-[id] {
-    scroll-margin-top: 5rem;
-
-    &:nth-of-type(2) {
-        scroll-margin-top: 6rem;
-
-        @media (width >= 768px) {
-            scroll-margin-top: 25rem;
-        }
-    }
-}
-
-@media (width >= 1024px) {
-    [id] {
-        scroll-margin-top: 8rem;
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    html {
-        scroll-behavior: smooth;
     }
 }
 
 body {
     font-family: 'Inter', system-ui, sans-serif;
     background-color: var(--background-color-primary);
-
-    @media (prefers-color-scheme: dark)  {
-        background-color: #121D26;
-    }
+    color: var(--color-text-primary);
 }
 
 main {
@@ -136,7 +124,7 @@ h2 {
     margin-block: 0.5rem;
     font-size: clamp(1.5rem, 1.2955rem + 0.9091vw, 2rem);
     line-height: 0.95;
-    color: var(--text-color-primary);
+    color: var(--color-text-primary);
 }
 
 hgroup span {
@@ -161,6 +149,30 @@ section {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+[id] {
+    scroll-margin-top: 5rem;
+
+    &:nth-of-type(2) {
+        scroll-margin-top: 6rem;
+
+        @media (width >= 768px) {
+            scroll-margin-top: 25rem;
+        }
+    }
+}
+
+@media (width >= 1024px) {
+    [id] {
+        scroll-margin-top: 8rem;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
     }
 }
 
