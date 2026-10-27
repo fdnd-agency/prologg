@@ -42,6 +42,7 @@
     p {
         max-width: 50rem;
         text-align: center;
+        color: var(--text-color-big);
     }
     
     h1 {
