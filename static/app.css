@@ -98,6 +98,7 @@
         --color-background-button-alt: var(--white);
         
         --text-color-secondary: var(--color-navy-darkest);
+        --text-color-accent: var(--color-blue-lightest);
         --color-text-primary: var(--white);
         --color-text-secondary: var(--color-blue-lightest);
         --alert-color: var(--color-coral);

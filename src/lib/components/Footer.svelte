@@ -1,5 +1,6 @@
 <script>
 	import fullLogo from "$lib/assets/full-logo.svg";
+    import fullLogoWhite from "$lib/assets/full-logo-white.svg";
 	import Button from "$lib/components/Button.svelte";
 
 	const navigationLinks = [
@@ -14,7 +15,22 @@
 	<div class="footer-inner">
 		<div class="footer-brand">
 			<a href="/" class="footer-logo">
-				<img src={fullLogo} alt="Prologg" />
+            	<picture>
+                	<source
+                    	srcset={fullLogoWhite}
+                    	media="(prefers-color-scheme: dark)"
+                	/>
+            
+                	<img
+                    	src={fullLogo}
+                    	alt="Prologg logo"
+						class="footer-logo"
+                    	width="100"
+                    	height="70"
+                    	fetchpriority="low"
+						loading="lazy"
+                	/>
+            	</picture>
 			</a>
 
 			<h2 class="brand-title">Prologg for Legal</h2>
@@ -67,17 +83,9 @@
 
 <style>
 	.site-footer {
-		--_link-color: var(--text-color-primary);
-		--_underline-color: var(--background-color-accent);
-
 		container-type: inline-size;
 		background-color: var(--background-color-primary);
-		color: var(--text-color-primary);
-
-		@media (prefers-color-scheme: dark) {
-			--_link-color: var(--text-color-secondary);
-			--_underline-color: var(--text-color-secondary);
-		}
+		color: var(--color-text-primary);
 	}
 
 	.footer-inner,
@@ -144,7 +152,7 @@
 
 	.brand-description {
 		margin: 0;
-		color: var(--text-color-accent);
+		color: var(--color-text-primary);
 		font-size: 0.9rem;
 		line-height: 1.5;
 	}
@@ -164,7 +172,7 @@
 		display: block;
 		width: fit-content;
 		max-width: 100%;
-		color: var(--_link-color);
+		color: var(--color-text-primary);
 		font-size: 0.9rem;
 		transform-origin: left center;
 
@@ -172,7 +180,7 @@
 			display: block;
 			width: 0%;
 			height: 1px;
-			background-color: var(--_underline-color);
+			background-color: var(--color-text-primary);
 		}
 
 		&:hover {
@@ -204,7 +212,7 @@
 			overflow-wrap: anywhere;
 
 			a {
-				color: var(--text-color-accent);
+				color: var(--color-text-primary);
 				font-size: 0.9rem;
 
 				&:hover {
@@ -220,8 +228,7 @@
 
 	.footer-bottom {
 		padding: 0.9rem 1.25rem;
-		border-top: 1px solid
-			color-mix(in srgb, var(--text-color-accent) 20%, transparent);
+		border-top: var(--border-usp);
 
 		p {
 			margin: 0;

@@ -57,19 +57,20 @@
 <header class:visible={isVisible} class="nav-bar">
     <div class="logo">
         <a class="logo-link" href="/">
-                <picture>
-        <source
-            srcset={fullLogoWhite}
-            media="(prefers-color-scheme: dark)"
-        />
-        <img
-            src={fullLogo}
-            alt="Prologg logo"
-            width="100"
-            height="70"
-            fetchpriority="high"
-        />
-    </picture>
+            <picture>
+                <source
+                    srcset={fullLogoWhite}
+                    media="(prefers-color-scheme: dark)"
+                />
+            
+                <img
+                    src={fullLogo}
+                    alt="Prologg logo"
+                    width="100"
+                    height="70"
+                    fetchpriority="high"
+                />
+            </picture>
         </a>
 
         <div class="mobile-menu">

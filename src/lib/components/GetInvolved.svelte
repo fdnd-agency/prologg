@@ -25,11 +25,8 @@
     section {
         padding: 1rem;
         color: var(--text-color-primary);
+        background-color: var(--background-color-secondary);
         display: grid;
-
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-secondary);
-        }
 
         @media (width >= 768px) {
             padding: 3.5rem 3rem;
