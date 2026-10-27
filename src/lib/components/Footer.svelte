@@ -41,7 +41,10 @@
 			<h2 class="footer-heading">Contact</h2>
 
 			<address>
-				<a href="mailto:frank.kloos@fonetic.studio">
+				<a
+					href="mailto:frank.kloos@fonetic.studio"
+					class="footer-link"
+				>
 					frank.kloos@fonetic.studio
 				</a>
 			</address>
@@ -189,15 +192,6 @@
 			margin-bottom: 1.1rem;
 			font-style: normal;
 			overflow-wrap: anywhere;
-
-			a {
-				color: var(--text-color-accent);
-				font-size: 0.9rem;
-
-				&:hover {
-					text-decoration: underline;
-				}
-			}
 		}
 	}
 
