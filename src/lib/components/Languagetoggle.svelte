@@ -50,7 +50,7 @@
         &::after {
             content: "EN";
             transition: all 0.3s ease;
-            background-color: var(--white);
+            color: var(--text-color-primary);
             margin: 0.25rem;
             padding: 0.25rem;
             border-radius: 6px;
@@ -58,7 +58,7 @@
 
         &::before {
             content: "NL";
-            color: var(--color-text-primary);
+            color: var(--background-color-dark);
             background-color: var(--background-color-primary);
             transition: all 0.3s ease;
             margin: 0.25rem;
@@ -70,20 +70,16 @@
         &:checked {
             &::after {
                 background-color: var(--background-color-primary);
-                            color: var(--color-text-primary);
+                color: var(--color-text-primary);
                 transition: all 0.3s ease;
                 font-weight: bold;
             }
 
             &::before {
                 background-color: var(--white);
-                color: var(--text-color-secondary);
+                color: var(--text-color-primary);
                 transition: all 0.3s ease;
                 font-weight: 400;
-
-                @media(prefers-color-scheme: light) {
-                    color: var(--navy-darkest);  
-                }
             }
         }
     }

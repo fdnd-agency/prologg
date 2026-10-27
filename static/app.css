@@ -41,6 +41,7 @@
 }
 
 :root {
+    color-scheme: light dark;
 
     /* Colors (niet direct gebruiken in componenten) */
     --color-navy-darkest: hsl(212 76% 5%); 
