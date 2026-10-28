@@ -24,11 +24,7 @@
 
         &.hero-primary {
             color: var(--text-color-secondary);
-            background-color: var(--background-color-accent);
-
-            @media (prefers-color-scheme: dark) {
-                background-color: var(--background-color-primary);
-            }
+            background-color: var(--color-background-button);
         }
 
         &.hero-primary {
@@ -58,7 +54,7 @@
 
         &.hero-secondary {
             color: var(--text-color-primary);
-            background-color: var(--background-color-primary);
+            background-color: var(--color-background-button-alt);
 
             @media (any-pointer: fine) and (width > 280px) {
                 &:hover {
@@ -74,35 +70,20 @@
                     content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 12h16m-7-7l7 7l-7 7'/%3E%3C/svg%3E");
                     transform: rotate(90deg) translateY(2px);
                     transition: all 0.2s ease;
-
-                    @media (prefers-color-scheme: dark) {
-                        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 12h16m-7-7l7 7l-7 7'/%3E%3C/svg%3E");
-                    }
                 }
-            }
-
-            @media (prefers-color-scheme: dark) {
-                background-color: #134886;
             }
         }
 
         &.nav {
             padding: 10px 16px;
             font-size: 12px;
-            background-color: var(--background-color-accent);
             color: var(--text-color-secondary);
-
-            @media (prefers-color-scheme: dark) {
-                background-color: var(--background-color-secondary);
-                color: var(--text-color-primary);
-            }
+            background-color: var(--color-background-button);
         }
 
         &.footer {
             align-items: center;
             justify-content: center;
-            color: var(--text-color-primary);
-            background-color: var(--white);
 
             @media (width > 280px) {
                 &::after {
@@ -120,7 +101,7 @@
             min-height: 52px;
             margin: 32px auto 0;
             padding: 12px 16px;
-            background-color: var(--background-color-primary);
+            background-color: var(--color-background-button-light);
             color: #171717;
             font-size: 16px;
             font-weight: 600;

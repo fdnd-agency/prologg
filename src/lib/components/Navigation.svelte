@@ -1,5 +1,6 @@
 <script>
     import fullLogo from "$lib/assets/full-logo.svg";
+    import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
     import { Hamburger } from "svelte-hamburgers";
     import Button from "$lib/components/Button.svelte";
@@ -56,13 +57,20 @@
 <header class:visible={isVisible} class="nav-bar">
     <div class="logo">
         <a class="logo-link" href="/">
-            <img
-                src={fullLogo}
-                alt="Prologg logo"
-                width="100"
-                height="70"
-                fetchpriority="high"
-            />
+            <picture>
+                <source
+                    srcset={fullLogoWhite}
+                    media="(prefers-color-scheme: dark)"
+                />
+            
+                <img
+                    src={fullLogo}
+                    alt="Prologg logo"
+                    width="100"
+                    height="70"
+                    fetchpriority="high"
+                />
+            </picture>
         </a>
 
         <div class="mobile-menu">
@@ -76,7 +84,7 @@
                 type="collapse"
                 title="Toggles menu"
                 --padding="22px"
-                --color="#030C16"
+                --color="var(--color-text-primary)"
                 --layer-width="20px"
                 --layer-height="3px"
                 --layer-spacing="3px"
@@ -119,11 +127,7 @@
 
         a {
             text-decoration: none;
-            color: var(--text-color-primary);
-
-            @media (prefers-color-scheme: dark) {
-                color: var(--text-color-secondary);
-            }
+            color: var(--color-text-primary);
         }
     }
 
@@ -155,6 +159,12 @@
         inset: 0;
         z-index: 10;
 
+        @media (prefers-color-scheme: dark) {
+            .close-button img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
         .nav-link {
             transition: 0.1s ease-in-out;
 
@@ -163,24 +173,15 @@
                 height: 1px;
                 background-color: var(--background-color-accent);
                 transition: all 0.3s ease;
-
-                @media (prefers-color-scheme: dark) {
-                    background-color: var(--text-color-secondary);
-                }
             }
 
-            @media (any-pointer: fine) {
-                &:hover {
-                    text-decoration: underline;
-                    color: var(--text-color-primary);
-                    scale: 1.02;
+            &:hover {
+                text-decoration: underline;
+                color: var(--text-color-accent);
+                scale: 1.02;
 
-                    @media (prefers-color-scheme: dark) {
-                        color: var(--text-color-secondary);
-                    }
-
-                    @media (prefers-reduced-motion: no-preference) {
-                        text-decoration: unset;
+                @media (prefers-reduced-motion: no-preference) {
+                    text-decoration: unset;
 
                         .underline-deco {
                             width: 100%;

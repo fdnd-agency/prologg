@@ -23,15 +23,10 @@
 
 <style>
     section {
-        background-color: var(--background-color-secondary);
         padding: 1rem;
         color: var(--text-color-primary);
+        background-color: var(--background-color-secondary);
         display: grid;
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--card-text);
-            background-color: var(--background-color-secondary);
-        }
 
         @media (width >= 768px) {
             padding: 3.5rem 3rem;
@@ -40,6 +35,7 @@
         div {
             max-width: var(--max-width);
             justify-self: center;
+            color: var(--text-color-primary);
         }
     }
 
@@ -57,15 +53,15 @@
         padding: 2rem 1.5rem;
         border-radius: 1rem;
         filter: var(--filter-shadow-card);
+        color: var(--color-text-primary);
     }
 
     li:first-child {
-        background-color: var(--card-background);
-        color: var(--card-text);
+        background-color: var(--color-background-card);
     }
 
     li:last-child {
-        background-color: var(--card-background-alt);
+        background-color: var(--color-background-card-alt);
     }
 
     .number {
@@ -78,10 +74,6 @@
 
     li .number {
         color: var(--alert-color);
-
-        @media (prefers-color-scheme: dark) {
-            color: var(--white);
-        }
     }
 
     h3 {

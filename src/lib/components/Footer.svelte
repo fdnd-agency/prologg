@@ -9,7 +9,22 @@
 	<div class="footer-inner">
 		<div class="footer-brand">
 			<a href="/" class="footer-logo">
-				<img src={fullLogo} alt="Prologg" />
+            	<picture>
+                	<source
+                    	srcset={fullLogoWhite}
+                    	media="(prefers-color-scheme: dark)"
+                	/>
+            
+                	<img
+                    	src={fullLogo}
+                    	alt="Prologg logo"
+						class="footer-logo"
+                    	width="100"
+                    	height="70"
+                    	fetchpriority="low"
+						loading="lazy"
+                	/>
+            	</picture>
 			</a>
 
 			<h2 class="brand-title">{title}</h2>
@@ -63,11 +78,7 @@
 	.site-footer {
 		container-type: inline-size;
 		background-color: var(--background-color-primary);
-		color: var(--text-color-primary);
-
-		@media (prefers-color-scheme: dark) {
-			color: var(--text-color-secondary);
-		}
+		color: var(--color-text-primary);
 	}
 
 	a {
@@ -125,6 +136,8 @@
 	}
 
 	.brand-description {
+		margin: 0;
+		color: var(--color-text-primary);
 		display: flex;
 		flex-direction: column;
 		color: var(--text-color-accent);
@@ -152,7 +165,7 @@
 		display: block;
 		width: fit-content;
 		max-width: 100%;
-		color: inherit;
+		color: var(--color-text-primary);
 		font-size: 0.9rem;
 		transform-origin: left center;
 
@@ -160,6 +173,7 @@
 			display: block;
 			width: 100%;
 			height: 1px;
+			background-color: var(--color-text-primary);
 			background-color: currentColor;
 			content: '';
 			transform: scaleX(0);
@@ -198,8 +212,7 @@
 
 	.footer-bottom {
 		padding: 0.9rem 1.25rem;
-		border-top: 1px solid
-			color-mix(in srgb, var(--text-color-accent) 20%, transparent);
+		border-top: var(--border-usp);
 
 		p {
 			color: var(--text-color-accent);

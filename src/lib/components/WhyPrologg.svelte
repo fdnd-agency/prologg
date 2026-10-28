@@ -24,7 +24,6 @@
 		container: why-prologg / inline-size;
 		inline-size: 100%;
 		min-inline-size: 0;
-		color: var(--text-color-primary);
 		overflow-wrap: anywhere;
 	}
 

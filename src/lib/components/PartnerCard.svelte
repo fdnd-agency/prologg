@@ -3,14 +3,14 @@
 </script>
 
 <article>
-    <img src={icon} alt="" width="24" height="24" />
+    <span class="icon" style="--icon: url({icon})"></span>
     <h3>{label}</h3>
     <p>{text}</p>
 </article>
 
 <style>
     article {
-        background-color: var(--white);
+        background-color: var(--color-background-card);
         width: 100%;
         max-width: 300px;
         padding: 1rem;
@@ -23,10 +23,13 @@
         gap: 1rem;
         line-height: 1.5;
         filter: var(--filter-shadow-card);
+    }
 
-        @media (prefers-color-scheme: dark) {
-            background-color: var(--background-color-primary);
-        }
+    .icon {
+        width: 24px;
+        height: 24px;
+        background-color: var(--alert-color);
+        mask: var(--icon) center / contain no-repeat;
     }
 
     h3 {
