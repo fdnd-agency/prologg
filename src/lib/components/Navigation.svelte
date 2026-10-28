@@ -197,7 +197,7 @@
                 border-radius: 5px;
             }
         }
-    }
+    
 
     .open {
         display: flex;

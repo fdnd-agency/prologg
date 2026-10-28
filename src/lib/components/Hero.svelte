@@ -58,6 +58,7 @@
     }
     .button-wrapper {
         display: flex;
+        flex-direction: row-reverse;
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
