@@ -28,3 +28,9 @@ In deze powerpoint wordt uitgelegd wat een Pull Request is en hoe je deze gebrui
 
 ### Teamcanvas
 <img width="874" height="619" alt="Screenshot 2026-10-05 at 10 36 25" src="https://github.com/user-attachments/assets/90977b8e-f919-4f47-b429-00e3791bba96" />
+
+
+### Definition of Ready
+- As a **[type of user]** , I want **[some goal / action]**, so that **[some value / benefit]**
+-Estimated Effort
+ 
