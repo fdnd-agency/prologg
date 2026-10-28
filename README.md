@@ -1,70 +1,92 @@
 # Prologg
 
-## Inhoudsopgave
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Licentie](#licentie)
 
-## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+## Table of Contents
 
-**Prologg is een startup die strijd tegen arbeidsuitbuiting. **
-Dit project bestaat uit een statische website gericht op crowdfunding en klantenwerving en een web-app die gebruikt wordt in de praktijk door mensen die uitgebuit worden. 
-
-De website is informatief, zakelijk en gericht op advocatenkantoren met als doel om een demo aan te vragen.
-
-De web-app is functioneel, responsief en gericht op mensen die uitgebuit worden in het werkveld met als doel snel en gemakkelijk bewijslast te verzamelen voor een mogelijke rechtzaak.
-
-[Live link - informatieve website](https://prologglaw.netlify.app/)
-
-<img width="2278" height="4164" alt="screenshots" src="https://github.com/user-attachments/assets/405bf186-2682-4a70-a916-4550b571a145" />
+  * [Description](#description)
+  * [Usage](#usage)
+  * [Features](#features)
+  * [Installation](#installation)
+  * [License](#license)
 
 
 
-## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+## Description
+<!-- Description briefly explains what kind of project this is and what you made -->
+<!-- Add a nice poster visual 📸 -->
+<!-- Add a link to GitHub Pages 🌐 -->
 
+**Prologg is a startup fighting labor exploitation.**
+This project consists of a static website focused on crowdfunding and customer acquisition, and a web app used in practice by people who are being exploited.
+
+The website is informational, professional, and aimed at law firms, with the goal of getting them to request a demo.
+
+The web app is functional, responsive, and aimed at people who are being exploited in the workplace, with the goal of helping them quickly and easily collect evidence for a potential court case.
+
+[Live link - informational website](https://prologglaw.netlify.app/)
+
+<img width="2278" height="4164" alt="screenshots of the website aimed at lawyers" src="https://github.com/user-attachments/assets/405bf186-2682-4a70-a916-4550b571a145" />
+
+
+
+## Usage
+<!-- Usage covers the user story, how it works, and what you can do with it. -->
 ### Language toggle
-Een van de hoofd functionaliteiten is de language toggle. Het is van belang dat de website voor zowel Nederlandstalige als buitenlandse advocaten en belangstelling hebbende goed te lezen valt. De taal van de website staat standaard in het Nederlands maar is met 1 druk op de knop om te zetten naar Engels. De knop staat altijd in de navigatie balk, op mobiel is die binnen het hamburger menu te vinden.
+One of the main features is the language toggle. It is important that the website is easy to read for both Dutch-speaking and foreign lawyers and other interested parties. The website's language defaults to Dutch, but it can be switched to English with a single button press. The button is always in the navigation bar; on mobile, you'll find it inside the hamburger menu.
 
 <img width="1479" height="78" alt="Screenshot 2026-10-27 at 11 45 57" src="https://github.com/user-attachments/assets/67f8f070-b558-4718-8eb2-fc0955cfd8b8" />
 <img width="358" height="681" alt="Screenshot 2026-10-27 at 11 46 14" src="https://github.com/user-attachments/assets/e54e771f-18a8-4ce0-ba15-85e7ff6385ed" />
 
-
-
 ### Markdown & YAML
-Het is van belang dat de website gemakkelijk te onderhouden is en content zonder al te veel technische kennis aan te passen is. 
-Wij hebben ervoor gekozen om de beheerder de content te laten schrijven in Markdown. Deze content laden wij in de site met behulp van YAML.
+It is important that the website is easy to maintain and that its content can be edited without much technical knowledge.
+We chose to let the maintainer write the content in Markdown. We load this content into the site using YAML.
 
-De content staat in 1 bestand die opgedeeld is in de secties van de website. Wel is er nog een kopie van het bestand in het Engels om de Language toggle mogelijk te maken.
-Als je besluit de content van de website aan te passen, vergeet dan niet ook het Engelstalige bestand aan te passen.
+The content lives in a single file, divided into the sections of the website. There is also a copy of this file in English, which makes the language toggle possible.
+If you decide to change the website's content, don't forget to update the English file as well.
 
-**Note:** Verander niet de namen van de secties, anders wordt de content niet meer ingeladen.
-
+**Note:** Do not change the names of the sections, otherwise the content will no longer be loaded.
 
 ### Media features
-Een andere functionaliteit die in de website staat is een darkmode. Hierbij gebruiken wij een media feature `@media (prefers-color-scheme: dark)` om mee te gaan met de behoeftes van de gebruiker.
+Another feature of the website is a dark mode. For this, we use the media feature `@media (prefers-color-scheme: dark)` to follow the user's preferences.
 
-Ook gebruiken wij de media feature `@media (prefers-reduced-motion: no-preference)` bij de animatie van de navigatiebar om te controleren of de gebruiker wel animaties wilt. En `@media (any-pointer: fine)` bij hover effect om te controleren of de gebruiker daadwerkelijk een hover effect heeft (hovers gaan anders aan op klik en dat willen wij niet).
+We also use the media feature `@media (prefers-reduced-motion: no-preference)` for the navigation bar animation, to check whether the user actually wants animations. And we use `@media (any-pointer: fine)` for hover effects, to check whether the user's device actually supports hovering (otherwise hover effects trigger on tap, which we don't want).
 
-
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
-Deze website werkt op Sveltekit, dit is een component based framework. Omdat deze website maar uit een pagina bestaat hebben wij er voor gekozen deze pagina met een static adapter te laten runnen. Dat wil zeggen dat de website vooraf al gegenereerd wordt en er dus geen Node.js nodig is om de HTML steeds te genereren.
-
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
-Stap 1: **Fork de repo**
-Stap 2: **Clone de code**
-Stap 3: **npm install**
-Stap 4: **npm run dev**
+### Site navigation
+Since this is a one page website, the navigation links use anchor points in the website to go to the correct section. Combined with an animation, this results into a great user experience.
 
 
-## Licentie
+
+## Features
+<!-- Features covers which techniques were used and how. What is the HTML structure? What are the most important things in CSS? What was done with JS and how? Maybe you did something with Node.js, or used a framework or library? -->
+This website runs on SvelteKit, a component-based framework. Because the website consists of only one page, we chose to run it with a static adapter. This means the website is generated in advance, so Node.js isn't needed to generate the HTML on every request.
+
+
+
+## Design choices
+The website is designed with the focus on professionalism and trust. The main colors we used are different shades of blue.
+Blue emits trust, professionalism, security and stability.
+
+
+
+## Want to add or something in the project?
+Read our guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+
+
+## Installation
+<!-- Installation explains how another developer can work on your repo -->
+Step 1: **Fork the repo**
+Step 2: **Clone the code**
+Step 3: **npm install**
+Step 4: **npm run dev**
+
+
+
+## Sources
+
+
+
+
+## License
 This project is licensed under the terms of the [MIT license](./LICENSE).
-
