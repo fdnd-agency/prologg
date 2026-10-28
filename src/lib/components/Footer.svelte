@@ -1,31 +1,37 @@
 <script>
-	import fullLogo from '$lib/assets/full-logo.svg'
-	import Button from '$lib/components/Button.svelte'
-	import fullLogoWhite from '$lib/assets/full-logo-white.svg'
+	import fullLogo from "$lib/assets/full-logo.svg";
+	import Button from "$lib/components/Button.svelte";
+	import fullLogoWhite from "$lib/assets/full-logo-white.svg";
 
-	let { links = [], title, descriptionFirst, descriptionSecond } = $props()
+	let {
+		button,
+		links = [],
+		title,
+		descriptionFirst,
+		descriptionSecond,
+	} = $props();
 </script>
 
 <footer class="site-footer">
 	<div class="footer-inner">
 		<div class="footer-brand">
 			<a href="/" class="footer-logo">
-            	<picture>
-                	<source
-                    	srcset={fullLogoWhite}
-                    	media="(prefers-color-scheme: dark)"
-                	/>
-            
-                	<img
-                    	src={fullLogo}
-                    	alt="Prologg logo"
+				<picture>
+					<source
+						srcset={fullLogoWhite}
+						media="(prefers-color-scheme: dark)"
+					/>
+
+					<img
+						src={fullLogo}
+						alt="Prologg logo"
 						class="footer-logo"
-                    	width="100"
-                    	height="70"
-                    	fetchpriority="low"
+						width="100"
+						height="70"
+						fetchpriority="low"
 						loading="lazy"
-                	/>
-            	</picture>
+					/>
+				</picture>
 			</a>
 
 			<h2 class="brand-title">{title}</h2>
@@ -52,10 +58,7 @@
 			<h2 class="footer-heading">Contact</h2>
 
 			<address>
-				<a
-					href="mailto:frank.kloos@fonetic.studio"
-					class="footer-link"
-				>
+				<a href="mailto:frank.kloos@fonetic.studio" class="footer-link">
 					frank.kloos@fonetic.studio
 				</a>
 			</address>
@@ -64,7 +67,7 @@
 				<Button
 					href="mailto:frank.kloos@fonetic.studio"
 					classes="nav"
-					content="Vraag kantoordemo aan"
+					content={button}
 				/>
 			</div>
 		</div>
@@ -176,7 +179,7 @@
 			height: 1px;
 			background-color: var(--color-text-primary);
 			background-color: currentColor;
-			content: '';
+			content: "";
 			transform: scaleX(0);
 			transform-origin: left;
 		}

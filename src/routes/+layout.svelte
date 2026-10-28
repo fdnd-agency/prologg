@@ -1,14 +1,14 @@
 <script>
-	import favicon from '$lib/assets/favicon.svg'
-	import Navigation from '$lib/components/Navigation.svelte'
-	import Footer from '$lib/components/Footer.svelte'
+	import favicon from "$lib/assets/favicon.svg";
+	import Navigation from "$lib/components/Navigation.svelte";
+	import Footer from "$lib/components/Footer.svelte";
 
-	import { lang } from '$lib/lang.svelte.js'
-	import { content } from '$lib/content.js'
+	import { lang } from "$lib/lang.svelte.js";
+	import { content } from "$lib/content.js";
 
-	let { children } = $props()
+	let { children } = $props();
 
-	const c = $derived(content[lang.current])
+	const c = $derived(content[lang.current]);
 </script>
 
 <svelte:head>
@@ -17,4 +17,4 @@
 
 <Navigation {...c.navigation} />
 {@render children()}
-<Footer links={c.navigation.links} {...c.footer} />
+<Footer links={c.navigation.links} button={c.navigation.button} {...c.footer} />

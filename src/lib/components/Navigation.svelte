@@ -12,7 +12,7 @@
         mobileMenuOpen = false;
     }
 
-    let { links = [] } = $props();
+    let { button, links = [] } = $props();
 
     let isVisible = $state(true);
 
@@ -62,7 +62,7 @@
                     srcset={fullLogoWhite}
                     media="(prefers-color-scheme: dark)"
                 />
-            
+
                 <img
                     src={fullLogo}
                     alt="Prologg logo"
@@ -77,7 +77,7 @@
             <Button
                 href="mailto:frank.kloos@fonetic.studio"
                 classes="nav"
-                content="Vraag demo aan"
+                content={button}
             />
             <Hamburger
                 bind:open={mobileMenuOpen}
@@ -110,7 +110,7 @@
             <Button
                 href="mailto:frank.kloos@fonetic.studio"
                 classes="nav"
-                content="Vraag demo aan"
+                content={button}
             />
         </nav>
     </div>
@@ -183,21 +183,20 @@
                 @media (prefers-reduced-motion: no-preference) {
                     text-decoration: unset;
 
-                        .underline-deco {
-                            width: 100%;
-                            transition: all 0.3s ease;
-                        }
+                    .underline-deco {
+                        width: 100%;
+                        transition: all 0.3s ease;
                     }
                 }
             }
-
-            &:focus-visible {
-                outline-offset: 6px;
-                outline: 2px solid var(--text-color-primary);
-                border-radius: 5px;
-            }
         }
-    
+
+        &:focus-visible {
+            outline-offset: 6px;
+            outline: 2px solid var(--text-color-primary);
+            border-radius: 5px;
+        }
+    }
 
     .open {
         display: flex;

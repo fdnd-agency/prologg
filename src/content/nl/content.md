@@ -1,5 +1,6 @@
 ---
 navigation:
+  button: "Vraag demo aan"
   links:
     - content: "Waarom Prologg"
       href: "#waarom-prologg"
