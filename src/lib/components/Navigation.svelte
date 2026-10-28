@@ -183,9 +183,10 @@
                 @media (prefers-reduced-motion: no-preference) {
                     text-decoration: unset;
 
-                    .underline-deco {
-                        width: 100%;
-                        transition: all 0.3s ease;
+                        .underline-deco {
+                            width: 100%;
+                            transition: all 0.3s ease;
+                        }
                     }
                 }
             }

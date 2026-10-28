@@ -1,13 +1,13 @@
 ---
 navigation:
   links:
-    - content: "Waarom Prologg"
+    - content: "Why Prologg"
       href: "#waarom-prologg"
-    - content: "Casus"
+    - content: "Case"
       href: "#hoe-het-werkt"
-    - content: "Doe mee"
+    - content: "Get involved"
       href: "#doe-mee"
-    - content: "Waarde Levering"
+    - content: "Value"
       href: "#waarde-levering"
     - content: "Partners"
       href: "#partners"
@@ -101,4 +101,9 @@ demo:
   items:
     - title: "How clients can store evidence safely."
     - title: "How a case file comes in and how you check it."
+
+footer:
+  title: "Prologg for Legal"
+  descriptionFirst: "Digital Evidence &"
+  descriptionSecond: "Forensic Chain of Evidence"
 ---
