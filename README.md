@@ -69,7 +69,7 @@ Blue emits trust, professionalism, security and stability.
 
 
 
-## Want to add or something in the project?
+## Want to add or change something in the project?
 Read our guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 
@@ -85,6 +85,9 @@ Step 4: **npm run dev**
 
 ## Sources
 
+
+### Datamodel
+<img width="5131" height="4171" alt="Image" src="https://github.com/user-attachments/assets/ecef9e3c-5fe7-486f-aa46-a175c599970f" />
 
 
 
