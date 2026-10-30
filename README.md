@@ -84,6 +84,8 @@ Step 4: **npm run dev**
 
 
 ## Sources
+- [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme)
+- [w3c media queries]{https://www.w3.org/TR/mediaqueries-5/}
 
 
 ### Datamodel
