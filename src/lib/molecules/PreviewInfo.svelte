@@ -1,5 +1,5 @@
 <script>
-    import Sectiontitle from "./Sectiontitle.svelte";
+   import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
     let { subtitle, title, description } = $props();
 </script>
 

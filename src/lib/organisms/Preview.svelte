@@ -1,7 +1,7 @@
 <script>
-    import PreviewInfo from "./PreviewInfo.svelte";
-    import PreviewBanner from "./PreviewBanner.svelte";
-    import PreviewUsp from "./PreviewUsp.svelte";
+    import PreviewInfo from "$lib/molecules/PreviewInfo.svelte";
+    import PreviewBanner from '$lib/molecules/PreviewBanner.svelte';
+    import PreviewUsp from '$lib/organisms/PreviewUsp.svelte';
 
     import { lang } from "$lib/lang.svelte.js";
     import { content } from "$lib/content.js";

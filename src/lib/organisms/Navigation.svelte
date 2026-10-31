@@ -3,8 +3,8 @@
     import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
     import { Hamburger } from "svelte-hamburgers";
-    import Button from "$lib/components/Button.svelte";
-    import Languagetoggle from "$lib/components/Languagetoggle.svelte";
+    import Button from "$lib/atoms/Button.svelte";
+    import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
 
     let mobileMenuOpen = $state(false);
 

@@ -1,7 +1,7 @@
 <script>
 	let { subtitle, title, reasons = [] } = $props();
 
-	import Sectiontitle from "./Sectiontitle.svelte";
+	import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
 </script>
 
 <section id="waarom-prologg" class="why-section">
