@@ -58,6 +58,8 @@ We also use the media feature `@media (prefers-reduced-motion: no-preference)` f
 ### Site navigation
 Since this is a one page website, the navigation links use anchor points in the website to go to the correct section. Combined with an animation, this results into a great user experience.
 
+### Container queries
+We use container queries to adjust the layout of components based on the width of their container. Media queries respond to the browser or device, while container queries respond to the space available inside a specific part of the page. This helps components display correctly in both smaller and larger containers.
 
 
 ## Features
@@ -122,6 +124,7 @@ Read our guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
 - [@media-features](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features)
 - [svelte hamburger repo](https://github.com/ghostdevv/svelte-hamburgers)
 - [Design Principles: Compositional Flow And Rhythm](https://www.smashingmagazine.com/2015/04/design-principles-compositional-flow-and-rhythm/)
+- [CSS container queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries)
 
 
 ## License
