@@ -1,4 +1,4 @@
-# Prologg
+# Prologg.org
 
 
 
@@ -7,15 +7,15 @@
   * [Description](#description)
   * [Usage](#usage)
   * [Features](#features)
+  * [Design choices](#design-choices)
+  * [Contributing](#contributing)
   * [Installation](#installation)
+  * [Sources](#sources)
   * [License](#license)
 
 
 
 ## Description
-<!-- Description briefly explains what kind of project this is and what you made -->
-<!-- Add a nice poster visual 📸 -->
-<!-- Add a link to GitHub Pages 🌐 -->
 
 **Prologg is a startup fighting labor exploitation.**
 This project consists of a static website focused on crowdfunding and customer acquisition, and a web app used in practice by people who are being exploited.
@@ -26,7 +26,7 @@ The web app is functional, responsive, and aimed at people who are being exploit
 
 [Live link - informational website](https://prologglaw.netlify.app/)
 
-<img width="2278" height="4164" alt="screenshots of the website aimed at lawyers" src="https://github.com/user-attachments/assets/405bf186-2682-4a70-a916-4550b571a145" />
+<img width="2278" height="4164" alt="screenshots of the website aimed at lawyers" id="website-mockup" src="https://github.com/user-attachments/assets/405bf186-2682-4a70-a916-4550b571a145" />
 
 
 
@@ -47,6 +47,9 @@ If you decide to change the website's content, don't forget to update the Englis
 
 **Note:** Do not change the names of the sections, otherwise the content will no longer be loaded.
 
+### Datamodel
+<img width="5131" height="4171" alt="Image" src="https://github.com/user-attachments/assets/ecef9e3c-5fe7-486f-aa46-a175c599970f" />
+
 ### Media features
 Another feature of the website is a dark mode. For this, we use the media feature `@media (prefers-color-scheme: dark)` to follow the user's preferences.
 
@@ -61,36 +64,64 @@ Since this is a one page website, the navigation links use anchor points in the 
 <!-- Features covers which techniques were used and how. What is the HTML structure? What are the most important things in CSS? What was done with JS and how? Maybe you did something with Node.js, or used a framework or library? -->
 This website runs on SvelteKit, a component-based framework. Because the website consists of only one page, we chose to run it with a static adapter. This means the website is generated in advance, so Node.js isn't needed to generate the HTML on every request.
 
+### Navigation
+
+On mobile, a hamburger button (`svelte-hamburgers`) toggles a fullscreen menu. Links and the close button close it again.
+
+https://github.com/fdnd-agency/prologg/blob/6ea6c6b4b5055f508ac602a5f1b75446f9f1cca7/src/lib/components/Navigation.svelte#L5-L13
+
+https://github.com/fdnd-agency/prologg/blob/6ea6c6b4b5055f508ac602a5f1b75446f9f1cca7/src/lib/components/Navigation.svelte#L82-L83
+
+https://github.com/fdnd-agency/prologg/blob/6ea6c6b4b5055f508ac602a5f1b75446f9f1cca7/src/lib/components/Navigation.svelte#L94
+
+Menu items are set in `navigation links` in the content files (`src/content/{nl,en}/content.md`).
+
 
 
 ## Design choices
-The website is designed with the focus on professionalism and trust. The main colors we used are different shades of blue.
-Blue emits trust, professionalism, security and stability.
+The website is designed with a focus on professionalism and trust. The interface uses a blue palette to convey a professional, trustworthy look.
+
+| Role              | Light                | Dark                 |
+|-------------------|----------------------|----------------------|
+| Text              | `hsl(212 76% 5%)`    | `hsl(212 76% 95%)`   |
+| Background        | `hsl(212 76% 95%)`   | `#121D26`            |
+| Card              | `#FFFFFF`            | `hsl(217 56% 38%)`   |
+| Accent / alert    | `hsl(6 61% 41%)`     | `hsl(6 61% 41%)`     |
+
+- Main text and background combinations meet WCAG AA contrast.
+
+[Screenshot of website with the colors](#website-mockup)
+
+### Dark mode
+Dark mode follows the user's system setting via `prefers-color-scheme`. All colors are defined as CSS custom properties in `static/app.css` and the colors only change with CSS.
+
+<img width="1440" height="749" alt="Screenshot 2026-10-30 at 22 15 38" src="https://github.com/user-attachments/assets/ad9789c3-f392-4336-9606-837ab820704d" />
+<img width="1439" height="755" alt="Screenshot 2026-10-30 at 22 16 14" src="https://github.com/user-attachments/assets/572d9db8-f890-451d-93ea-be721df496cd" />
 
 
 
-## Want to add or change something in the project?
+## Contributing
 Read our guidelines in [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 
 
 ## Installation
-<!-- Installation explains how another developer can work on your repo -->
-Step 1: **Fork the repo**
-Step 2: **Clone the code**
-Step 3: **npm install**
-Step 4: **npm run dev**
+1. **Fork the repo**
+2. **Clone the code**
+3. **npm install**
+4. **npm run dev**
 
 
 
 ## Sources
 - [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme)
-- [w3c media queries]{https://www.w3.org/TR/mediaqueries-5/}
-
-
-### Datamodel
-<img width="5131" height="4171" alt="Image" src="https://github.com/user-attachments/assets/ecef9e3c-5fe7-486f-aa46-a175c599970f" />
-
+- [w3c media queries](https://www.w3.org/TR/mediaqueries-5/)
+- [Svelte docs](https://svelte.dev/docs)
+- [mask css property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/mask)
+- [img src SVG changing the styles with CSS](https://stackoverflow.com/questions/24933430/img-src-svg-changing-the-styles-with-css)
+- [@media-features](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features)
+- [svelte hamburger repo](https://github.com/ghostdevv/svelte-hamburgers)
+- [Design Principles: Compositional Flow And Rhythm](https://www.smashingmagazine.com/2015/04/design-principles-compositional-flow-and-rhythm/)
 
 
 ## License
