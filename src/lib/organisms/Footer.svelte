@@ -1,6 +1,6 @@
 <script>
 	import fullLogo from "$lib/assets/full-logo.svg";
-	import Button from "$lib/components/Button.svelte";
+	import Button from "$lib/atoms/Button.svelte";
 	import fullLogoWhite from "$lib/assets/full-logo-white.svg";
 
 	let {

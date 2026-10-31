@@ -1,7 +1,7 @@
 <script>
 	import favicon from "$lib/assets/favicon.svg";
-	import Navigation from "$lib/components/Navigation.svelte";
-	import Footer from "$lib/components/Footer.svelte";
+	import Navigation from "$lib/organisms/Navigation.svelte";
+	import Footer from "$lib/organisms/Footer.svelte";
 
 	import { lang } from "$lib/lang.svelte.js";
 	import { content } from "$lib/content.js";

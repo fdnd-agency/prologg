@@ -1,6 +1,6 @@
 <script>
-    import PartnerCard from "./PartnerCard.svelte";
-    import Sectiontitle from "./Sectiontitle.svelte";
+    import PartnerCard from "$lib/molecules/PartnerCard.svelte";
+    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
     let { subtitle, title, description, partners = [] } = $props();
 </script>
 

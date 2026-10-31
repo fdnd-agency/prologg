@@ -1,6 +1,6 @@
 <script>
-    import UspBlock from "./UspBlock.svelte";
-    import img from "$lib/assets/phone-preview.webp";
+    import UspBlock from '$lib/molecules/UspBlock.svelte';
+    import img from '$lib/assets/phone-preview.webp';
 
     let { usps = [] } = $props();
 </script>

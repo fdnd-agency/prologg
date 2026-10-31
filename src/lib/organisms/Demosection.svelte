@@ -1,6 +1,6 @@
 <script>
-    import Button from "$lib/components/Button.svelte";
-    import Sectiontitle from "./Sectiontitle.svelte";
+    import Button from "$lib/atoms/Button.svelte";
+    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
 
     let { subtitle, title, description, items = [] } = $props();
 </script>
