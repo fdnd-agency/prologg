@@ -2,15 +2,9 @@
     import fullLogo from "$lib/assets/full-logo.svg";
     import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
-    import { Hamburger } from "svelte-hamburgers";
+    import hamburgerIcon from "$lib/assets/hamburger.svg";
     import Button from "$lib/atoms/Button.svelte";
     import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
-
-    let mobileMenuOpen = $state(false);
-
-    function closeMenu() {
-        mobileMenuOpen = false;
-    }
 
     let { button, links = [] } = $props();
 
@@ -79,27 +73,29 @@
                 classes="nav"
                 content={button}
             />
-            <Hamburger
-                bind:open={mobileMenuOpen}
-                type="collapse"
-                title="Toggles menu"
-                --padding="22px"
-                --color="var(--color-text-primary)"
-                --layer-width="20px"
-                --layer-height="3px"
-                --layer-spacing="3px"
-            />
+            <button
+                popovertarget="mobilepopover"
+                class="hamburger"
+                type="button"
+            >
+                <img src={hamburgerIcon} alt="Open menu" />
+            </button>
         </div>
 
-        <nav class="main-nav" class:open={mobileMenuOpen}>
+        <nav class="main-nav" id="mobilepopover" popover>
             <div class="mobile-menu-top">
-                <button type="button" class="close-button" onclick={closeMenu}>
-                    <img src={closeIcon} alt="Sluit menu" />
+                <button 
+                    type="button"
+                    class="close-button"
+                    popovertarget="mobilepopover"
+                    popovertargetaction="hide"
+                >
+                    <img src={closeIcon} alt="Sluit menu"/>
                 </button>
             </div>
 
             {#each links as link}
-                <a href={link.href} onclick={closeMenu} class="nav-link"
+                <a href={link.href} class="nav-link"
                     >{link.content}
                     <div class="underline-deco"></div>
                 </a>
@@ -150,10 +146,15 @@
     .mobile-menu {
         display: flex;
         place-items: center;
+
+        @media (prefers-color-scheme: dark) {
+            button img {
+                filter: brightness(0) invert(1);
+            }
+        }
     }
 
     .main-nav {
-        display: none;
         flex-direction: column;
         position: fixed;
         inset: 0;
@@ -198,7 +199,7 @@
         }
     }
 
-    .open {
+    .main-nav:popover-open {
         display: flex;
         align-items: center;
         background-color: var(--background-color-primary);
