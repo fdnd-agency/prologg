@@ -150,6 +150,12 @@ section {
     padding: var(--space-lg) var(--space-md);
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 @keyframes land {
     from {
         opacity: 0;

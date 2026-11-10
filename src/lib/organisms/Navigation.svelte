@@ -67,7 +67,7 @@
             </picture>
         </a>
 
-        <div class="mobile-menu">
+        <div class="mobile-nav">
             <Button
                 href="mailto:frank.kloos@fonetic.studio"
                 classes="nav"
@@ -78,7 +78,7 @@
                 class="hamburger"
                 type="button"
             >
-                <img src={hamburgerIcon} alt="Open menu" />
+                <img src={hamburgerIcon} alt="Open menu" width="50" height="50"/>
             </button>
         </div>
 
@@ -90,7 +90,7 @@
                     popovertarget="mobilepopover"
                     popovertargetaction="hide"
                 >
-                    <img src={closeIcon} alt="Sluit menu"/>
+                    <img src={closeIcon} alt="Sluit menu" width="25" height="25"/>
                 </button>
             </div>
 
@@ -127,11 +127,6 @@
         }
     }
 
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
     .logo {
         display: flex;
         align-items: center;
@@ -143,28 +138,26 @@
         }
     }
 
-    .mobile-menu {
+    .mobile-nav {
         display: flex;
         place-items: center;
+    }
 
+    .hamburger img,
+    .close-button img {
         @media (prefers-color-scheme: dark) {
-            button img {
-                filter: brightness(0) invert(1);
-            }
+            filter: brightness(0) invert(1);
         }
     }
 
     .main-nav {
         flex-direction: column;
-        position: fixed;
-        inset: 0;
         z-index: 10;
-
-        @media (prefers-color-scheme: dark) {
-            .close-button img {
-                filter: brightness(0) invert(1);
-            }
-        }
+        margin: 0;
+        border: none;
+        width: 100%;
+        height: 100%;
+        color: var(--color-text-primary);
 
         .nav-link {
             transition: 0.1s ease-in-out;
@@ -178,7 +171,6 @@
 
             &:hover {
                 text-decoration: underline;
-                color: var(--text-color-accent);
                 scale: 1.02;
 
                 @media (prefers-reduced-motion: no-preference) {
@@ -187,6 +179,7 @@
                     .underline-deco {
                         width: 100%;
                         transition: all 0.3s ease;
+                        color: var(--text-color-primary);
                     }
                 }
             }
@@ -228,19 +221,22 @@
             height: 80px;
         }
 
-        .mobile-menu,
+        .mobile-nav,
         .mobile-menu-top {
             display: none;
         }
 
-        .main-nav {
+        .main-nav,
+        .main-nav:popover-open {
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: end;
             position: static;
-            z-index: auto;
             gap: 24px;
             padding: 20px;
+            width: 100%;
+            background-color: transparent;
         }
 
         .nav-bar {
