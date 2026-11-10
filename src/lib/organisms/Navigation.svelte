@@ -6,6 +6,10 @@
     import Button from "$lib/atoms/Button.svelte";
     import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
 
+    function closeMenu() {
+        document.getElementById("mobilepopover")?.hidePopover();
+    }
+
     let { button, links = [] } = $props();
 
     let isVisible = $state(true);
@@ -95,7 +99,7 @@
             </div>
 
             {#each links as link}
-                <a href={link.href} class="nav-link"
+                <a href={link.href} onclick={closeMenu} class="nav-link"
                     >{link.content}
                     <div class="underline-deco"></div>
                 </a>
