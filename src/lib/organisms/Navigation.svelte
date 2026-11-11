@@ -2,14 +2,12 @@
     import fullLogo from "$lib/assets/full-logo.svg";
     import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
-    import { Hamburger } from "svelte-hamburgers";
+    import hamburgerIcon from "$lib/assets/hamburger.svg";
     import Button from "$lib/atoms/Button.svelte";
     import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
 
-    let mobileMenuOpen = $state(false);
-
     function closeMenu() {
-        mobileMenuOpen = false;
+        document.getElementById("mobilepopover")?.hidePopover();
     }
 
     let { button, links = [] } = $props();
@@ -73,28 +71,30 @@
             </picture>
         </a>
 
-        <div class="mobile-menu">
+        <div class="mobile-nav">
             <Button
                 href="mailto:frank.kloos@fonetic.studio"
                 classes="nav"
                 content={button}
             />
-            <Hamburger
-                bind:open={mobileMenuOpen}
-                type="collapse"
-                title="Toggles menu"
-                --padding="22px"
-                --color="var(--color-text-primary)"
-                --layer-width="20px"
-                --layer-height="3px"
-                --layer-spacing="3px"
-            />
+            <button
+                popovertarget="mobilepopover"
+                class="hamburger"
+                type="button"
+            >
+                <img src={hamburgerIcon} alt="Open menu" width="50" height="50"/>
+            </button>
         </div>
 
-        <nav class="main-nav" class:open={mobileMenuOpen}>
+        <nav class="main-nav" id="mobilepopover" popover>
             <div class="mobile-menu-top">
-                <button type="button" class="close-button" onclick={closeMenu}>
-                    <img src={closeIcon} alt="Sluit menu" />
+                <button 
+                    type="button"
+                    class="close-button"
+                    popovertarget="mobilepopover"
+                    popovertargetaction="hide"
+                >
+                    <img src={closeIcon} alt="Sluit menu" width="25" height="25"/>
                 </button>
             </div>
 
@@ -131,11 +131,6 @@
         }
     }
 
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
     .logo {
         display: flex;
         align-items: center;
@@ -147,23 +142,26 @@
         }
     }
 
-    .mobile-menu {
+    .mobile-nav {
         display: flex;
         place-items: center;
     }
 
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        inset: 0;
-        z-index: 10;
-
+    .hamburger img,
+    .close-button img {
         @media (prefers-color-scheme: dark) {
-            .close-button img {
-                filter: brightness(0) invert(1);
-            }
+            filter: brightness(0) invert(1);
         }
+    }
+
+    .main-nav {
+        flex-direction: column;
+        z-index: 10;
+        margin: 0;
+        border: none;
+        width: 100%;
+        height: 100%;
+        color: var(--color-text-primary);
 
         .nav-link {
             transition: 0.1s ease-in-out;
@@ -177,7 +175,6 @@
 
             &:hover {
                 text-decoration: underline;
-                color: var(--text-color-accent);
                 scale: 1.02;
 
                 @media (prefers-reduced-motion: no-preference) {
@@ -186,6 +183,7 @@
                     .underline-deco {
                         width: 100%;
                         transition: all 0.3s ease;
+                        color: var(--text-color-primary);
                     }
                 }
             }
@@ -198,7 +196,7 @@
         }
     }
 
-    .open {
+    .main-nav:popover-open {
         display: flex;
         align-items: center;
         background-color: var(--background-color-primary);
@@ -227,28 +225,28 @@
             height: 80px;
         }
 
-        .mobile-menu,
+        .mobile-nav,
         .mobile-menu-top {
             display: none;
         }
 
-        .main-nav {
+        .main-nav,
+        .main-nav:popover-open {
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: end;
             position: static;
-            z-index: auto;
             gap: 24px;
             padding: 20px;
+            width: 100%;
+            background-color: transparent;
         }
 
         .nav-bar {
             position: fixed;
-            top: 0;
-            left: 0;
             right: 0;
             transform: translateY(-100%);
-            z-index: 10;
 
             @media (prefers-reduced-motion: no-preference) {
                 transition: all 0.5s ease;
