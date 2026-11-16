@@ -44,6 +44,7 @@
     .hero {
         background-color: var(--background-color-secondary);
         width: 100%;
+        display: grid;
     }
     .hero-wrapper {
         display: flex;
@@ -75,6 +76,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @media (width > 709px) {
+        }
     }
 
     h1,
@@ -90,7 +93,7 @@
 
     h1 {
         font-family: var(--font-heading);
-        font-size: clamp(1.5rem, 0rem + 8vw, 3rem);
+        font-size: clamp(2rem, 0rem + 8vw, 3rem);
         line-height: 0.9;
         text-wrap: balance;
         max-width: 64rem;
