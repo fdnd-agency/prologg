@@ -10,7 +10,7 @@
         document.getElementById("mobilepopover")?.hidePopover();
     }
 
-    let { button, links = [] } = $props();
+    let { button, links = [], openAlt, closeAlt, logoAlt } = $props();
 
     let isVisible = $state(true);
 
@@ -63,7 +63,7 @@
 
                 <img
                     src={fullLogo}
-                    alt="Prologg logo"
+                    alt={logoAlt}
                     width="100"
                     height="70"
                     fetchpriority="high"
@@ -82,7 +82,7 @@
                 class="hamburger"
                 type="button"
             >
-                <img src={hamburgerIcon} alt="Open menu" width="50" height="50"/>
+                <img src={hamburgerIcon} alt={openAlt} width="50" height="50"/>
             </button>
         </div>
 
@@ -95,7 +95,7 @@
                     popovertargetaction="hide"
                     autofocus
                 >
-                    <img src={closeIcon} alt="Sluit menu" width="25" height="25"/>
+                    <img src={closeIcon} alt={closeAlt} width="25" height="25"/>
                 </button>
             </div>
 

@@ -1,6 +1,9 @@
 ---
 navigation:
   button: "Vraag demo aan"
+  openAlt: "Open menu"
+  closeAlt: "Sluit menu"
+  logoAlt: "Prologg, ga naar hoofdpagina"
   links:
     - content: "Waarom Prologg"
       href: "#waarom-prologg"
