@@ -127,6 +127,11 @@ main {
     overflow-x: hidden;
 }
 
+body:has(#mobilepopover:popover-open) main,
+body:has(#mobilepopover:popover-open) footer {
+    visibility: hidden;
+}
+
 h2, hgroup span {
     font-family: var(--font-heading);
 }
@@ -183,6 +188,11 @@ button {
 @media (width >= 1024px) {
     [id] {
         scroll-margin-top: 8rem;
+    }
+
+    body:has(#mobilepopover:popover-open) main,
+    body:has(#mobilepopover:popover-open) footer {
+        visibility: visible;
     }
 }
 

@@ -93,6 +93,7 @@
                     class="close-button"
                     popovertarget="mobilepopover"
                     popovertargetaction="hide"
+                    autofocus
                 >
                     <img src={closeIcon} alt="Sluit menu" width="25" height="25"/>
                 </button>
