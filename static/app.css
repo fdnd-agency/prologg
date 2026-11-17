@@ -51,6 +51,7 @@
     --color-coral: hsl(9 100% 73%);
     --color-terracotta: hsl(6 61% 41%);
     --color-green: hsl(156 10% 30%);
+    --color-green-light: hsl(156 10% 75%);
     --white: #fff;
 
     /* Background colors */
@@ -98,7 +99,7 @@
         --color-background-accent: var(--color-blue-light);
         --color-background-card: var(--color-navy-darkest);
         --color-background-card-alt: var(--color-navy-dark);
-        --color-background-button: var(--color-blue-light);
+        --color-background-button: var(--color-green-light);
         --color-background-button-alt: var(--white);
 
         --text-color-secondary: var(--color-navy-darkest);
