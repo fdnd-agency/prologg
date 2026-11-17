@@ -44,12 +44,13 @@
     color-scheme: light dark;
 
     /* Colors (niet direct gebruiken in componenten) */
-    --color-navy-darkest: hsl(212 76% 5%); 
+    --color-navy-darkest: hsl(212 76% 5%);
     --color-navy-dark: hsl(212 76% 10%);
     --color-blue-light: hsl(213 78% 79%);
     --color-blue-lightest: hsl(213 80% 94%);
-    --color-coral: hsl(9 100% 73%);    
+    --color-coral: hsl(9 100% 73%);
     --color-terracotta: hsl(6 61% 41%);
+    --color-green: hsl(156 10% 30%);
     --white: #fff;
 
     /* Background colors */
@@ -59,7 +60,7 @@
     --color-background-dark: hsl(0 0% 0%);
     --color-background-card: var(--white);
     --color-background-card-alt: var(--background-color-primary);
-    --color-background-button: var(--color-navy-darkest);
+    --color-background-button: var(--color-green);
     --color-background-button-alt: var(--background-color-primary);
     --color-background-button-light: var(--white);
 
@@ -68,7 +69,6 @@
     --text-color-accent: hsl(240 6% 29%);
     --text-color-button: var(--color-navy-darkest);
     --text-color-big: var(--color-navy-darkest);
-
 
     --card-text: var(--text-color-primary);
     --alert-color: var(--color-terracotta);
@@ -79,7 +79,7 @@
 
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
     --border-usp: 1px solid color-mix(in srgb, var(--text-color-primary) 25%, transparent);
-    
+
     --max-width: 1200px;
 
     /* SPACINGS */
@@ -100,7 +100,7 @@
         --color-background-card-alt: var(--color-navy-dark);
         --color-background-button: var(--color-blue-light);
         --color-background-button-alt: var(--white);
-        
+
         --text-color-secondary: var(--color-navy-darkest);
         --text-color-accent: var(--color-blue-lightest);
         --text-color-big: var(--color-blue-lightest);
@@ -156,7 +156,7 @@ section {
         opacity: 0;
         transform: translateY(1.5rem);
     }
-    
+
     to {
         opacity: 1;
         transform: translateY(0);
