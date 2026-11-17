@@ -42,6 +42,7 @@ declare module '$env/static/private' {
 	export const ACSvcPort: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
+	export const CHROME_CRASHPAD_PIPE_NAME: string;
 	export const COLOR: string;
 	export const COLORTERM: string;
 	export const CommonProgramFiles: string;
@@ -50,9 +51,11 @@ declare module '$env/static/private' {
 	export const ComSpec: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_12052_1592913036: string;
-	export const EFC_12052_4126798990: string;
+	export const EFC_20620_1592913036: string;
+	export const EFC_20620_4126798990: string;
 	export const EnableLog: string;
+	export const FPS_BROWSER_APP_PROFILE_STRING: string;
+	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GIT_ASKPASS: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
@@ -209,6 +212,7 @@ declare module '$env/dynamic/private' {
 		ACSvcPort: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
+		CHROME_CRASHPAD_PIPE_NAME: string;
 		COLOR: string;
 		COLORTERM: string;
 		CommonProgramFiles: string;
@@ -217,9 +221,11 @@ declare module '$env/dynamic/private' {
 		ComSpec: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_12052_1592913036: string;
-		EFC_12052_4126798990: string;
+		EFC_20620_1592913036: string;
+		EFC_20620_4126798990: string;
 		EnableLog: string;
+		FPS_BROWSER_APP_PROFILE_STRING: string;
+		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GIT_ASKPASS: string;
 		HOME: string;
 		HOMEDRIVE: string;

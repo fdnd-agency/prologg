@@ -17,9 +17,9 @@
 }
 
 @font-face {
-    font-family: 'Space Grotesk';
-    src: url('/fonts/SpaceGrotesk-VariableFont_wght.ttf') format("truetype");
-    font-weight: 300 700;
+    font-family: 'Instrument Sans';
+    src: url('/fonts/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 400 700;
     font-style: normal;
     font-display: swap;
 }
@@ -74,7 +74,7 @@
     --alert-color: var(--color-terracotta);
 
     /* FONTS */
-    --font-heading: 'Space Grotesk', sans-serif; 
+    --font-heading: 'Instrument Sans', sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
@@ -85,10 +85,10 @@
     /* SPACINGS */
     --space-xxl: 4rem;
     --space-xl: 2rem;
-	--space-lg: 1.5rem;
-	--space-md: 1rem;
-	--space-sm: 0.5rem;
-	--space-xs: 0.25rem;
+    --space-lg: 1.5rem;
+    --space-md: 1rem;
+    --space-sm: 0.5rem;
+    --space-xs: 0.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,7 +128,7 @@ main {
     overflow-x: hidden;
 }
 
-h2, hgroup span {
+h1, h2, h3, h4, h5, h6, hgroup span {
     font-family: var(--font-heading);
 }
 
@@ -188,7 +188,7 @@ section {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-     /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
+    /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
     :target > * {
         animation: land 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
         animation-delay: 250ms;
