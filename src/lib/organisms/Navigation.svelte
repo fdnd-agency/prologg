@@ -50,6 +50,32 @@
             window.removeEventListener("scroll", handleScroll);
         };
     });
+
+    let nav;
+
+    // Trap focus within the menu when open 
+    // AI assistance: https://claude.ai/share/60a1b1e7-aada-4eda-aa43-2d0d463dc064
+    function menuKeydown(event) {
+        if (event.key !== "Tab" || !nav.matches(":popover-open")) return;
+    
+        const focusbaar = [...nav.querySelectorAll("a[href], button:not([disabled])")]
+            .filter((el) => el.getClientRects().length > 0);
+
+        const eerste = focusbaar[0];
+        const laatste = focusbaar.at(-1);
+
+        // Move focus to the last element when pressing Shift+Tab on the first element.
+        if (event.shiftKey && document.activeElement === eerste) {
+            event.preventDefault();
+            laatste.focus();
+        }
+
+        // Move focus to the first element when pressing Tab on the last element.
+        if (!event.shiftKey && document.activeElement === laatste) {
+            event.preventDefault();
+            eerste.focus();
+        }
+    }
 </script>
 
 <header class:visible={isVisible} class="nav-bar">
@@ -86,7 +112,7 @@
             </button>
         </div>
 
-        <nav class="main-nav" id="mobilepopover" popover>
+        <nav class="main-nav" id="mobilepopover" popover bind:this={nav} onkeydown={menuKeydown}>
             <div class="mobile-menu-top">
                 <button 
                     type="button"
