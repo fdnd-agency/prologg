@@ -38,6 +38,6 @@ declare module "$app/types" {
 		};
 		Pathname(): "/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
-		Asset(): "/app.css" | "/fonts/IBMPlexMono-Bold.woff2" | "/fonts/IBMPlexMono-Regular.woff2" | "/fonts/Inter-VariableFont_opsz,wght.ttf" | "/fonts/SpaceGrotesk-VariableFont_wght.ttf" | "/icons/decoration-icon-1.svg" | "/icons/decoration-icon-2.svg" | "/icons/decoration-icon.svg" | "/images/dashboard.webp" | "/robots.txt" | string & {};
+		Asset(): "/app.css" | "/fonts/IBMPlexMono-Bold.woff2" | "/fonts/IBMPlexMono-Regular.woff2" | "/fonts/InstrumentSans-VariableFont_wdth,wght.ttf" | "/fonts/Inter-VariableFont_opsz,wght.ttf" | "/icons/decoration-icon-1.svg" | "/icons/decoration-icon-2.svg" | "/icons/decoration-icon.svg" | "/images/dashboard.webp" | "/images/hero-img-05x.avif" | "/images/hero-img-05x.webp" | "/images/hero-img.avif" | "/images/hero-img.webp" | "/robots.txt" | string & {};
 	}
 }

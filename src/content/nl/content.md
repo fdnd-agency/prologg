@@ -19,6 +19,9 @@ navigation:
 hero:
   title: "Bewijs van uitbuiting, vastgelegd door wie het meemaakt."
   description: "Veilig en anoniem bewijs verzamelen met een telefoon. Voor advocaten in zaken rond arbeidsuitbuiting."
+  imageWebpFallback: "/images/hero-img.webp"
+  imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
+  imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
   buttons:
     - content: "Vraag kantoordemo aan"
       href: "mailto:frank.kloos@fonetic.studio"

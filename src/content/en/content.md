@@ -19,6 +19,9 @@ navigation:
 hero:
   title: "Evidence of exploitation, captured by the people who live it."
   description: "Collect evidence safely and anonymously with a phone. For lawyers handling labour exploitation cases."
+  imageWebpFallback: "/images/hero-img.webp"
+  imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
+  imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
   buttons:
     - content: "Request a demo for your firm"
       href: "mailto:frank.kloos@fonetic.studio"

@@ -17,9 +17,9 @@
 }
 
 @font-face {
-    font-family: 'Space Grotesk';
-    src: url('/fonts/SpaceGrotesk-VariableFont_wght.ttf') format("truetype");
-    font-weight: 300 700;
+    font-family: 'Instrument Sans';
+    src: url('/fonts/InstrumentSans-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 400 700;
     font-style: normal;
     font-display: swap;
 }
@@ -44,12 +44,14 @@
     color-scheme: light dark;
 
     /* Colors (niet direct gebruiken in componenten) */
-    --color-navy-darkest: hsl(212 76% 5%); 
+    --color-navy-darkest: hsl(212 76% 5%);
     --color-navy-dark: hsl(212 76% 10%);
     --color-blue-light: hsl(213 78% 79%);
     --color-blue-lightest: hsl(213 80% 94%);
-    --color-coral: hsl(9 100% 73%);    
+    --color-coral: hsl(9 100% 73%);
     --color-terracotta: hsl(6 61% 41%);
+    --color-green: hsl(156 10% 30%);
+    --color-green-light: hsl(156 10% 75%);
     --white: #fff;
 
     /* Background colors */
@@ -59,7 +61,7 @@
     --color-background-dark: hsl(0 0% 0%);
     --color-background-card: var(--white);
     --color-background-card-alt: var(--background-color-primary);
-    --color-background-button: var(--color-navy-darkest);
+    --color-background-button: var(--color-green);
     --color-background-button-alt: var(--background-color-primary);
     --color-background-button-light: var(--white);
 
@@ -69,25 +71,25 @@
     --text-color-button: var(--color-navy-darkest);
     --text-color-big: var(--color-navy-darkest);
 
-
     --card-text: var(--text-color-primary);
     --alert-color: var(--color-terracotta);
 
     /* FONTS */
-    --font-heading: 'Space Grotesk', sans-serif; 
+    --font-heading: 'Instrument Sans', sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
     --filter-shadow-card: drop-shadow(0px 0px 15px #d2d2d29f);
     --border-usp: 1px solid color-mix(in srgb, var(--text-color-primary) 25%, transparent);
-    
+
     --max-width: 1200px;
 
     /* SPACINGS */
+    --space-xxl: 4rem;
     --space-xl: 2rem;
-	--space-lg: 1.5rem;
-	--space-md: 1rem;
-	--space-sm: 0.5rem;
-	--space-xs: 0.25rem;
+    --space-lg: 1.5rem;
+    --space-md: 1rem;
+    --space-sm: 0.5rem;
+    --space-xs: 0.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -97,9 +99,9 @@
         --color-background-accent: var(--color-blue-light);
         --color-background-card: var(--color-navy-darkest);
         --color-background-card-alt: var(--color-navy-dark);
-        --color-background-button: var(--color-blue-light);
+        --color-background-button: var(--color-green-light);
         --color-background-button-alt: var(--white);
-        
+
         --text-color-secondary: var(--color-navy-darkest);
         --text-color-accent: var(--color-blue-lightest);
         --text-color-big: var(--color-blue-lightest);
@@ -127,7 +129,7 @@ main {
     overflow-x: hidden;
 }
 
-h2, hgroup span {
+h1, h2, h3, h4, h5, h6, hgroup span {
     font-family: var(--font-heading);
 }
 
@@ -161,7 +163,7 @@ button {
         opacity: 0;
         transform: translateY(1.5rem);
     }
-    
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -198,7 +200,7 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-     /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
+    /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
     :target > * {
         animation: land 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
         animation-delay: 250ms;
