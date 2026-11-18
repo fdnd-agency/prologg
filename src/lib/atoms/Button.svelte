@@ -93,6 +93,34 @@
             }
         }
 
+        &.cta {
+            align-items: center;
+            padding: 12px 20px;
+            font-weight: 500;
+            color: inherit;
+            background-color: var(--cta-background, var(--color-background-button-alt));
+
+            &::after {
+                content: "";
+                width: 1em;
+                height: 1em;
+                background-color: currentColor;
+                mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 17L17 7M8 7h9v9'/%3E%3C/svg%3E") center / contain no-repeat;
+                transition: transform 0.2s ease;
+            }
+
+            @media (any-pointer: fine) {
+                &:hover::after {
+                    transform: translate(2px, -2px);
+                }
+            }
+
+            &:focus-visible {
+                outline: 3px solid #1688ec;
+                outline-offset: 4px;
+            }
+        }
+
         &.demo-contact {
             align-items: center;
             justify-content: center;
