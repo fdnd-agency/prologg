@@ -3,5 +3,5 @@ client: "FairWork"
 status: "active"
 years: [2]
 main_link: ""
-dev_link: "https://prologg.netlify.app/"
+dev_link: "https://prologglaw.netlify.app/"
 tech_stack: ["SvelteKit", "Directus"]
