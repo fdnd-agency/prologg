@@ -7,7 +7,7 @@
     import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
 
     function closeMenu() {
-        document.getElementById("mobilepopover")?.hidePopover();
+        document.getElementById("mobile-dialog")?.close();
     }
 
     let { button, links = [], openAlt, closeAlt, logoAlt } = $props();
@@ -56,7 +56,7 @@
     // Trap focus within the menu when open 
     // AI assistance: https://claude.ai/share/60a1b1e7-aada-4eda-aa43-2d0d463dc064
     function menuKeydown(event) {
-        if (event.key !== "Tab" || !nav.matches(":popover-open")) return;
+        if (event.key !== "Tab" || !nav.open) return;
     
         const focusbaar = [...nav.querySelectorAll("a[href], button:not([disabled])")]
             .filter((el) => el.getClientRects().length > 0);
@@ -104,7 +104,8 @@
                 content={button}
             />
             <button
-                popovertarget="mobilepopover"
+                command="show-modal"
+                commandfor="mobile-dialog"
                 class="hamburger"
                 type="button"
             >
@@ -112,34 +113,36 @@
             </button>
         </div>
 
-        <nav class="main-nav" id="mobilepopover" popover bind:this={nav} onkeydown={menuKeydown}>
+        <dialog class="mobile-dialog" id="mobile-dialog" bind:this={nav} onkeydown={menuKeydown}>
             <div class="mobile-menu-top">
                 <button 
                     type="button"
                     class="close-button"
-                    popovertarget="mobilepopover"
-                    popovertargetaction="hide"
+                    commandfor="mobile-dialog"
+                    command="close"
                     autofocus
                 >
                     <img src={closeIcon} alt={closeAlt} width="25" height="25"/>
                 </button>
             </div>
 
-            {#each links as link}
-                <a href={link.href} onclick={closeMenu} class="nav-link"
-                    >{link.content}
-                    <div class="underline-deco"></div>
-                </a>
-            {/each}
+            <nav class="main-nav">
+                {#each links as link}
+                    <a href={link.href} onclick={closeMenu} class="nav-link"
+                        >{link.content}
+                        <div class="underline-deco"></div>
+                    </a>
+                {/each}
 
-            <Languagetoggle />
+                <Languagetoggle />
 
-            <Button
-                href="mailto:frank.kloos@fonetic.studio"
-                classes="nav"
-                content={button}
-            />
-        </nav>
+                <Button
+                    href="mailto:frank.kloos@fonetic.studio"
+                    classes="nav"
+                    content={button}
+                />
+            </nav>
+        </dialog>
     </div>
 </header>
 
