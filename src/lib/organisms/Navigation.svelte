@@ -78,8 +78,8 @@
     }
 </script>
 
-<header class:visible={isVisible} class="nav-bar">
-    <div class="logo">
+<header class:visible={isVisible} class="header">
+    <div class="nav-bar">
         <a class="logo-link" href="/">
             <picture>
                 <source
@@ -126,7 +126,7 @@
                 </button>
             </div>
 
-            <nav class="main-nav">
+            <nav class="links-nav">
                 {#each links as link}
                     <a href={link.href} onclick={closeMenu} class="nav-link"
                         >{link.content}
@@ -143,11 +143,28 @@
                 />
             </nav>
         </dialog>
+
+        <nav class="desktop-nav">
+            {#each links as link}
+                <a href={link.href} class="nav-link"
+                    >{link.content}
+                    <div class="underline-deco"></div>
+                </a>
+            {/each}
+
+            <Languagetoggle />
+
+            <Button
+                href="mailto:frank.kloos@fonetic.studio"
+                classes="nav"
+                content={button}
+            />
+        </nav>
     </div>
 </header>
 
 <style>
-    .nav-bar {
+    .header {
         width: 100%;
         background-color: var(--background-color-primary);
         position: sticky;
@@ -161,7 +178,7 @@
         }
     }
 
-    .logo {
+    .nav-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -184,37 +201,53 @@
         }
     }
 
-    .main-nav {
-        flex-direction: column;
-        z-index: 10;
+    .mobile-dialog {
         margin: 0;
         border: none;
         width: 100%;
         height: 100%;
+        max-width: none;
+        max-height: none;
+        padding: 30px;
+        background-color: var(--background-color-primary);
         color: var(--color-text-primary);
+    }
 
-        .nav-link {
-            transition: 0.1s ease-in-out;
+    .mobile-dialog[open] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 
-            .underline-deco {
-                width: 0%;
-                height: 1px;
-                background-color: var(--background-color-accent);
-                transition: all 0.3s ease;
-            }
+    .links-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 
-            &:hover {
-                text-decoration: underline;
-                scale: 1.02;
+    .nav-link {
+        transition: 0.1s ease-in-out;
 
-                @media (prefers-reduced-motion: no-preference) {
-                    text-decoration: unset;
+        .underline-deco {
+            width: 0%;
+            height: 1px;
+            background-color: var(--text-color-primary);
+            transition: all 0.3s ease;
+        }
 
-                    .underline-deco {
-                        width: 100%;
-                        transition: all 0.3s ease;
-                        color: var(--text-color-primary);
-                    }
+        &:hover {
+            text-decoration: underline;
+            scale: 1.02;
+
+            @media (prefers-reduced-motion: no-preference) {
+                text-decoration: unset;
+
+                .underline-deco {
+                    width: 100%;
+                    transition: all 0.3s ease;
+                    color: var(--text-color-primary);
                 }
             }
         }
@@ -226,13 +259,8 @@
         }
     }
 
-    .main-nav:popover-open {
-        display: flex;
-        align-items: center;
-        background-color: var(--background-color-primary);
-        padding: 30px;
-        gap: 30px;
-        z-index: 10;
+    .desktop-nav {
+        display: none;
     }
 
     .mobile-menu-top {
@@ -255,25 +283,21 @@
             height: 80px;
         }
 
-        .mobile-nav,
-        .mobile-menu-top {
+        .mobile-nav {
             display: none;
         }
 
-        .main-nav,
-        .main-nav:popover-open {
+        .desktop-nav {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: end;
-            position: static;
             gap: 24px;
             padding: 20px;
             width: 100%;
-            background-color: transparent;
         }
 
-        .nav-bar {
+        .header {
             position: fixed;
             right: 0;
             transform: translateY(-100%);
@@ -282,6 +306,7 @@
                 transition: all 0.5s ease;
             }
         }
+
         .visible {
             transform: translateY(0);
 
