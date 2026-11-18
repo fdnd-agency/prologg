@@ -2,7 +2,14 @@
     import Sectiontitle from "$lib/molecules/Sectiontitle.svelte";
     import Button from "$lib/atoms/Button.svelte";
 
-    let { title, description, imageWebp, imageAvif, buttons = [] } = $props();
+    let {
+        title,
+        description,
+        imageWebpFallback,
+        imageWebp,
+        imageAvif,
+        buttons = [],
+    } = $props();
 </script>
 
 <section class="hero">
@@ -35,7 +42,10 @@
                 type="image/webp"
                 sizes="(max-width: 600px) 400px, 700px"
             />
-            <img src={imageWebp} alt="person logging using prologg webapp" />
+            <img
+                src={imageWebpFallback}
+                alt="person logging using prologg webapp"
+            />
         </picture>
     </div>
 </section>
