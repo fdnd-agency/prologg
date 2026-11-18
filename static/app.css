@@ -100,7 +100,6 @@
         --color-background-button: var(--color-blue-light);
         --color-background-button-alt: var(--white);
         
-        --text-color-primary: var(--white);
         --text-color-secondary: var(--color-navy-darkest);
         --text-color-accent: var(--color-blue-lightest);
         --text-color-big: var(--color-blue-lightest);
@@ -126,11 +125,6 @@ body {
 main {
     display: grid;
     overflow-x: hidden;
-}
-
-body:has(#mobilepopover:popover-open) main,
-body:has(#mobilepopover:popover-open) footer {
-    visibility: hidden;
 }
 
 h2, hgroup span {
