@@ -101,4 +101,12 @@ This presentation explains what a Pull Request is and how to use it in GitHub.
 ### Figma
 [Prologg - Design & TeamCanvas](https://www.figma.com/design/m6gDxMDBp69qJU5f0vGRHF/Prologg?node-id=70-11&p=f&t=Qdg1lGjbk6W1qKhX-0)
 
+
+### Teamcanvas
+<img width="874" height="619" alt="Screenshot 2026-10-05 at 10 36 25" src="https://github.com/user-attachments/assets/90977b8e-f919-4f47-b429-00e3791bba96" />
+
+
+### Definition of Ready
+- As a **[type of user]** , I want **[some goal / action]**, so that **[some value / benefit]**
+-Estimated Effort
  
