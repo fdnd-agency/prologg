@@ -2,17 +2,15 @@
     import fullLogo from "$lib/assets/full-logo.svg";
     import fullLogoWhite from "$lib/assets/full-logo-white.svg";
     import closeIcon from "$lib/assets/close-icon.svg";
-    import { Hamburger } from "svelte-hamburgers";
+    import hamburgerIcon from "$lib/assets/hamburger.svg";
     import Button from "$lib/atoms/Button.svelte";
     import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
 
-    let mobileMenuOpen = $state(false);
-
     function closeMenu() {
-        mobileMenuOpen = false;
+        document.getElementById("mobile-dialog")?.close();
     }
 
-    let { button, links = [] } = $props();
+    let { button, links = [], openAlt, closeAlt, logoAlt } = $props();
 
     let isVisible = $state(true);
 
@@ -52,10 +50,36 @@
             window.removeEventListener("scroll", handleScroll);
         };
     });
+
+    let nav;
+
+    // Trap focus within the menu when open 
+    // AI assistance: https://claude.ai/share/60a1b1e7-aada-4eda-aa43-2d0d463dc064
+    function menuKeydown(event) {
+        if (event.key !== "Tab" || !nav.open) return;
+    
+        const focusbaar = [...nav.querySelectorAll("a[href], button:not([disabled])")]
+            .filter((el) => el.getClientRects().length > 0);
+
+        const eerste = focusbaar[0];
+        const laatste = focusbaar.at(-1);
+
+        // Move focus to the last element when pressing Shift+Tab on the first element.
+        if (event.shiftKey && document.activeElement === eerste) {
+            event.preventDefault();
+            laatste.focus();
+        }
+
+        // Move focus to the first element when pressing Tab on the last element.
+        if (!event.shiftKey && document.activeElement === laatste) {
+            event.preventDefault();
+            eerste.focus();
+        }
+    }
 </script>
 
-<header class:visible={isVisible} class="nav-bar">
-    <div class="logo">
+<header class:visible={isVisible} class="header">
+    <div class="nav-bar">
         <a class="logo-link" href="/">
             <picture>
                 <source
@@ -65,7 +89,7 @@
 
                 <img
                     src={fullLogo}
-                    alt="Prologg logo"
+                    alt={logoAlt}
                     width="100"
                     height="70"
                     fetchpriority="high"
@@ -73,33 +97,56 @@
             </picture>
         </a>
 
-        <div class="mobile-menu">
+        <div class="mobile-nav">
             <Button
                 href="mailto:frank.kloos@fonetic.studio"
                 classes="nav"
                 content={button}
             />
-            <Hamburger
-                bind:open={mobileMenuOpen}
-                type="collapse"
-                title="Toggles menu"
-                --padding="22px"
-                --color="var(--color-text-primary)"
-                --layer-width="20px"
-                --layer-height="3px"
-                --layer-spacing="3px"
-            />
+            <button
+                command="show-modal"
+                commandfor="mobile-dialog"
+                class="hamburger"
+                type="button"
+            >
+                <img src={hamburgerIcon} alt={openAlt} width="50" height="50"/>
+            </button>
         </div>
 
-        <nav class="main-nav" class:open={mobileMenuOpen}>
+        <dialog class="mobile-dialog" id="mobile-dialog" bind:this={nav} onkeydown={menuKeydown}>
             <div class="mobile-menu-top">
-                <button type="button" class="close-button" onclick={closeMenu}>
-                    <img src={closeIcon} alt="Sluit menu" />
+                <button 
+                    type="button"
+                    class="close-button"
+                    commandfor="mobile-dialog"
+                    command="close"
+                    autofocus
+                >
+                    <img src={closeIcon} alt={closeAlt} width="25" height="25"/>
                 </button>
             </div>
 
+            <nav class="links-nav">
+                {#each links as link}
+                    <a href={link.href} onclick={closeMenu} class="nav-link"
+                        >{link.content}
+                        <div class="underline-deco"></div>
+                    </a>
+                {/each}
+
+                <Languagetoggle />
+
+                <Button
+                    href="mailto:frank.kloos@fonetic.studio"
+                    classes="nav"
+                    content={button}
+                />
+            </nav>
+        </dialog>
+
+        <nav class="desktop-nav">
             {#each links as link}
-                <a href={link.href} onclick={closeMenu} class="nav-link"
+                <a href={link.href} class="nav-link"
                     >{link.content}
                     <div class="underline-deco"></div>
                 </a>
@@ -117,7 +164,7 @@
 </header>
 
 <style>
-    .nav-bar {
+    .header {
         width: 100%;
         background-color: var(--background-color-primary);
         position: sticky;
@@ -131,12 +178,7 @@
         }
     }
 
-    button {
-        border: none;
-        background-color: transparent;
-    }
-
-    .logo {
+    .nav-bar {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -147,46 +189,65 @@
         }
     }
 
-    .mobile-menu {
+    .mobile-nav {
         display: flex;
         place-items: center;
     }
 
-    .main-nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        inset: 0;
-        z-index: 10;
-
+    .hamburger img,
+    .close-button img {
         @media (prefers-color-scheme: dark) {
-            .close-button img {
-                filter: brightness(0) invert(1);
-            }
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    .mobile-dialog {
+        margin: 0;
+        border: none;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        padding: 30px;
+        background-color: var(--background-color-primary);
+        color: var(--color-text-primary);
+    }
+
+    .mobile-dialog[open] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .links-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-link {
+        transition: 0.1s ease-in-out;
+
+        .underline-deco {
+            width: 0%;
+            height: 1px;
+            background-color: var(--text-color-primary);
+            transition: all 0.3s ease;
         }
 
-        .nav-link {
-            transition: 0.1s ease-in-out;
+        &:hover {
+            text-decoration: underline;
+            scale: 1.02;
 
-            .underline-deco {
-                width: 0%;
-                height: 1px;
-                background-color: var(--background-color-accent);
-                transition: all 0.3s ease;
-            }
+            @media (prefers-reduced-motion: no-preference) {
+                text-decoration: unset;
 
-            &:hover {
-                text-decoration: underline;
-                color: var(--text-color-accent);
-                scale: 1.02;
-
-                @media (prefers-reduced-motion: no-preference) {
-                    text-decoration: unset;
-
-                    .underline-deco {
-                        width: 100%;
-                        transition: all 0.3s ease;
-                    }
+                .underline-deco {
+                    width: 100%;
+                    transition: all 0.3s ease;
+                    color: var(--text-color-primary);
                 }
             }
         }
@@ -198,13 +259,8 @@
         }
     }
 
-    .open {
-        display: flex;
-        align-items: center;
-        background-color: var(--background-color-primary);
-        padding: 30px;
-        gap: 30px;
-        z-index: 10;
+    .desktop-nav {
+        display: none;
     }
 
     .mobile-menu-top {
@@ -227,33 +283,30 @@
             height: 80px;
         }
 
-        .mobile-menu,
-        .mobile-menu-top {
+        .mobile-nav {
             display: none;
         }
 
-        .main-nav {
+        .desktop-nav {
             display: flex;
             flex-direction: row;
             align-items: center;
-            position: static;
-            z-index: auto;
+            justify-content: end;
             gap: 24px;
             padding: 20px;
+            width: 100%;
         }
 
-        .nav-bar {
+        .header {
             position: fixed;
-            top: 0;
-            left: 0;
             right: 0;
             transform: translateY(-100%);
-            z-index: 10;
 
             @media (prefers-reduced-motion: no-preference) {
                 transition: all 0.5s ease;
             }
         }
+
         .visible {
             transform: translateY(0);
 
