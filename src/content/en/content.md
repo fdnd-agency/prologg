@@ -1,6 +1,9 @@
 ---
 navigation:
   button: "Request demo"
+  openAlt: "Open menu"
+  closeAlt: "Close menu"
+  logoAlt: "Prologg, go to homepage"
   links:
     - content: "Why Prologg"
       href: "#waarom-prologg"
