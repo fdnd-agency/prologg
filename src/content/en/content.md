@@ -66,9 +66,15 @@ getInvolved:
     - number: "1"
       title: "Support further development"
       description: "Join the crowdfunding campaign. With your contribution we will build the secure back end, have the app independently audited, and test the translations with the target group itself."
+      button:
+        content: "Go to crowdfunding"
+        href: "#"
     - number: "2"
       title: "Become a Prologg for Lawyers customer"
-      description: "Receive case files from your clients in a secure environment for your firm. Subscriptions from [amount] per month."
+      description: "Receive case files from your clients in a secure environment for your firm."
+      button:
+        content: "Contact form"
+        href: "mailto:frank.kloos@fonetic.studio"
 
 value:
   subtitle: "What it gives you"
