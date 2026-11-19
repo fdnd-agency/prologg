@@ -81,7 +81,7 @@
 			max-inline-size: 60ch;
 			margin: 0;
 			padding-block-start: 0.625rem;
-			font-size: 1rem;
+			font-size: var(--font-size-body);
 			line-height: 1.6;
 			padding-bottom: var(--space-sm);
 		}

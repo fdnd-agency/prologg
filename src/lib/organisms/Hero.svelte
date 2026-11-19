@@ -109,8 +109,9 @@
         max-width: 64rem;
     }
     p {
-        font-size: clamp(1rem, 0.8171rem + 0.9756vw, 1.25rem);
-        font-weight: 300;
+        color: inherit;
+        font-size: var(--font-size-body);
+        font-weight: 400;
         margin-block: var(--space-md);
     }
     .button-wrapper {

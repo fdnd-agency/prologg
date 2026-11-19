@@ -1,4 +1,4 @@
-//#region src/get-log-filter.ts
+// src/get-log-filter.ts
 /**
 * A helper function to generate log filters using the same syntax as the CLI.
 *
@@ -64,5 +64,4 @@ const testFilter = (log, key, parts) => {
 	}
 	return value.endsWith(parts[lastPartIndex]);
 };
-//#endregion
 export { getLogFilter as default };

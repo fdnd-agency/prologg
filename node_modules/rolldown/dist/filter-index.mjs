@@ -1,5 +1,5 @@
-import { r as isPromiseLike, t as arraify } from "./shared/misc-DOSKtd97.mjs";
-//#region ../../node_modules/.pnpm/@rolldown+pluginutils@1.0.1/node_modules/@rolldown/pluginutils/dist/filter-B_mD-HGz.mjs
+import { r as isPromiseLike, t as arraify } from "./shared/misc-BaVlOYH0.mjs";
+// ../../node_modules/.pnpm/@rolldown+pluginutils@1.0.1/node_modules/@rolldown/pluginutils/dist/filter-B_mD-HGz.mjs
 const postfixRE = /[?#].*$/;
 function cleanUrl(url) {
 	return url.replace(postfixRE, "");
@@ -312,8 +312,7 @@ function makeIdFilterToMatchWithQuery(input) {
 function makeRegexIdFilterToMatchWithQuery(input) {
 	return new RegExp(input.source.replace(/(?<!\\)\$/g, "(?:\\?.*)?$"), input.flags);
 }
-//#endregion
-//#region src/plugin/with-filter.ts
+// src/plugin/with-filter.ts
 function withFilterImpl(pluginOption, filterObjectList) {
 	if (isPromiseLike(pluginOption)) return pluginOption.then((p) => withFilter(p, filterObjectList));
 	if (pluginOption == false || pluginOption == null) return pluginOption;
@@ -372,5 +371,4 @@ function findMatchedFilterObject(pluginName, overrideFilterObjectList) {
 	}
 	return -1;
 }
-//#endregion
 export { and, code, exactRegex, exclude, exprInterpreter, filterVitePlugins, id, importerId, include, interpreter, interpreterImpl, makeIdFiltersToMatchWithQuery, moduleType, not, or, prefixRegex, queries, query, withFilter };
