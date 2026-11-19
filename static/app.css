@@ -155,6 +155,12 @@ section {
     padding: var(--space-lg) var(--space-md);
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 @keyframes land {
     from {
         opacity: 0;
@@ -182,6 +188,11 @@ section {
 @media (width >= 1024px) {
     [id] {
         scroll-margin-top: 8rem;
+    }
+
+    body:has(#mobilepopover:popover-open) main,
+    body:has(#mobilepopover:popover-open) footer {
+        visibility: visible;
     }
 }
 
