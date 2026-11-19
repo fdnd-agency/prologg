@@ -97,7 +97,7 @@
     .number {
         grid-row: 1;
         grid-column: 1;
-        font-weight: 400;
+        font-weight: 700;
         color: var(--alert-color);
     }
 

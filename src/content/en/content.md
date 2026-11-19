@@ -68,7 +68,7 @@ getInvolved:
         href: "#"
     - number: "2"
       title: "Become a Prologg for Lawyers customer"
-      description: "Receive case files from your clients in a secure environment for your firm. Subscriptions from [amount] per month."
+      description: "Receive case files from your clients in a secure environment for your firm."
       button:
         content: "Contact form"
         href: "mailto:frank.kloos@fonetic.studio"
