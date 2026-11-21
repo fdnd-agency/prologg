@@ -1,14 +1,14 @@
 <script>
-   import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
+    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
     let { subtitle, title, description } = $props();
 </script>
 
-<section class="preview-info">
+<header>
     <Sectiontitle {subtitle} h2={title} p={description} />
-</section>
+</header>
 
 <style>
-    section {
+    header {
         padding: 0;
         grid-column: span 2;
 

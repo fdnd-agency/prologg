@@ -8,26 +8,23 @@
     <div>
         <Sectiontitle {subtitle} h2={title} />
 
-        <ol>
-            {#each cards as card (card.number)}
-                <li>
-                    <article>
-                        <p class="number">{card.number}</p>
-                        <h3>{card.title}</h3>
-                        <p class="description">{card.description}</p>
-                        {#if card.button}
-                            <div class="cta">
-                                <Button
-                                    href={card.button.href}
-                                    classes="cta"
-                                    content={card.button.content}
-                                />
-                            </div>
-                        {/if}
-                    </article>
-                </li>
+        <div class="cards">
+            {#each cards as card (card.title)}
+                <article>
+                    <h3>{card.title}</h3>
+                    <p class="description">{card.description}</p>
+                    {#if card.button}
+                        <div class="cta">
+                            <Button
+                                href={card.button.href}
+                                classes="cta"
+                                content={card.button.content}
+                            />
+                        </div>
+                    {/if}
+                </article>
             {/each}
-        </ol>
+        </div>
     </div>
 </section>
 
@@ -49,44 +46,41 @@
         }
     }
 
-    ol {
+    .cards {
         display: grid;
         gap: 2rem;
-        list-style: none;
-        padding: 0;
+        margin-block: 1rem;
+        counter-reset: card;
 
         @media (width >= 768px) {
             grid-template-columns: 1fr 1fr;
         }
     }
 
-    li {
-        display: flex;
+    article {
+        counter-increment: card;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto 1fr;
+        column-gap: 1.5rem;
         padding: 1.5rem 2rem;
         border-radius: 1rem;
         filter: var(--filter-shadow-card);
         color: var(--color-text-primary);
     }
 
-    li:first-child {
+    article:first-child {
         background-color: var(--color-background-card);
         --cta-background: var(--color-background-card-alt);
     }
 
-    li:last-child {
+    article:last-child {
         background-color: var(--color-background-card-alt);
         --cta-background: var(--color-background-card);
     }
 
-    article {
-        flex: 1;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto 1fr;
-        column-gap: 1.5rem;
-    }
-
-    .number,
+    /* Decorative number: generated with a CSS counter, not part of the markup */
+    article::before,
     h3 {
         font-family: var(--font-heading);
         font-size: 1.125rem;
@@ -94,7 +88,8 @@
         margin: 0;
     }
 
-    .number {
+    article::before {
+        content: counter(card);
         grid-row: 1;
         grid-column: 1;
         font-weight: 700;
