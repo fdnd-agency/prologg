@@ -2,8 +2,7 @@
     let { label, icon, text } = $props();
 </script>
 
-<article>
-    <span class="icon" style="--icon: url({icon})"></span>
+<article style:--icon="url({icon})">
     <h3>{label}</h3>
     <p>{text}</p>
 </article>
@@ -25,7 +24,9 @@
         filter: var(--filter-shadow-card);
     }
 
-    .icon {
+    /* Decorative icon as a pseudo-element instead of an empty <span> */
+    article::before {
+        content: "";
         width: 24px;
         height: 24px;
         background-color: var(--alert-color);
