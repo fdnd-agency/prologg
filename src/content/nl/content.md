@@ -121,4 +121,8 @@ footer:
   title: "Prologg for Legal"
   descriptionFirst: "Digitale Bewijskracht &"
   descriptionSecond: "Forensische Keten van Bewijs"
+
+error:
+  foutParagraaf: "Er is iets fout gegaan! Pagina niet gevonden."
+  terugButton: "Terug naar hoofdpagina"
 ---
