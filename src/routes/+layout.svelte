@@ -11,9 +11,7 @@
 	const c = $derived(content[lang.current]);
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<svelte:head></svelte:head>
 
 <Navigation {...c.navigation} />
 {@render children()}

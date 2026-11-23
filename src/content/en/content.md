@@ -73,7 +73,7 @@ getInvolved:
       title: "Become a Prologg for Lawyers customer"
       description: "Receive case files from your clients in a secure environment for your firm."
       button:
-        content: "Contact form"
+        content: "Contact us"
         href: "mailto:frank.kloos@fonetic.studio"
 
 value:

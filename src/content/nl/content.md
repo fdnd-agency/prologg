@@ -75,7 +75,7 @@ getInvolved:
       title: "Word klant van Prologg voor advocaten"
       description: "Ontvang dossiers van cliënten in een beveiligde omgeving voor uw kantoor."
       button:
-        content: "Contactformulier"
+        content: "Contact ons"
         href: "mailto:frank.kloos@fonetic.studio"
 
 value:
