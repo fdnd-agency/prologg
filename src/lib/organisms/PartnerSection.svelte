@@ -9,17 +9,15 @@
         <Sectiontitle {subtitle} h2={title} p={description} />
     </header>
 
-    <ul class="cards">
+    <div class="cards">
         {#each partners as card}
-            <li>
-                <PartnerCard
-                    label={card.title}
-                    icon={card.image}
-                    text={card.description}
-                />
-            </li>
+            <PartnerCard
+                label={card.title}
+                icon={card.image}
+                text={card.description}
+            />
         {/each}
-    </ul>
+    </div>
 </section>
 
 <style>
@@ -44,13 +42,9 @@
     .cards {
         display: grid;
         grid-template-columns: 1fr;
+        justify-items: center;
         gap: 1rem;
         width: 100%;
-    }
-
-    li {
-        display: flex;
-        justify-content: center;
     }
 
     @media (width >= 768px) {

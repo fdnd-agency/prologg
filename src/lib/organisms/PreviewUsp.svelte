@@ -5,9 +5,9 @@
     let { usps = [] } = $props();
 </script>
 
-<section>
+<figure>
     <img src={img} alt="" width="100%" />
-</section>
+</figure>
 <div>
     {#each usps as usp}
         <UspBlock
@@ -20,8 +20,9 @@
 </div>
 
 <style>
-    section {
+    figure {
         display: grid;
+        margin: 0;
     }
     img {
         max-width: 20rem;
