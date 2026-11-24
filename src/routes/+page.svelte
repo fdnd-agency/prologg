@@ -1,14 +1,12 @@
 <script>
-    import { goto } from "$app/navigation";
+    import { enhance } from "$app/forms";
 
-    const number = localStorage.getItem("loginNumber");
-
-    function logout() {
-        localStorage.removeItem("loginNumber");
-        goto("/login");
-    }
+    let { data } = $props();
 </script>
 
 <h1>Welcome</h1>
-<p>Logged in with: {number}</p>
-<button onclick={logout}>Log out</button>
+<p>Logged in with: {data.number}</p>
+
+<form method="POST" action="?/logout" use:enhance>
+    <button type="submit">Log out</button>
+</form>

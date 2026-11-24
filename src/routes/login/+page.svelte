@@ -1,38 +1,55 @@
 <script>
-    import { goto } from "$app/navigation";
+    import { enhance } from "$app/forms";
+    import DigitBoxes from "#lib/components/atoms/DigitBoxes.svelte";
 
-    let number = $state("");
-    let error = $state("");
+    let { form } = $props();
+    let hasJs = $state(false);
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const value = number.trim();
-
-        if (!/^\d{16}$/.test(value)) {
-            error = "Please enter exactly 16 digits (numbers only).";
-            return;
-        }
-
-        localStorage.setItem("loginNumber", value);
-        goto("/");
-    }
+    $effect(() => {
+        hasJs = true;
+    });
 </script>
 
 <h1>Log in</h1>
 
-<form onsubmit={handleSubmit}>
-    <label>
-        16-digit number
-        <input
-            bind:value={number}
-            inputmode="numeric"
-            maxlength="16"
-            autocomplete="off"
-        />
-    </label>
+<form method="POST" use:enhance class:ready={hasJs}>
+    {#if hasJs}
+        <fieldset style="border: none; padding: 0">
+            <legend>16-digit number</legend>
+            <DigitBoxes initial={form?.number ?? ""} />
+        </fieldset>
+    {:else}
+        <label>
+            16-digit number
+            <input
+                name="number"
+                value={form?.number ?? ""}
+                inputmode="numeric"
+                maxlength="16"
+                pattern={"[0-9]{16}"}
+                title="Exactly 16 digits"
+                autocomplete="off"
+                required
+            />
+        </label>
+    {/if}
+
     <button type="submit">Log in</button>
 
-    {#if error}
-        <p style="color: red">{error}</p>
+    {#if form?.error}
+        <p style="color: red">{form.error}</p>
     {/if}
 </form>
+
+<style>
+    @keyframes reveal {
+        to {
+            visibility: visible;
+        }
+    }
+
+    :global(html.js) form:not(.ready) {
+        visibility: hidden;
+        animation: reveal 0s 2s forwards;
+    }
+</style>
