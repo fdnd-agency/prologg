@@ -1,12 +1,21 @@
 <script>
     import UspBlock from '$lib/molecules/UspBlock.svelte';
-    import img from '$lib/assets/phone-preview.webp';
 
-    let { usps = [] } = $props();
+    let { usps = [], imageAlt } = $props();
 </script>
 
 <figure>
-    <img src={img} alt="" width="100%" />
+    <picture>
+        <source srcset="/images/phone-preview.avif" type="image/avif" />
+        <source srcset="/images/phone-preview.webp" type="image/webp" />
+        <img
+            src="/images/phone-preview.png"
+            alt={imageAlt}
+            width="340"
+            height="626.67"
+            loading="lazy"
+        />
+    </picture>
 </figure>
 <div>
     {#each usps as usp}

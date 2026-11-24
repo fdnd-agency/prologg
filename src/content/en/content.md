@@ -22,6 +22,7 @@ hero:
   imageWebpFallback: "/images/hero-img.webp"
   imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
   imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
+  imageAlt: "Person storing evidence with Prologg webapp"
   buttons:
     - content: "Request a demo for your firm"
       href: "mailto:frank.kloos@fonetic.studio"
@@ -45,6 +46,7 @@ preview:
   subtitle: "The solution in practice"
   title: "Collecting evidence without drawing attention."
   description: "Prologg works in the browser of a phone. There is nothing to install, no account needed and no name."
+  imageAlt: "Prologg on a phone: the screen where the worker records evidence"
   usps:
     - number: "1"
       subtitle: "Capture"
@@ -73,13 +75,13 @@ getInvolved:
       title: "Become a Prologg for Lawyers customer"
       description: "Receive case files from your clients in a secure environment for your firm."
       button:
-        content: "Contact form"
+        content: "Contact us"
         href: "mailto:frank.kloos@fonetic.studio"
 
 value:
   subtitle: "What it gives you"
   title: "A case file you can verify yourself"
-  image: "/images/dashboard.webp"
+  imageAlt: "The Prologg dashboard for lawyers"
   values:
     - title: "Stronger from the start"
       description: "Evidence captured during the exploitation, not afterwards"
@@ -119,4 +121,8 @@ footer:
   title: "Prologg for Legal"
   descriptionFirst: "Digital Evidence &"
   descriptionSecond: "Forensic Chain of Evidence"
+
+error:
+  foutParagraaf: "Something went wrong! Page not found."
+  terugButton: "Back to homepage"
 ---

@@ -22,6 +22,7 @@ hero:
   imageWebpFallback: "/images/hero-img.webp"
   imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
   imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
+  imageAlt: "Persoon slaat bewijs op met de Prologg webapp"
   buttons:
     - content: "Vraag kantoordemo aan"
       href: "mailto:frank.kloos@fonetic.studio"
@@ -45,6 +46,7 @@ preview:
   subtitle: "Oplossing in de praktijk"
   title: "Bewijs verzamelen zonder op te vallen."
   description: "Prologg werkt in de browser van een telefoon. Er is niets te installeren, geen account nodig en geen naam."
+  imageAlt: "Prologg op een telefoon: het scherm waarmee de werknemer bewijs vastlegt"
   usps:
     - number: "1"
       subtitle: "Vastleggen"
@@ -75,13 +77,13 @@ getInvolved:
       title: "Word klant van Prologg voor advocaten"
       description: "Ontvang dossiers van cliënten in een beveiligde omgeving voor uw kantoor."
       button:
-        content: "Contactformulier"
+        content: "Contact ons"
         href: "mailto:frank.kloos@fonetic.studio"
 
 value:
   subtitle: "Wat het u oplevert"
   title: "Een dossier dat u zelf kunt controleren"
-  image: "/images/dashboard.webp"
+  imageAlt: "Het Prologg-dashboard voor advocaten"
   values:
     - title: "Sterker vanaf het begin"
       description: "Bewijs vastgelegd tijdens de uitbuiting, niet achteraf"
@@ -121,4 +123,8 @@ footer:
   title: "Prologg for Legal"
   descriptionFirst: "Digitale Bewijskracht &"
   descriptionSecond: "Forensische Keten van Bewijs"
+
+error:
+  foutParagraaf: "Er is iets fout gegaan! Pagina niet gevonden."
+  terugButton: "Terug naar hoofdpagina"
 ---

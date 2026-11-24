@@ -8,6 +8,7 @@
         imageWebpFallback,
         imageWebp,
         imageAvif,
+        imageAlt,
         buttons = [],
     } = $props();
 </script>
@@ -44,7 +45,10 @@
             />
             <img
                 src={imageWebpFallback}
-                alt="person logging using prologg webapp"
+                alt={imageAlt}
+                width="710"
+                height="568"
+                fetchpriority="high"
             />
         </picture>
     </div>
@@ -139,11 +143,12 @@
         }
         img {
             width: 100%;
+            height: auto;
             border-radius: 12px;
 
             @media (width > 709px) {
                 grid-row: span 2;
-                width: unset;
+                width: auto;
                 height: 100%;
             }
         }
