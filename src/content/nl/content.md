@@ -45,6 +45,7 @@ preview:
   subtitle: "Oplossing in de praktijk"
   title: "Bewijs verzamelen zonder op te vallen."
   description: "Prologg werkt in de browser van een telefoon. Er is niets te installeren, geen account nodig en geen naam."
+  imageAlt: "Prologg op een telefoon: het scherm waarmee de werknemer bewijs vastlegt"
   usps:
     - number: "1"
       subtitle: "Vastleggen"

@@ -45,6 +45,7 @@ preview:
   subtitle: "The solution in practice"
   title: "Collecting evidence without drawing attention."
   description: "Prologg works in the browser of a phone. There is nothing to install, no account needed and no name."
+  imageAlt: "Prologg on a phone: the screen where the worker records evidence"
   usps:
     - number: "1"
       subtitle: "Capture"
