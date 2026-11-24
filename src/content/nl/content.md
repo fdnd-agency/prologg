@@ -82,7 +82,7 @@ getInvolved:
 value:
   subtitle: "Wat het u oplevert"
   title: "Een dossier dat u zelf kunt controleren"
-  image: "/images/dashboard.webp"
+  imageAlt: "Het Prologg-dashboard voor advocaten"
   values:
     - title: "Sterker vanaf het begin"
       description: "Bewijs vastgelegd tijdens de uitbuiting, niet achteraf"

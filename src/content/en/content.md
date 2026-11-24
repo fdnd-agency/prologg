@@ -80,7 +80,7 @@ getInvolved:
 value:
   subtitle: "What it gives you"
   title: "A case file you can verify yourself"
-  image: "/images/dashboard.webp"
+  imageAlt: "The Prologg dashboard for lawyers"
   values:
     - title: "Stronger from the start"
       description: "Evidence captured during the exploitation, not afterwards"
