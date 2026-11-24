@@ -16,3 +16,31 @@
 
   <Button href="/" classes="hero-primary" content={terugButton} />
 </section>
+
+<style>
+  section {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: var(--space-lg);
+    padding: var(--space-xxl) var(--space-md);
+    background-color: var(--background-color-secondary);
+    text-align: center;
+    min-height: 70vh;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 8vw, 4rem);
+    line-height: 1;
+    color: var(--text-color-big);
+  }
+
+  p {
+    max-width: 20rem;
+    color: var(--text-color-accent);
+
+    @media (width >= 768px) {
+      max-width: none;
+    }
+  }
+</style>
