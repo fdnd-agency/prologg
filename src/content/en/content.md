@@ -119,4 +119,8 @@ footer:
   title: "Prologg for Legal"
   descriptionFirst: "Digital Evidence &"
   descriptionSecond: "Forensic Chain of Evidence"
+
+error:
+  foutParagraaf: "Something went wrong! Page not found."
+  terugButton: "Back to homepage"
 ---
