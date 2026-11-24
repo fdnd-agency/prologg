@@ -22,6 +22,7 @@ hero:
   imageWebpFallback: "/images/hero-img.webp"
   imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
   imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
+  imageAlt: "Person storing evidence with Prologg webapp"
   buttons:
     - content: "Request a demo for your firm"
       href: "mailto:frank.kloos@fonetic.studio"
