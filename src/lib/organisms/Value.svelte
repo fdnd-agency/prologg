@@ -1,6 +1,6 @@
 <script>
     import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
-    let { subtitle, title, image, values = [] } = $props();
+    let { subtitle, title, imageAlt, values = [] } = $props();
 </script>
 
 <section id="waarde-levering" class="value">
@@ -14,7 +14,15 @@
     </dl>
 
     <picture>
-        <img src={image} alt="" />
+        <source srcset="/images/dashboard.avif" type="image/avif" />
+        <source srcset="/images/dashboard.webp" type="image/webp" />
+        <img
+            src="/images/dashboard.png"
+            alt={imageAlt}
+            width="1200"
+            height="800"
+            loading="lazy"
+        />
     </picture>
 </section>
 
@@ -51,12 +59,19 @@
         }
 
         picture {
-            height: 30rem;
+            max-height: 30rem;
             width: 100%;
             overflow: hidden;
 
             filter: var(--filter-shadow-card);
             border-radius: 1rem 1rem 0 0;
+
+            /* Responsive, no CLS */
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
         }
     }
 </style>
