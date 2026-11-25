@@ -2,6 +2,6 @@ title: "Prologg"
 client: "FairWork"
 status: "active"
 years: [2]
-main_link: ""
+main_link: "https://prologg.org/"
 dev_link: "https://prologglaw.netlify.app/"
 tech_stack: ["SvelteKit", "Directus"]
