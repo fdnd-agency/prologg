@@ -58,23 +58,23 @@
     function menuKeydown(event) {
         if (event.key !== "Tab" || !nav.open) return;
 
-        const focusbaar = [
+        const focusable = [
             ...nav.querySelectorAll("a[href], button:not([disabled])"),
         ].filter((el) => el.getClientRects().length > 0);
 
-        const eerste = focusbaar[0];
-        const laatste = focusbaar.at(-1);
+        const first = focusable[0];
+        const last = focusable.at(-1);
 
         // Move focus to the last element when pressing Shift+Tab on the first element.
-        if (event.shiftKey && document.activeElement === eerste) {
+        if (event.shiftKey && document.activeElement === first) {
             event.preventDefault();
-            laatste.focus();
+            last.focus();
         }
 
         // Move focus to the first element when pressing Tab on the last element.
-        if (!event.shiftKey && document.activeElement === laatste) {
+        if (!event.shiftKey && document.activeElement === last) {
             event.preventDefault();
-            eerste.focus();
+            first.focus();
         }
     }
 </script>
