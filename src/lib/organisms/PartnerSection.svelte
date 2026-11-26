@@ -1,12 +1,12 @@
 <script>
     import PartnerCard from "$lib/molecules/PartnerCard.svelte";
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
+    import SectionTitle from "$lib/molecules/SectionTitle.svelte";
     let { subtitle, title, description, partners = [] } = $props();
 </script>
 
 <section id="partners">
     <header>
-        <Sectiontitle {subtitle} h2={title} p={description} />
+        <SectionTitle {subtitle} h2={title} p={description} />
     </header>
 
     <div class="cards">

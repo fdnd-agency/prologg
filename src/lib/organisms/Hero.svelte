@@ -1,5 +1,4 @@
 <script>
-    import Sectiontitle from "$lib/molecules/Sectiontitle.svelte";
     import Button from "$lib/atoms/Button.svelte";
 
     let {

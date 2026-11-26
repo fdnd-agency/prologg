@@ -1,10 +1,10 @@
 <script>
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
+    import SectionTitle from "$lib/molecules/SectionTitle.svelte";
     let { subtitle, title, imageAlt, values = [] } = $props();
 </script>
 
 <section id="waarde-levering" class="value">
-    <Sectiontitle {subtitle} h2={title} />
+    <SectionTitle {subtitle} h2={title} />
 
     <dl>
         {#each values as value}

@@ -1,12 +1,12 @@
 <script>
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
-    import Button from '$lib/atoms/Button.svelte';
+    import SectionTitle from "$lib/molecules/SectionTitle.svelte";
+    import Button from "$lib/atoms/Button.svelte";
     let { subtitle, title, description, cards = [] } = $props();
 </script>
 
 <section id="doe-mee">
     <div>
-        <Sectiontitle {subtitle} h2={title} />
+        <SectionTitle {subtitle} h2={title} />
 
         <div class="cards">
             {#each cards as card (card.title)}
