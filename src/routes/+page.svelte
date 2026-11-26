@@ -8,21 +8,17 @@
     import GetInvolved from "$lib/organisms/GetInvolved.svelte";
 
     import { lang } from "$lib/lang.svelte.js";
-    import { content } from "$lib/content.js";
+    import { markdown } from "$lib/content.js";
 
-    const c = $derived(content[lang.current]);
+    const content = $derived(markdown[lang.current]);
 </script>
 
 <main>
-    <Hero {...c.hero} />
-    <WhyPrologg {...c.why} />
+    <Hero {...content.hero} />
+    <WhyPrologg {...content.why} />
     <Preview />
-    <Value {...c.value} />
-    <GetInvolved {...c.getInvolved} />
-    <PartnerSection {...c.partners} />
-    <DemoSection {...c.demo} />
-    <!-- <Footer /> -->
+    <Value {...content.value} />
+    <GetInvolved {...content.getInvolved} />
+    <PartnerSection {...content.partners} />
+    <DemoSection {...content.demo} />
 </main>
-
-<style>
-</style>
