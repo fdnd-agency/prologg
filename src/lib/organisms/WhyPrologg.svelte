@@ -5,7 +5,7 @@
 </script>
 
 <section id="waarom-prologg" class="why-section">
-	<div class="why-content">
+	<div class="container why-content">
 		<header>
 			<SectionTitle {subtitle} h2={title} />
 		</header>
@@ -34,15 +34,14 @@
 	.why-content {
 		box-sizing: border-box;
 		inline-size: 100%;
-		max-inline-size: 75rem;
 		margin-inline: auto;
 
 		@container why-prologg (width >= 640px) {
-			padding: 3.5rem 2rem;
+			/* padding: 3.5rem 2rem; */
 		}
 
 		@container why-prologg (width >= 960px) {
-			padding: 4rem;
+			/* padding: 4rem; */
 		}
 	}
 

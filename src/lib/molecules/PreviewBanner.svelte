@@ -26,7 +26,7 @@
     section {
         font-family: var(--font-heading);
         grid-column: span 2;
-        max-width: max-content;
+        width: 100%;
         place-self: center;
 
         margin: 0.5rem;

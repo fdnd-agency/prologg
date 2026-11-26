@@ -29,7 +29,7 @@
     }
 
     article {
-        margin: 1rem 0.5rem;
+        margin-block: var(--space-md);
         padding: 1rem;
         display: flex;
         flex-direction: column;
@@ -39,7 +39,7 @@
         max-width: 100%;
         filter: var(--filter-shadow-card);
 
-        @media(prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: dark) {
             background-color: var(--color-background-card-alt);
         }
 
@@ -47,10 +47,9 @@
             display: grid;
             grid-template-columns: min-content 1fr;
             gap: 2rem;
-            margin: 1.5rem 0.5rem;
-
             padding: 2.5rem 2rem;
         }
+
         h3,
         p {
             font-family: var(--font-heading);

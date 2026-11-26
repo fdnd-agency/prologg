@@ -10,7 +10,7 @@
 </script>
 
 <section id="hoe-het-werkt">
-    <div>
+    <div class="container">
         <PreviewInfo {...content.preview} />
         <PreviewUsp {...content.preview} />
         <PreviewBanner {...content.preview} />

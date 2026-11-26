@@ -1,4 +1,6 @@
-*,*::after,*::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -132,7 +134,12 @@ main {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
 }
 
@@ -179,13 +186,13 @@ button {
     &:nth-of-type(2) {
         scroll-margin-top: 6rem;
 
-        @media (width >= 768px) {
+        @media (width >=768px) {
             scroll-margin-top: 25rem;
         }
     }
 }
 
-@media (width >= 1024px) {
+@media (width >=1024px) {
     [id] {
         scroll-margin-top: 8rem;
     }
@@ -203,38 +210,52 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+
     /* Animate the direct children of the :target section (URL hash), so the section background stays still. */
-    :target > * {
+    :target>* {
         animation: land 700ms cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
         animation-delay: 250ms;
     }
 
     /* Stagger: each child starts 80ms later */
-    :target > :nth-child(2) { animation-delay: 330ms; }
-    :target > :nth-child(3) { animation-delay: 410ms; }
-    :target > :nth-child(4) { animation-delay: 490ms; }
+    :target> :nth-child(2) {
+        animation-delay: 330ms;
+    }
+
+    :target> :nth-child(3) {
+        animation-delay: 410ms;
+    }
+
+    :target> :nth-child(4) {
+        animation-delay: 490ms;
+    }
 }
 
 @keyframes page-out {
-	to {
-		opacity: 0;
-		scale: 1;
-	}
+    to {
+        opacity: 0;
+        scale: 1;
+    }
 }
 
 @keyframes page-in {
-	from {
-		opacity: 0;
-		scale: 1.08;
-	}
+    from {
+        opacity: 0;
+        scale: 1.08;
+    }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	::view-transition-old(root) {
-		animation: 200ms ease-in forwards page-out;
-	}
+    ::view-transition-old(root) {
+        animation: 200ms ease-in forwards page-out;
+    }
 
-	::view-transition-new(root) {
-		animation: 300ms ease-out 200ms backwards page-in;
-	}
+    ::view-transition-new(root) {
+        animation: 300ms ease-out 200ms backwards page-in;
+    }
+}
+
+
+.container {
+    max-width: var(--max-width);
 }

@@ -35,10 +35,6 @@
         background-color: var(--background-color-secondary);
         display: grid;
 
-        @media (width >= 768px) {
-            padding: 3.5rem 3rem;
-        }
-
         > div {
             max-width: var(--max-width);
             justify-self: center;
