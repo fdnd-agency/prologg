@@ -11,20 +11,18 @@ navigation:
       href: "#hoe-het-werkt"
     - content: "Doe mee"
       href: "#doe-mee"
-    - content: "Waarde Levering"
-      href: "#waarde-levering"
     - content: "Partners"
       href: "#partners"
 
 hero:
-  title: "Bewijs van uitbuiting, vastgelegd door wie het meemaakt."
-  description: "Veilig en anoniem bewijs verzamelen met een telefoon. Voor advocaten in zaken rond arbeidsuitbuiting."
+  title: "Betrouwbaar bewijs, rechtsreeks van de bron."
+  description: "Bewijs dat de cliënt zelf verzamelt, veilig en anoniem."
   imageWebpFallback: "/images/hero-img.webp"
   imageWebp: "/images/hero-img-05x.webp 355w, /images/hero-img.webp 710w"
   imageAvif: "/images/hero-img-05x.avif 355w, /images/hero-img.avif 710w"
   imageAlt: "Persoon slaat bewijs op met de Prologg webapp"
   buttons:
-    - content: "Vraag kantoordemo aan"
+    - content: "Vraag een demo aan"
       href: "mailto:frank.kloos@fonetic.studio"
       variant: "hero-primary"
     - content: "Bekijk de casus"
@@ -33,19 +31,19 @@ hero:
 
 why:
   subtitle: "Waarom"
-  title: "Arbeidsuitbuiting is moeilijk te bewijzen."
+  title: "Uitbuiting of intimidatie is vaak moeilijk te bewijzen."
   reasons:
-    - title: "Geen papieren"
-      description: "Soms is er geen contract en wordt het loon contant betaald."
+    - title: "Geen papieren spoor"
+      description: "Soms is er geen contract, geen bon of betalingsbewijs."
     - title: "Volledige afhankelijkheid"
-      description: "De werkgever is ook de huisbaas en regelt het vervoer."
-    - title: "Bewijs verdwijnt"
-      description: "Losse foto's en appjes zonder aantoonbare herkomst zijn makkelijk te betwisten."
+      description: "Zonder vastlegging staat het verhaal van je cliënt tegenover dat van de ander."
+    - title: "Achteraf is het te laat"
+      description: "Wat niet op het moment zelf is vastgelegd, is later nauwelijks te reconstrueren."
 
 preview:
   subtitle: "Oplossing in de praktijk"
   title: "Bewijs verzamelen zonder op te vallen."
-  description: "Prologg werkt in de browser van een telefoon. Er is niets te installeren, geen account nodig en geen naam."
+  description: "Prologg werkt in de browser van een telefoon. Er is niets te installeren, werkt zonder account en anoniem."
   imageAlt: "Prologg op een telefoon: het scherm waarmee de werknemer bewijs vastlegt"
   bannerTitle: "Open source fundament"
   bannerSubtitle: "Geauditeerd"
@@ -55,13 +53,11 @@ preview:
     - number: "1"
       subtitle: "Vastleggen"
       title: "Vastleggen op het moment zelf."
-      description: "De werknemer legt vast wat er gebeurt: foto's, geluid, locaties en documenten."
-
+      description: "De cliënt legt vast wat er gebeurt: foto's, geluid, locaties en documenten."
     - number: "2"
       subtitle: "Verzegelen"
       title: "Elk bestand krijgt een vingerafdruk."
       description: "Elk bestand krijgt direct een SHA-256-vingerafdruk en wordt versleuteld bewaard."
-
     - number: "3"
       subtitle: "Overdragen"
       title: "De werknemer bepaalt wanneer het dossier naar u gaat."
@@ -101,32 +97,30 @@ value:
       description: "Alleen de werknemer en u kunnen de inhoud lezen"
 
 partners:
-  subtitle: "Maatschappelijke verankering"
   title: "In samenwerking met"
-  description: "Mede ontwikkeld en getoetst in samenwerking met toonaangevende maatschappelijke partners en onderwijsinstellingen."
+  description: "In samenwerking met maatschappelijke partners en onderwijsinstellingen."
   partners:
     - title: "FairWork"
       description: "Belangenbehartiger tegen arbeidsuitbuiting"
       image: "/icons/decoration-icon.svg"
     - title: "Hogeschool van Amsterdam (HvA)"
-      description: "Juridisch praktijkonderzoek"
+      description: "Technische realisatie"
       image: "/icons/decoration-icon-1.svg"
     - title: "Hack Your Future (HYF)"
-      description: "Tech innovatie"
+      description: "Technische back-end"
       image: "/icons/decoration-icon-2.svg"
 
 demo:
-  subtitle: "Frank Kloos - prologg.org"
-  title: "Werkt u met cliënten in zaken rond arbeidsuitbuiting?"
+  title: "Werkt u met cliënten in een afhankelijke positie?"
   description: "In een demo laten we zien:"
   items:
-    - title: "Hoe clienten veilig bewijs kunnen opslaan."
+    - title: "Hoe cliënten veilig bewijs kunnen opslaan."
     - title: "Hoe een dossier binnenkomt en hoe u het controleert."
 
 footer:
-  title: "Prologg for Legal"
-  descriptionFirst: "Digitale Bewijskracht &"
-  descriptionSecond: "Forensische Keten van Bewijs"
+  title: "Prologg voor de advocatuur"
+  descriptionFirst: "Digitale bewijskracht &"
+  descriptionSecond: "Forensische keten van bewijs"
 
 error:
   foutParagraaf: "Er is iets fout gegaan! Pagina niet gevonden."

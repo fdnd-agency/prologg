@@ -37,11 +37,11 @@
 		margin-inline: auto;
 
 		@container why-prologg (width >= 640px) {
-			/* padding: 3.5rem 2rem; */
+			padding-block: 2rem;
 		}
 
 		@container why-prologg (width >= 960px) {
-			/* padding: 4rem; */
+			padding-block: 4rem;
 		}
 	}
 
