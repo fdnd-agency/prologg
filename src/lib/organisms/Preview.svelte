@@ -1,7 +1,7 @@
 <script>
     import PreviewInfo from "$lib/molecules/PreviewInfo.svelte";
-    import PreviewBanner from '$lib/molecules/PreviewBanner.svelte';
-    import PreviewUsp from '$lib/organisms/PreviewUsp.svelte';
+    import PreviewBanner from "$lib/molecules/PreviewBanner.svelte";
+    import PreviewUsp from "$lib/organisms/PreviewUsp.svelte";
 
     import { lang } from "$lib/lang.svelte.js";
     import { content } from "$lib/content.js";
@@ -13,7 +13,7 @@
     <div>
         <PreviewInfo {...c.preview} />
         <PreviewUsp {...c.preview} />
-        <PreviewBanner />
+        <PreviewBanner {...c.preview} />
     </div>
 </section>
 

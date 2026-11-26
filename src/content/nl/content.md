@@ -47,6 +47,10 @@ preview:
   title: "Bewijs verzamelen zonder op te vallen."
   description: "Prologg werkt in de browser van een telefoon. Er is niets te installeren, geen account nodig en geen naam."
   imageAlt: "Prologg op een telefoon: het scherm waarmee de werknemer bewijs vastlegt"
+  bannerTitle: "Open source fundament"
+  bannerSubtitle: "Geauditeerd"
+  bannerHighlighted: "Gebouwd op GlobaLeaks:"
+  bannerDescription: "de beproefde open source standaard voor vertrouwelijke en cryptografisch beveiligde data-overdracht onafhankelijk geauditeerd."
   usps:
     - number: "1"
       subtitle: "Vastleggen"

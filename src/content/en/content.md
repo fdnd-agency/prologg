@@ -47,6 +47,10 @@ preview:
   title: "Collecting evidence without drawing attention."
   description: "Prologg works in the browser of a phone. There is nothing to install, no account needed and no name."
   imageAlt: "Prologg on a phone: the screen where the worker records evidence"
+  bannerTitle: "Open source fundament"
+  bannerSubtitle: "Audited"
+  bannerHighlighted: "Build with GlobaLeaks:"
+  bannerDescription: "the proven open-source standard for confidential and cryptographically secure data transfer, independently audited."
   usps:
     - number: "1"
       subtitle: "Capture"

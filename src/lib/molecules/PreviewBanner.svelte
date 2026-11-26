@@ -1,3 +1,8 @@
+<script>
+    let { bannerTitle, bannerSubtitle, bannerHighlighted, bannerDescription } =
+        $props();
+</script>
+
 <section>
     <svg viewBox="0 0 19 22" aria-hidden="true">
         <path
@@ -7,13 +12,12 @@
 
     <div>
         <hgroup>
-            <h3>Open source fundament</h3>
-            <p>Geauditeerd</p>
+            <h3>{bannerTitle}</h3>
+            <p>{bannerSubtitle}</p>
         </hgroup>
         <p>
-            <strong>Gebouwd op GlobaLeaks:</strong> de beproefde open source standaard
-            voor vertrouwelijke en cryptografisch beveiligde data-overdracht, onafhankelijk
-            geauditeerd.
+            <strong>{bannerHighlighted}</strong>
+            {bannerDescription}
         </p>
     </div>
 </section>
