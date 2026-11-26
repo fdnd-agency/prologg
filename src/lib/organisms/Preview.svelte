@@ -4,16 +4,16 @@
     import PreviewUsp from "$lib/organisms/PreviewUsp.svelte";
 
     import { lang } from "$lib/lang.svelte.js";
-    import { content } from "$lib/content.js";
+    import { markdown } from "$lib/content.js";
 
-    const c = $derived(content[lang.current]);
+    const content = $derived(markdown[lang.current]);
 </script>
 
 <section id="hoe-het-werkt">
-    <div>
-        <PreviewInfo {...c.preview} />
-        <PreviewUsp {...c.preview} />
-        <PreviewBanner {...c.preview} />
+    <div class="container">
+        <PreviewInfo {...content.preview} />
+        <PreviewUsp {...content.preview} />
+        <PreviewBanner {...content.preview} />
     </div>
 </section>
 

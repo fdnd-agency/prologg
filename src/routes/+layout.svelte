@@ -5,11 +5,11 @@
 	import { onNavigate } from "$app/navigation";
 
 	import { lang } from "$lib/lang.svelte.js";
-	import { content } from "$lib/content.js";
+	import { markdown } from "$lib/content.js";
 
 	let { children } = $props();
 
-	const c = $derived(content[lang.current]);
+	const content = $derived(markdown[lang.current]);
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -25,6 +25,10 @@
 
 <svelte:head></svelte:head>
 
-<Navigation {...c.navigation} />
+<Navigation {...content.navigation} />
 {@render children()}
-<Footer links={c.navigation.links} button={c.navigation.button} {...c.footer} />
+<Footer
+	links={content.navigation.links}
+	button={content.navigation.button}
+	{...content.footer}
+/>

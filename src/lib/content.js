@@ -8,7 +8,7 @@ import enRaw from '../content/en/content.md?raw';
 // grab the text between the two --- lines and parse it as YAML
 const frontmatter = (raw) => parse(raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)[1]);
 
-export const content = {
+export const markdown = {
     nl: frontmatter(nlRaw),
     en: frontmatter(enRaw)
 };

@@ -1,5 +1,4 @@
 <script>
-    import Sectiontitle from "$lib/molecules/Sectiontitle.svelte";
     import Button from "$lib/atoms/Button.svelte";
 
     let {
@@ -14,7 +13,7 @@
 </script>
 
 <section class="hero">
-    <div class="hero-wrapper">
+    <div class="container hero-wrapper">
         <div class="hero-info-wrapper">
             <h1>{title}</h1>
             <div>
@@ -67,13 +66,11 @@
         justify-self: center;
         gap: 1rem;
         overflow-y: hidden;
-        max-width: var(--max-width);
 
         @media (width > 709px) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 275px);
-            padding-inline: var(--space-lg);
         }
 
         @media (width > 1023px) {

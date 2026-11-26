@@ -1,10 +1,10 @@
 <script>
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
+    import SectionTitle from "$lib/molecules/SectionTitle.svelte";
     let { subtitle, title, imageAlt, values = [] } = $props();
 </script>
 
-<section id="waarde-levering" class="value">
-    <Sectiontitle {subtitle} h2={title} />
+<section id="waarde-levering" class="container value">
+    <SectionTitle {subtitle} h2={title} />
 
     <dl>
         {#each values as value}
@@ -28,17 +28,25 @@
 
 <style>
     .value {
-        padding: 2rem 1.5rem 0 1.5rem;
-        justify-self: center;
+        /* padding: 2rem 1.5rem 0 1.5rem; */
+        /* width: 100%; */
+        /* margin: auto; */
         display: grid;
-        max-width: var(--max-width);
+        justify-self: center;
+        width: 100%;
+
+        @media (width > 1250px) {
+            padding-inline: 0;
+        }
 
         dl {
             padding-block: 1rem;
+
             @media (width > 890px) {
                 display: grid;
                 grid-template-columns: 1fr max-content;
             }
+
             dt {
                 font-weight: 600;
 

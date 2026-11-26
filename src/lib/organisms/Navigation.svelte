@@ -4,7 +4,7 @@
     import closeIcon from "$lib/assets/close-icon.svg";
     import hamburgerIcon from "$lib/assets/hamburger.svg";
     import Button from "$lib/atoms/Button.svelte";
-    import Languagetoggle from "$lib/atoms/Languagetoggle.svelte";
+    import LanguageToggle from "$lib/atoms/LanguageToggle.svelte";
 
     function closeMenu() {
         document.getElementById("mobile-dialog")?.close();
@@ -53,27 +53,28 @@
 
     let nav;
 
-    // Trap focus within the menu when open 
+    // Trap focus within the menu when open
     // AI assistance: https://claude.ai/share/60a1b1e7-aada-4eda-aa43-2d0d463dc064
     function menuKeydown(event) {
         if (event.key !== "Tab" || !nav.open) return;
-    
-        const focusbaar = [...nav.querySelectorAll("a[href], button:not([disabled])")]
-            .filter((el) => el.getClientRects().length > 0);
 
-        const eerste = focusbaar[0];
-        const laatste = focusbaar.at(-1);
+        const focusable = [
+            ...nav.querySelectorAll("a[href], button:not([disabled])"),
+        ].filter((el) => el.getClientRects().length > 0);
+
+        const first = focusable[0];
+        const last = focusable.at(-1);
 
         // Move focus to the last element when pressing Shift+Tab on the first element.
-        if (event.shiftKey && document.activeElement === eerste) {
+        if (event.shiftKey && document.activeElement === first) {
             event.preventDefault();
-            laatste.focus();
+            last.focus();
         }
 
         // Move focus to the first element when pressing Tab on the last element.
-        if (!event.shiftKey && document.activeElement === laatste) {
+        if (!event.shiftKey && document.activeElement === last) {
             event.preventDefault();
-            eerste.focus();
+            first.focus();
         }
     }
 </script>
@@ -109,20 +110,30 @@
                 class="hamburger"
                 type="button"
             >
-                <img src={hamburgerIcon} alt={openAlt} width="50" height="50"/>
+                <img src={hamburgerIcon} alt={openAlt} width="50" height="50" />
             </button>
         </div>
 
-        <dialog class="mobile-dialog" id="mobile-dialog" bind:this={nav} onkeydown={menuKeydown}>
+        <dialog
+            class="mobile-dialog"
+            id="mobile-dialog"
+            bind:this={nav}
+            onkeydown={menuKeydown}
+        >
             <div class="mobile-menu-top">
-                <button 
+                <button
                     type="button"
                     class="close-button"
                     commandfor="mobile-dialog"
                     command="close"
                     autofocus
                 >
-                    <img src={closeIcon} alt={closeAlt} width="25" height="25"/>
+                    <img
+                        src={closeIcon}
+                        alt={closeAlt}
+                        width="25"
+                        height="25"
+                    />
                 </button>
             </div>
 
@@ -134,7 +145,7 @@
                     </a>
                 {/each}
 
-                <Languagetoggle />
+                <LanguageToggle />
 
                 <Button
                     href="mailto:frank.kloos@fonetic.studio"
@@ -152,7 +163,7 @@
                 </a>
             {/each}
 
-            <Languagetoggle />
+            <LanguageToggle />
 
             <Button
                 href="mailto:frank.kloos@fonetic.studio"

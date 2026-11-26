@@ -1,6 +1,5 @@
 <script>
     import Button from "$lib/atoms/Button.svelte";
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
 
     let { subtitle, title, description, items = [] } = $props();
 </script>
@@ -74,7 +73,7 @@
 
     .demo-note {
         margin: 40px 0 0;
-        color: var( --color-text-primary);
+        color: var(--color-text-primary);
         font-size: 16px;
         line-height: 1.6;
     }

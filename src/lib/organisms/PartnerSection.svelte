@@ -1,12 +1,12 @@
 <script>
     import PartnerCard from "$lib/molecules/PartnerCard.svelte";
-    import Sectiontitle from '$lib/molecules/Sectiontitle.svelte';
+    import SectionTitle from "$lib/molecules/SectionTitle.svelte";
     let { subtitle, title, description, partners = [] } = $props();
 </script>
 
 <section id="partners">
     <header>
-        <Sectiontitle {subtitle} h2={title} p={description} />
+        <SectionTitle {subtitle} h2={title} p={description} />
     </header>
 
     <div class="cards">
@@ -26,7 +26,7 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        padding: 1rem;
+        /* padding: 1rem; */
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
     }
@@ -48,10 +48,6 @@
     }
 
     @media (width >= 768px) {
-        section {
-            padding: 64px 32px;
-        }
-
         .cards {
             grid-template-columns: repeat(3, 1fr);
             max-width: 960px;
