@@ -1,10 +1,10 @@
 <script>
-  import { page } from '$app/state';
-  import { content } from '$lib/content.js';
-  import { lang } from '$lib/lang.svelte.js';
-  import Button from '$lib/atoms/Button.svelte';
+  import { page } from "$app/state";
+  import { markdown } from "$lib/content.js";
+  import { lang } from "$lib/lang.svelte.js";
+  import Button from "$lib/atoms/Button.svelte";
 
-  let { foutParagraaf, terugButton } = $derived(content[lang.current].error);
+  let { foutParagraaf, terugButton } = $derived(markdown[lang.current].error);
 </script>
 
 <section>
