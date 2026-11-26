@@ -1,7 +1,7 @@
 <script>
     import Hero from "$lib/organisms/Hero.svelte";
     import Preview from "$lib/organisms/Preview.svelte";
-    import DemoSection from "$lib/organisms/Demosection.svelte";
+    import DemoSection from "$lib/organisms/DemoSection.svelte";
     import WhyPrologg from "$lib/organisms/WhyPrologg.svelte";
     import PartnerSection from "$lib/organisms/PartnerSection.svelte";
     import Value from "$lib/organisms/Value.svelte";
